@@ -1,4 +1,4 @@
-# Cognito — https://cognito.homes
+# Cognito — https://cognitosystem.com
 # All crawlers welcome, including AI / LLM crawlers (search-grounded answers,
 # citation, and training). We do not block any user agent.
 
@@ -30,4 +30,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://cognito.homes/sitemap.xml
+Sitemap: https://cognitosystem.com/sitemap.xml

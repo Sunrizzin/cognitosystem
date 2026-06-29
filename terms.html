@@ -1,116 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0a0a1a">
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <title>Terms of Use — Cognito</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16130d">
+<title>Terms of Use — Cognito</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://cognitosystem.com/terms.html">
+<style>
+  :root{
+    --ink:#000;--panel:#111113;--cream:#f5f5f7;--cream-dim:#a1a1a6;--cream-faint:#6b6b70;
+    --accent:#ff6b35;--accent-soft:#ff9f6b;
+    --line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.14);
+    --serif:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--cream-dim);font-family:var(--sans);font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased;position:relative}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(55% 40% at 82% -12%,rgba(255,107,53,.12),transparent 62%)}
+  .wrap{position:relative;z-index:1}
+  a{color:var(--accent-soft);text-decoration:none}
+  a:hover{text-decoration:underline}
 
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);background:rgba(8,8,10,.62);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:820px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;gap:24px}
+  .brand{display:flex;align-items:center;gap:.55em;font-family:var(--serif);font-weight:600;font-size:1.25rem;color:var(--cream);margin-right:auto;letter-spacing:-.01em}
+  .brand img{width:30px;height:30px;border-radius:7px}
+  .nav-links{display:flex;gap:1.5rem;font-size:.92rem}
+  .nav-links a{color:var(--cream-dim)}
+  .nav-links a:hover{color:var(--cream);text-decoration:none}
+  @media(max-width:560px){.nav-links a.opt{display:none}}
 
-    :root {
-      --bg: #0a0a1a;
-      --surface: rgba(255,255,255,0.04);
-      --border: rgba(255,255,255,0.08);
-      --text: #f0f0f5;
-      --text-muted: #8888a0;
-      --text-dim: #55556a;
-      --accent: #FF6B35;
-      --accent-light: #FF8F5E;
-    }
+  .page-header{max-width:760px;margin:0 auto;padding:66px 24px 0}
+  .eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .page-header h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.2rem,5vw,3rem);color:var(--cream);letter-spacing:-.02em;margin:.32em 0 .22em}
+  .page-header .date{font-size:.9rem;color:var(--cream-faint)}
 
-    html { scroll-behavior: smooth; }
+  main{max-width:760px;margin:26px auto 76px;padding:0 24px}
+  main>p:first-child{font-size:1.12rem;color:var(--cream)}
+  h2{font-family:var(--serif);font-weight:600;font-size:1.45rem;color:var(--cream);letter-spacing:-.01em;margin:46px 0 14px;padding-top:28px;border-top:1px solid var(--line)}
+  h2:first-of-type{border-top:none;padding-top:10px}
+  p{margin-bottom:14px}
+  ul{margin:0 0 16px 1.2em}
+  li{margin-bottom:7px}
+  li::marker{color:var(--accent)}
+  strong{color:var(--cream);font-weight:600}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--accent-light); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* === NAV === */
-    nav {
-      background: rgba(10,10,26,0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px; height: 60px;
-      display: flex; align-items: center; gap: 28px;
-      max-width: 900px; margin: 0 auto;
-    }
-    nav a { font-size: 0.9rem; color: var(--text-muted); transition: color 0.2s; }
-    nav a:hover { color: var(--text); text-decoration: none; }
-    .nav-logo {
-      display: flex; align-items: center; gap: 8px;
-      font-weight: 800; font-size: 1.1rem;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      color: var(--accent) !important;
-      margin-right: auto;
-    }
-    .nav-logo img { height: 24px; width: 24px; border-radius: 5px; }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-
-    /* === CONTENT === */
-    .page-header {
-      text-align: center; padding: 60px 24px 0;
-    }
-    .page-header h1 {
-      font-size: 2rem; font-weight: 700; margin-bottom: 8px;
-    }
-    .page-header .date {
-      font-size: 0.9rem; color: var(--text-dim);
-    }
-
-    main {
-      max-width: 720px; margin: 40px auto 60px;
-      padding: 0 24px;
-    }
-
-    h2 {
-      font-size: 1.2rem; font-weight: 700;
-      margin: 36px 0 12px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-    }
-
-    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 24px; }
-
-    p { margin-bottom: 14px; color: var(--text-muted); }
-    ul { margin: 0 0 14px 20px; color: var(--text-muted); }
-    li { margin-bottom: 6px; }
-
-    /* === FOOTER === */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 24px;
-      text-align: center;
-      font-size: 0.85rem; color: var(--text-dim);
-    }
-    footer a { color: var(--text-muted); }
-  </style>
+  footer{border-top:1px solid var(--line);padding:38px 24px 60px;text-align:center;font-size:.88rem;color:var(--cream-faint)}
+  footer .brand{justify-content:center;font-size:1.1rem;margin:0 0 .55em}
+  footer .fl{display:flex;gap:1.2em;justify-content:center;margin-top:.5em}
+  footer a{color:var(--cream-dim)}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
-
 <body>
+<div class="wrap">
 
 <nav>
-  <a href="index.html" class="nav-logo"><img src="logo-new.png" alt="Cognito logo">Cognito</a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="mailto:info@cognito.homes">Support</a>
+  <div class="nav-in">
+    <a class="brand" href="./"><img src="apple-touch-icon.png" alt="Cognito">Cognito</a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="privacy.html" class="opt">Privacy</a>
+      <a href="mailto:info@cognitosystem.com">Support</a>
+    </div>
   </div>
 </nav>
 
 <div class="page-header">
+  <div class="eyebrow">Legal</div>
   <h1>Terms of Use</h1>
-  <div class="date">Last updated: June 5, 2026</div>
+  <div class="date">Last updated: June 29, 2026</div>
 </div>
 
 <main>
@@ -126,8 +87,7 @@
     <li>Diagram-to-cards conversion from labeled images</li>
     <li>Text-to-speech with automatic language detection</li>
     <li>Folders, tags, and organizational tools</li>
-    <li>Community deck sharing (publish and download decks)</li>
-    <li>Analytics dashboard with heatmaps, retention trends, achievements, and streaks</li>
+    <li>Analytics dashboard with heatmaps, retention trends, and streaks</li>
     <li>Import from Anki (.apkg), CSV, and TSV files</li>
     <li>iOS widgets for study reminders</li>
   </ul>
@@ -144,57 +104,36 @@
     <li>Attempt to circumvent subscription requirements or usage limits</li>
   </ul>
 
-  <h2>Subscriptions & Purchases</h2>
+  <h2>Subscriptions &amp; Purchases</h2>
   <p>Cognito offers optional Premium features via subscription. Available plans:</p>
   <ul>
+    <li><strong>Weekly</strong> — auto-renewing weekly subscription</li>
     <li><strong>Monthly</strong> — auto-renewing monthly subscription</li>
     <li><strong>Yearly</strong> — auto-renewing yearly subscription</li>
+    <li><strong>Ultra (Yearly)</strong> — auto-renewing yearly subscription with our highest-quality AI</li>
   </ul>
   <p>All subscriptions are billed through Apple's App Store using StoreKit. Payment is charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</p>
   <p>You can manage or cancel subscriptions in your Apple ID Settings > Subscriptions. We do not process payments or have access to your payment information.</p>
 
   <h2>AI-Generated Content</h2>
-  <p>AI features in Cognito use Google's Gemini API to generate flashcards, quiz options, explanations, and answer evaluations. Important notices:</p>
+  <p>AI features in Cognito use Google's Gemini (and DeepSeek in regions where Google's AI is unavailable) to generate flashcards, quiz options, explanations, and answer evaluations. Important notices:</p>
   <ul>
     <li>AI-generated content may contain inaccuracies or errors</li>
     <li>You are responsible for reviewing and verifying all AI-generated material</li>
     <li>AI content should not be relied upon for medical, legal, financial, or safety-critical decisions</li>
-    <li>Free users can save up to 10 AI-generated batches per day; Premium users have unlimited access</li>
+    <li>Free users can save up to 3 AI-generated batches per day; Premium users have unlimited access</li>
   </ul>
 
-  <h2>User Accounts & Authentication</h2>
-  <p>Cognito offers optional user accounts via Sign in with Apple. Account features include:</p>
-  <ul>
-    <li>A public nickname and avatar visible to other users</li>
-    <li>The ability to publish and manage shared card decks</li>
-    <li>Download decks shared by other community members</li>
-  </ul>
-  <p>You may use the App without creating an account. Anonymous users retain full access to flashcard creation, study, and AI features. Authentication is required only for community sharing features.</p>
-  <p>Account data (nickname, avatar, shared deck metadata) is stored in Google Firebase/Firestore. You may delete your account and all associated data at any time from the App settings.</p>
-
-  <h2>Shared Decks & Community Content</h2>
-  <p>When you publish a card deck to the community, the following information becomes publicly visible:</p>
-  <ul>
-    <li>Deck title, description, and tags</li>
-    <li>Card content (front and back text)</li>
-    <li>Your public nickname</li>
-    <li>Download count and creation date</li>
-  </ul>
-  <p>By publishing a deck, you confirm that:</p>
-  <ul>
-    <li>You have the right to share the content</li>
-    <li>The content does not contain offensive, hateful, discriminatory, or inappropriate material</li>
-    <li>The content does not violate any third-party intellectual property rights</li>
-    <li>The content is suitable for an educational community</li>
-  </ul>
-  <p>We reserve the right to remove any shared deck that violates these guidelines without notice. Repeated violations may result in account suspension.</p>
+  <h2>No Account Required</h2>
+  <p>Cognito has no sign-up, login, or user profiles. The App automatically uses an anonymous Firebase identifier in the background for analytics and crash reporting only — you are never asked to create an account or sign in.</p>
+  <p>You have full access to all features, including flashcard creation, study, and AI tools, without any account. You can erase all app data at any time from the App settings.</p>
 
   <h2>User Content</h2>
   <p>You retain ownership of all flashcards and study materials you create. When importing content from external sources (Anki decks, CSV files), you are responsible for ensuring you have the right to use that content.</p>
-  <p>Content you submit to AI features (topics, images, card text) is processed by Google Gemini API according to their terms. We do not store or access your content on our servers — except for decks you explicitly choose to share with the community.</p>
+  <p>Content you submit to AI features (topics, images, card text) is processed by our AI providers (Google Gemini, or DeepSeek in regions where Google's AI is unavailable) according to their terms. We do not store or access your flashcard content on our servers.</p>
 
   <h2>Privacy</h2>
-  <p>Your local data is stored on your device. We collect anonymous analytics to improve the App. Account data and shared decks are stored in Firebase/Firestore. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
+  <p>Your flashcards and study data are stored on your device (and in your private iCloud, if enabled). We collect anonymous analytics and crash reports to improve the App. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
 
   <h2>Intellectual Property</h2>
   <p>The App, its design, code, and branding are the intellectual property of the developer. You are granted a limited, non-exclusive, non-transferable license to use the App for personal purposes in accordance with these Terms.</p>
@@ -209,12 +148,15 @@
   <p>We may update these Terms from time to time. Changes will be reflected with an updated date at the top of this page. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
 
   <h2>Contact</h2>
-  <p>For support or legal inquiries, contact us at <a href="mailto:info@cognito.homes">info@cognito.homes</a>.</p>
+  <p>For support or legal inquiries, contact us at <a href="mailto:info@cognitosystem.com">info@cognitosystem.com</a>.</p>
 </main>
 
 <footer>
-  <p>&copy; 2026 Cognito by Aleksei Usanov &middot; <a href="mailto:info@cognito.homes">Send Feedback</a></p>
+  <a class="brand" href="./"><img src="apple-touch-icon.png" alt="Cognito">Cognito</a>
+  <div>Made by Aleksei Usanov · © 2026</div>
+  <div class="fl"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:info@cognitosystem.com">Support</a></div>
 </footer>
 
+</div>
 </body>
 </html>

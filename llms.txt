@@ -2,7 +2,7 @@
 
 > Cognito is an AI-powered learning app for iPhone and iPad that turns YouTube videos, PDFs, lectures, photos, web pages, and arXiv papers into flashcards and structured Skill Tree learning programs, scheduled with the FSRS spaced-repetition algorithm so you remember more in less time.
 
-Cognito is free to start. Core features — manual card creation, FSRS spaced repetition, Classic and Compact study modes, Anki (.apkg)/CSV/TSV import, and up to 10 AI card generations per day — are free forever. Premium ($9.99/month or $39.99/year) unlocks unlimited AI generation, Skill Tree learning programs, and advanced content sources (YouTube, PDF, audio, photo, URL, arXiv). Requires iOS 18 or later and syncs across devices via iCloud. Your flashcards and study history stay on your device; AI features send only the content you submit to Google's Gemini API, with no ads or third-party tracking.
+Cognito is free to start. Core features — manual card creation, FSRS spaced repetition, Classic and Compact study modes, Anki (.apkg)/CSV/TSV import, and up to 3 AI card generations per day — are free forever. Premium ($9.99/month or $39.99/year) unlocks unlimited AI generation, Skill Tree learning programs, and advanced content sources (YouTube, PDF, audio, photo, URL, arXiv). Requires iOS 18 or later and syncs across devices via iCloud. Your flashcards and study history stay on your device; AI features send only the content you submit to Google's Gemini API, with no ads or third-party tracking.
 
 ## Key facts
 - Platform: iPhone and iPad (iOS 18 or later)
@@ -17,6 +17,6 @@ Cognito is free to start. Core features — manual card creation, FSRS spaced re
 
 ## Links
 - [App Store](https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298)
-- [Website](https://cognito.homes/)
-- [Privacy Policy](https://cognito.homes/privacy.html)
-- [Terms of Use](https://cognito.homes/terms.html)
+- [Website](https://cognitosystem.com/)
+- [Privacy Policy](https://cognitosystem.com/privacy.html)
+- [Terms of Use](https://cognitosystem.com/terms.html)
