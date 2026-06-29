@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a1a">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <title>Privacy Policy — Cognito</title>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a1a;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #f0f0f5;
+      --text-muted: #8888a0;
+      --text-dim: #55556a;
+      --accent: #FF6B35;
+      --accent-light: #FF8F5E;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* === NAV === */
+    nav {
+      background: rgba(10,10,26,0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; gap: 28px;
+      max-width: 900px; margin: 0 auto;
+    }
+    nav a { font-size: 0.9rem; color: var(--text-muted); transition: color 0.2s; }
+    nav a:hover { color: var(--text); text-decoration: none; }
+    .nav-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-weight: 800; font-size: 1.1rem;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--accent) !important;
+      margin-right: auto;
+    }
+    .nav-logo img { height: 24px; width: 24px; border-radius: 5px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+
+    /* === CONTENT === */
+    .page-header {
+      text-align: center; padding: 60px 24px 0;
+    }
+    .page-header h1 {
+      font-size: 2rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .page-header .date {
+      font-size: 0.9rem; color: var(--text-dim);
+    }
+
+    main {
+      max-width: 720px; margin: 40px auto 60px;
+      padding: 0 24px;
+    }
+
+    h2 {
+      font-size: 1.2rem; font-weight: 700;
+      margin: 36px 0 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 24px; }
+
+    p { margin-bottom: 14px; color: var(--text-muted); }
+    ul { margin: 0 0 14px 20px; color: var(--text-muted); }
+    li { margin-bottom: 6px; }
+
+    /* === FOOTER === */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.85rem; color: var(--text-dim);
+    }
+    footer a { color: var(--text-muted); }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo-new.png" alt="Cognito logo">Cognito</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="mailto:info@cognito.homes">Support</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Privacy Policy</h1>
+  <div class="date">Last updated: June 5, 2026</div>
+</div>
+
+<main>
+  <p>Cognito ("the App") is built with privacy in mind. This policy explains what data is collected, how it is used, and your rights as a user.</p>
+
+  <h2>Local Data Storage</h2>
+  <p>Your flashcards, study history, settings, and progress are stored locally on your device using Apple's SwiftData framework. This data stays on your device and is not transmitted to our servers.</p>
+  <p>If you enable iCloud, your data may sync across your devices through Apple's secure iCloud infrastructure. We do not have access to your iCloud data.</p>
+
+  <h2>Anonymous Analytics</h2>
+  <p>Cognito collects anonymous usage events through Firebase Analytics to help us understand how the app is used and improve the experience. These events include:</p>
+  <ul>
+    <li>Study sessions (start, completion, accuracy)</li>
+    <li>Feature usage (card creation, AI generation, import)</li>
+    <li>Settings changes (theme, study mode, daily goal)</li>
+    <li>Subscription events (paywall views, purchases)</li>
+  </ul>
+  <p>No personally identifiable information (PII) is collected. Events do not contain your name, email, card content, or any data that could identify you. We use this data solely to improve the App.</p>
+
+  <h2>AI Features & Google Gemini</h2>
+  <p>AI-powered features (card generation, AI Tutor, Voice Tutor, Quiz Mode, answer checking, diagram analysis) are processed through Google's Gemini API. When you use these features, the following data is sent to Google:</p>
+  <ul>
+    <li>Text prompts (topics you want to study)</li>
+    <li>Images and photos you upload for card generation or diagram analysis</li>
+    <li>Documents (PDFs) and audio you provide — uploaded files or in-app recordings — to generate cards</li>
+    <li>Links to YouTube videos and web pages you ask the App to process</li>
+    <li>Microphone audio during a Voice Tutor session, streamed live for real-time conversation</li>
+    <li>Card content for restructuring, rephrasing, or answer validation</li>
+  </ul>
+  <p>This content is sent only when you actively use an AI feature. No user IDs, device identifiers, or personal information are included in these requests. Data is processed according to <a href="https://ai.google.dev/gemini-api/terms">Google's Gemini API Terms</a>.</p>
+
+  <h2>Purchases & Subscriptions</h2>
+  <p>Premium features are available via optional subscriptions managed through Apple's StoreKit. All payment processing is handled entirely by Apple. We do not receive, store, or have access to your payment information, credit card details, or Apple ID.</p>
+
+  <h2>User Accounts & Authentication</h2>
+  <p>Cognito offers optional user accounts via Sign in with Apple. When you create an account, we store the following data in Google Firebase/Firestore:</p>
+  <ul>
+    <li>Your chosen nickname and avatar emoji (public)</li>
+    <li>Your Firebase user ID (anonymous identifier)</li>
+    <li>Account creation and update timestamps</li>
+    <li>Avatar background color preference</li>
+  </ul>
+  <p>If you use Sign in with Apple with email relay, we receive only a relay email address managed by Apple. We do not use or share this email for marketing or any other purpose.</p>
+
+  <h2>Shared Decks</h2>
+  <p>When you publish a deck to the community, the following data is stored in Firestore and visible to all users:</p>
+  <ul>
+    <li>Deck title, description, and tags</li>
+    <li>Card content (front and back text, card type)</li>
+    <li>Your public nickname</li>
+    <li>Download count, creation and update timestamps</li>
+  </ul>
+  <p>You can delete your shared decks at any time. When you delete your account, all associated shared decks are also removed.</p>
+
+  <h2>Third-Party Services</h2>
+  <p>Cognito integrates the following third-party services:</p>
+  <ul>
+    <li><strong>Firebase Analytics</strong> — anonymous usage analytics (Google)</li>
+    <li><strong>Firebase Authentication</strong> — user account management via Sign in with Apple (Google)</li>
+    <li><strong>Firebase Firestore</strong> — user profiles and shared deck storage (Google)</li>
+    <li><strong>Firebase AppCheck</strong> — app integrity verification (Google)</li>
+    <li><strong>Firebase Crashlytics</strong> — anonymous crash reporting and diagnostics (Google)</li>
+    <li><strong>Firebase Cloud Messaging</strong> — push notifications (Google)</li>
+    <li><strong>Firebase Remote Config</strong> — feature configuration and rollout (Google)</li>
+    <li><strong>Google Gemini API</strong> — AI card generation and study features</li>
+    <li><strong>Apple StoreKit</strong> — subscription and purchase management</li>
+  </ul>
+  <p>No advertising SDKs, ad networks, or user tracking services are used.</p>
+
+  <h2>Data We Do Not Collect</h2>
+  <p>Cognito does not collect or store:</p>
+  <ul>
+    <li>Real names or phone numbers</li>
+    <li>Location data</li>
+    <li>Device identifiers linked to personal data</li>
+    <li>Browsing or search history</li>
+    <li>Your local flashcard content (stored only on your device, unless you explicitly share it)</li>
+  </ul>
+
+  <h2>Your Rights</h2>
+  <p>If you have a Cognito account, you can:</p>
+  <ul>
+    <li>View and edit your profile data (nickname, avatar) at any time</li>
+    <li>Delete any shared decks you've published</li>
+    <li>Delete your account and all associated data from the App settings</li>
+  </ul>
+  <p>For users without an account, your study data is fully under your control on your device. You can delete all app data by removing the app from your device.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Cognito is intended for users aged 13 and older. We do not knowingly collect personal data from children under 13. If you believe a child under 13 has provided data through the App, please contact us so we can remove it.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Changes will be reflected with an updated date at the top of this page. Continued use of the App constitutes acceptance of any changes.</p>
+
+  <h2>Contact</h2>
+  <p>For questions or concerns about privacy, contact us at <a href="mailto:info@cognito.homes">info@cognito.homes</a>.</p>
+</main>
+
+<footer>
+  <p>&copy; 2026 Cognito by Aleksei Usanov &middot; <a href="mailto:info@cognito.homes">Send Feedback</a></p>
+</footer>
+
+</body>
+</html>
