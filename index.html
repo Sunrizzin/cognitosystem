@@ -1,490 +1,514 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cognito — AI Flashcards that beat the forgetting curve</title>
-<meta name="description" content="Cognito turns any lecture, PDF, YouTube video, or paper into flashcards, then uses FSRS spaced repetition to lock it into long-term memory. Free on iPhone & iPad.">
-<link rel="canonical" href="https://cognitosystem.com/">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cognitosystem.com/">
-<meta property="og:title" content="Cognito — AI Flashcards that beat the forgetting curve">
-<meta property="og:description" content="Turn any lecture, PDF, video, or paper into flashcards. FSRS spaced repetition makes it stick. Free on iPhone & iPad.">
-<meta property="og:image" content="https://cognitosystem.com/logo-new.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#000000">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cognito — AI Flashcards","operatingSystem":"iOS 18+","applicationCategory":"EducationalApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"AI flashcards from any source, scheduled with FSRS spaced repetition.","url":"https://cognitosystem.com/","author":{"@type":"Person","name":"Aleksei Usanov"}}
-</script>
-<style>
-  :root{
-    --bg:#000; --bg-1:#08080a; --surface:#111113; --surface-2:#17171a;
-    --text:#f5f5f7; --text-2:#a1a1a6; --text-3:#6b6b70;
-    --accent:#ff6b35; --accent-2:#ff8a3d; --accent-soft:#ff9f6b;
-    --red:#ff453a; --amber:#ff9f0a; --green:#30d158;
-    --hair:rgba(255,255,255,.08); --hair-2:rgba(255,255,255,.14);
-    --glow:rgba(255,107,53,.55);
-    --maxw:1140px;
-    --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cognito System — Exam-aligned study that remembers</title>
+  <meta name="description" content="Choose your exam, add your study material, and turn it into exam-aligned practice with AI, active recall, and FSRS spaced repetition.">
+  <meta name="theme-color" content="#0b0a09">
+  <link rel="canonical" href="https://cognitosystem.com/">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cognitosystem.com/">
+  <meta property="og:title" content="Cognito System — Exam-aligned study that remembers">
+  <meta property="og:description" content="Turn your syllabus, notes, PDFs, lectures, and videos into practice shaped around the exam you are actually taking.">
+  <meta property="og:image" content="https://cognitosystem.com/logo-new.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cognito System — Exam-aligned study that remembers">
+  <meta name="twitter:description" content="Choose your exam. Add your material. Practice what matters, when it matters.">
+  <meta name="twitter:image" content="https://cognitosystem.com/logo-new.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Cognito System",
+        "alternateName": "Cognito",
+        "operatingSystem": "iOS 18 or later",
+        "applicationCategory": "EducationalApplication",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "description": "An exam-focused study system that creates practice from your materials and schedules reviews with FSRS spaced repetition.",
+        "url": "https://cognitosystem.com/",
+        "downloadUrl": "https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298",
+        "author": {"@type": "Person", "name": "Aleksei Usanov"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What can Cognito turn into study material?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Cognito can create study cards from a topic, PDF, image, audio recording, YouTube video, webpage, arXiv paper, or your own notes."}
+          },
+          {
+            "@type": "Question",
+            "name": "Does Cognito work without an exam?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can study any topic without choosing an exam and select an exam later in Settings."}
+          },
+          {
+            "@type": "Question",
+            "name": "Where is my study data stored?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Your decks, cards, progress, and settings are stored locally on your device. Optional iCloud sync uses your private CloudKit database."}
+          }
+        ]
+      }
+    ]
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:18px;line-height:1.6;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden}
-  /* single soft ambient glow, top-right — clean, no clutter */
-  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:radial-gradient(46% 38% at 84% -6%,rgba(255,107,53,.18),transparent 60%)}
-  .wrap{position:relative;z-index:1}
-  .shell{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%}
+  </script>
 
-  /* ---------- type ---------- */
-  h1{font-weight:700;line-height:1.03;letter-spacing:-.035em;font-size:clamp(2.9rem,7.4vw,5.3rem);text-wrap:balance}
-  h2{font-weight:700;line-height:1.06;letter-spacing:-.03em;font-size:clamp(2.1rem,4.6vw,3.3rem);text-wrap:balance}
-  h3{font-weight:700;letter-spacing:-.02em;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.1}
-  .grad{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .eyebrow{display:inline-flex;align-items:center;gap:.6em;font-size:.8rem;font-weight:600;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--accent);margin-bottom:1.3em}
-  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--glow)}
-  .lede{font-size:clamp(1.06rem,1.8vw,1.28rem);color:var(--text-2);max-width:48ch;line-height:1.55}
-  .muted{color:var(--text-2)}
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0a09;
+      --bg-soft: #12100e;
+      --surface: rgba(255, 255, 255, .055);
+      --surface-strong: rgba(255, 255, 255, .09);
+      --line: rgba(255, 255, 255, .12);
+      --text: #fbf8f4;
+      --muted: #aaa39b;
+      --accent: #ff6735;
+      --accent-2: #ffae45;
+      --green: #79dd91;
+      --radius-lg: 32px;
+      --radius-md: 22px;
+      --shadow: 0 30px 90px rgba(0, 0, 0, .36);
+      --max: 1180px;
+    }
 
-  /* ---------- buttons ---------- */
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;font-weight:600;font-size:1.02rem;
-    font-family:inherit;cursor:pointer;padding:1em 1.6em;border-radius:16px;border:1px solid transparent;
-    transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s,border-color .25s}
-  .btn-app{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:#1a0d04;
-    box-shadow:0 14px 40px -12px var(--glow),inset 0 1px 0 rgba(255,255,255,.35)}
-  .btn-app:hover{transform:translateY(-3px);box-shadow:0 22px 54px -14px var(--glow)}
-  .btn-app svg{width:1.3em;height:1.3em;margin-top:-2px}
-  .btn-ghost{background:rgba(255,255,255,.04);border-color:var(--hair-2);color:var(--text)}
-  .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--hair-2);transform:translateY(-2px)}
-  .cta-note{font-size:.85rem;color:var(--text-3);margin-top:1em}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(255, 103, 53, .16), transparent 32rem),
+        radial-gradient(circle at 90% 22%, rgba(255, 174, 69, .08), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* ---------- nav (liquid glass) ---------- */
-  nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);
-    background:rgba(8,8,10,.62);border-bottom:1px solid var(--hair)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{display:flex;align-items:center;gap:.55em;font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
-  .brand img{width:30px;height:30px;border-radius:8px}
-  .nav-links{display:flex;align-items:center;gap:2.1rem;font-size:.95rem;color:var(--text-2)}
-  .nav-links a:not(.nav-cta):hover{color:var(--text)}
-  .nav-cta{font-weight:600;color:#1a0d04;background:linear-gradient(180deg,var(--accent-2),var(--accent));
-    padding:.6em 1.15em;border-radius:12px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px -10px var(--glow)}
-  .nav-cta:hover{transform:translateY(-2px)}
-  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
-  /* ---------- device frame (real app screens) ---------- */
-  .device{position:relative;width:100%;max-width:300px;margin:0 auto;border-radius:46px;padding:7px;
-    background:linear-gradient(165deg,#252528,#0c0c0e);border:1px solid var(--hair-2);
-    box-shadow:0 60px 130px -44px var(--glow),0 36px 70px -30px rgba(0,0,0,.95)}
-  .device img{display:block;width:100%;height:auto;border-radius:40px}
-  .device-halo{position:absolute;inset:-14% -10%;z-index:-1;
-    background:radial-gradient(50% 50% at 50% 42%,rgba(255,107,53,.28),transparent 70%);filter:blur(8px)}
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      left: 16px;
+      top: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--text);
+      color: var(--bg);
+      transform: translateY(-150%);
+    }
+    .skip-link:focus { transform: translateY(0); }
 
-  /* glowing top edge — the app's signature card accent */
-  .edge{position:relative;overflow:hidden}
-  .edge::before{content:"";position:absolute;top:0;left:18%;right:18%;height:2px;border-radius:2px;
-    background:linear-gradient(90deg,transparent,var(--accent),transparent);box-shadow:0 0 20px 1px var(--glow)}
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
 
-  /* ---------- hero ---------- */
-  .hero{padding:clamp(54px,9vh,104px) 0 clamp(40px,6vh,76px)}
-  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(32px,5vw,68px);align-items:center}
-  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:52px}}
-  .hero h1{margin:0 0 .42em}
-  .hero .lede{margin-bottom:2.1em}
-  .hero-cta .row{display:flex;gap:.8em;flex-wrap:wrap;align-items:center}
-  .trust{display:flex;gap:1.5em;flex-wrap:wrap;margin-top:2.2em;font-size:.86rem;color:var(--text-3)}
-  .trust span{display:inline-flex;align-items:center;gap:.5em}
-  .trust svg{width:1.05em;height:1.05em;color:var(--accent)}
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: max(12px, env(safe-area-inset-top)) 0 12px;
+      background: linear-gradient(to bottom, rgba(11, 10, 9, .93), rgba(11, 10, 9, .76));
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
 
-  /* ---------- section scaffold ---------- */
-  section{padding:clamp(70px,11vh,128px) 0;position:relative}
-  .sec-head{max-width:62ch;margin-bottom:clamp(40px,5vw,64px)}
-  .sec-head h2{margin:.3em 0 .45em}
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 720; letter-spacing: -.02em; }
+    .brand img { width: 38px; height: 38px; border-radius: 11px; box-shadow: 0 8px 24px rgba(0, 0, 0, .25); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links > a { color: var(--muted); text-decoration: none; font-size: .94rem; }
+    .nav-links > a:hover { color: var(--text); }
+    .nav-links > a.button, .nav-links > a.button:hover { color: #170a05; }
 
-  /* sources */
-  .sources{display:flex;flex-wrap:wrap;gap:.7em}
-  .chip{display:inline-flex;align-items:center;gap:.55em;padding:.7em 1.1em;border-radius:14px;
-    background:var(--surface);border:1px solid var(--hair);font-weight:500;font-size:.97rem;color:var(--text)}
-  .chip b{color:var(--accent-soft);font-weight:600}
-  .flow-note{display:flex;align-items:center;gap:.7em;margin-top:1.8em;color:var(--text-3);font-size:.95rem}
-  .flow-note svg{width:1.2em;height:1.2em;color:var(--accent)}
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 16px;
+      background: var(--accent);
+      color: #170a05;
+      font-weight: 720;
+      text-decoration: none;
+      box-shadow: 0 12px 36px rgba(255, 103, 53, .18);
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .button:focus-visible, a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+    .button.secondary { background: rgba(255, 255, 255, .07); color: var(--text); border-color: var(--line); box-shadow: none; }
+    .button.small { min-height: 42px; padding-inline: 16px; border-radius: 14px; font-size: .9rem; }
 
-  /* feature rows */
-  .feat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,84px);align-items:center;margin-bottom:clamp(64px,9vh,120px)}
-  .feat:last-child{margin-bottom:0}
-  .feat.flip .feat-copy{order:2}
-  @media(max-width:880px){.feat,.feat.flip .feat-copy{grid-template-columns:1fr;order:0}.feat .device{max-width:260px}}
-  .feat-tag{font-size:.77rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--accent)}
-  .feat-copy h3{margin:.6em 0 .55em}
-  .feat-copy p{color:var(--text-2);max-width:44ch}
+    .hero { min-height: 760px; display: grid; align-items: center; padding: 90px 0 70px; overflow: clip; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(40px, 7vw, 96px); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-2); font-size: .82rem; font-weight: 760; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 20px currentColor; }
+    h1 { max-width: 780px; margin: 24px 0 22px; font-size: clamp(3.3rem, 7vw, 6.7rem); line-height: .94; letter-spacing: -.068em; font-weight: 760; }
+    h1 span, h1 em { display: block; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-copy > p { max-width: 650px; margin: 0; color: var(--muted); font-size: clamp(1.08rem, 2vw, 1.3rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-notes { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px; color: #c6c0b9; font-size: .88rem; }
+    .hero-notes span { display: inline-flex; align-items: center; gap: 7px; }
+    .hero-notes span::before { content: "✓"; color: var(--green); font-weight: 800; }
 
-  /* FSRS / rating section */
-  .fsrs{background:linear-gradient(180deg,var(--bg),var(--bg-1));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-  .fsrs-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,72px);align-items:center}
-  @media(max-width:880px){.fsrs-grid{grid-template-columns:1fr;gap:44px}}
-  .demo-card{background:var(--surface);border:1px solid var(--hair);border-radius:26px;padding:24px}
-  .demo-card .q{font-weight:700;font-size:1.2rem;margin-bottom:.5em;letter-spacing:-.01em}
-  .demo-card .tags{display:flex;gap:.5em;margin-bottom:1.4em}
-  .tag{font-size:.78rem;color:var(--accent-soft);background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.22);
-    padding:.28em .7em;border-radius:8px}
-  .demo-card .ans{color:var(--text-2);font-size:.97rem;line-height:1.5;padding-top:1.1em;border-top:1px solid var(--hair);margin-bottom:1.5em}
-  .rate{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
-  .k{border-radius:15px;padding:13px 8px 11px;text-align:center;line-height:1.1}
-  .k b{display:block;font-size:.92rem;font-weight:700;letter-spacing:.01em}
-  .k span{font-size:.76rem;opacity:.85}
-  .k.again{background:linear-gradient(180deg,#ff5c57,var(--red));color:#fff}
-  .k.hard{background:linear-gradient(180deg,#ffb340,var(--amber));color:#241a06}
-  .k.good{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:#241204}
-  .k.easy{background:linear-gradient(180deg,#42dd72,var(--green));color:#06230f}
-  .curve svg{width:100%;height:auto;display:block;overflow:visible}
-  .c-keep{fill:none;stroke:var(--accent);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 12px var(--glow))}
-  .c-fall{fill:none;stroke:var(--text-3);stroke-width:2.2;stroke-dasharray:2 7;stroke-linecap:round;opacity:.75}
-  .c-dot{fill:var(--accent);stroke:var(--bg);stroke-width:2.5}
-  .c-keep,.c-fall{stroke-dasharray:1;stroke-dashoffset:1}
-  .in .c-keep{animation:draw 2s .2s cubic-bezier(.4,0,.2,1) forwards}
-  .in .c-fall{animation:draw 1.4s .2s cubic-bezier(.4,0,.2,1) forwards}
-  .c-dot{opacity:0;transform-box:fill-box;transform-origin:center}
-  .in .c-dot{animation:pop .4s forwards}
-  .in .c-dot:nth-of-type(1){animation-delay:.65s}.in .c-dot:nth-of-type(2){animation-delay:1s}
-  .in .c-dot:nth-of-type(3){animation-delay:1.35s}.in .c-dot:nth-of-type(4){animation-delay:1.7s}
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes pop{from{opacity:0;transform:scale(0)}60%{transform:scale(1.35)}to{opacity:1;transform:scale(1)}}
-  .legend{display:flex;gap:1.4em;margin-top:1.1em;font-size:.82rem;color:var(--text-2);flex-wrap:wrap}
-  .legend span{display:inline-flex;align-items:center;gap:.5em}
-  .dot{width:11px;height:3px;border-radius:2px;display:inline-block}
+    .device-stage { position: relative; min-height: 590px; display: grid; place-items: center; }
+    .device-stage::before { content: ""; position: absolute; inset: 10% 0; border-radius: 50%; background: rgba(255, 103, 53, .18); filter: blur(80px); }
+    .phone {
+      position: relative;
+      width: min(100%, 390px);
+      min-height: 570px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 46px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, .04));
+      box-shadow: var(--shadow), inset 0 1px rgba(255, 255, 255, .16);
+      transform: rotate(2deg);
+    }
+    .screen { min-height: 532px; padding: 22px; overflow: hidden; border-radius: 31px; background: #f8f7f5; color: #111; }
+    .screen-head { display: flex; align-items: center; justify-content: space-between; }
+    .app-icon { width: 48px; height: 48px; border-radius: 15px; box-shadow: 0 10px 24px rgba(0, 0, 0, .1); }
+    .streak { display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; border-radius: 999px; background: #ffebe4; color: #be431d; font-weight: 700; }
+    .screen h2 { margin: 30px 0 18px; font-size: 2.5rem; line-height: 1; letter-spacing: -.055em; }
+    .today-card { padding: 24px; border: 1px solid #e8e5e1; border-radius: 26px; background: #fff; box-shadow: 0 14px 34px rgba(38, 25, 16, .06); }
+    .today-label { color: #89847e; font-size: .87rem; }
+    .today-card h3 { margin: 12px 0 4px; font-size: 1.58rem; letter-spacing: -.035em; }
+    .today-card p { margin: 0; color: #8b8580; }
+    .progress-label { display: flex; justify-content: space-between; margin-top: 28px; font-size: .84rem; color: #77716c; }
+    .progress { height: 7px; margin-top: 8px; border-radius: 99px; background: #eae6e2; overflow: hidden; }
+    .progress span { display: block; width: 64%; height: 100%; border-radius: inherit; background: var(--accent); }
+    .review { width: 100%; min-height: 58px; margin-top: 18px; border: 0; border-radius: 18px; background: var(--accent); color: #160a05; font: inherit; font-weight: 760; }
+    .exam-card { margin-top: 14px; padding: 17px 18px; border-radius: 20px; background: #181514; color: #fff; }
+    .exam-card small { color: #9d9690; }
+    .exam-card strong { display: block; margin-top: 3px; }
+    .floating-card { position: absolute; z-index: 2; max-width: 240px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 18px; background: rgba(26, 23, 20, .86); box-shadow: var(--shadow); backdrop-filter: blur(16px); }
+    .floating-card strong { display: block; margin-bottom: 3px; }
+    .floating-card span { color: var(--muted); font-size: .84rem; }
+    .floating-card.top { top: 45px; right: -28px; transform: rotate(-4deg); }
+    .floating-card.bottom { bottom: 60px; left: -42px; transform: rotate(-3deg); }
 
-  /* gallery */
-  .gallery{display:flex;gap:20px;overflow-x:auto;padding:6px 0 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-  .gallery::-webkit-scrollbar{height:0}
-  .gcard{flex:0 0 auto;width:220px;scroll-snap-align:center}
-  .gcard .device{max-width:220px}
-  .gcard .cap{font-size:.84rem;color:var(--text-2);text-align:center;padding-top:1em}
+    .proof { padding: 24px 0 78px; }
+    .proof-line { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--line); }
+    .proof-item { padding: 25px; background: rgba(12, 11, 10, .94); }
+    .proof-item strong { display: block; font-size: 1.35rem; letter-spacing: -.03em; }
+    .proof-item span { color: var(--muted); font-size: .9rem; }
 
-  /* pricing */
-  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-  @media(max-width:940px){.plans{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
-  .plan{background:var(--surface);border:1px solid var(--hair);border-radius:24px;padding:30px 28px;display:flex;flex-direction:column}
-  .plan.pro{background:linear-gradient(180deg,rgba(255,107,53,.1),var(--surface));border-color:rgba(255,107,53,.34)}
-  .plan.ultra{background:linear-gradient(180deg,rgba(255,138,61,.12),var(--surface));border-color:rgba(255,138,61,.4)}
-  .plan .btn-app,.plan .soon{margin-top:auto}
-  .pname{display:flex;align-items:center;gap:.55em;font-size:1.35rem;font-weight:700;letter-spacing:-.01em}
-  .badge{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#241204;
-    background:linear-gradient(180deg,var(--accent-2),var(--accent));padding:.34em .65em;border-radius:999px}
-  .badge.alt{background:linear-gradient(180deg,#ffd27a,var(--amber));color:#2a1c02}
-  .price{font-size:2.7rem;font-weight:700;letter-spacing:-.03em;margin:.32em 0 .08em}
-  .price small{font-size:.92rem;color:var(--text-2);font-weight:500;letter-spacing:0}
-  .plan .alt-line{font-size:.88rem;color:var(--text-3);margin-bottom:1.4em}
-  .plan ul{list-style:none;display:flex;flex-direction:column;gap:.78em;margin-bottom:1.7em}
-  .plan li{display:flex;gap:.65em;font-size:.97rem;color:var(--text)}
-  .plan li svg{flex:0 0 auto;width:1.15em;height:1.15em;margin-top:.18em;color:var(--accent)}
-  .plan li.off{color:var(--text-3)}.plan li.off svg{color:var(--text-3)}
-  .soon{display:inline-flex;align-items:center;justify-content:center;gap:.5em;width:100%;padding:1em 1.2em;
-    border-radius:16px;border:1px dashed rgba(255,138,61,.5);color:var(--accent-soft);font-weight:600;font-size:.95rem}
+    section { padding: 92px 0; }
+    .section-head { max-width: 760px; margin-bottom: 46px; }
+    .kicker { color: var(--accent); font-weight: 730; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
+    h2.section-title { margin: 12px 0 14px; font-size: clamp(2.45rem, 5vw, 4.7rem); line-height: 1; letter-spacing: -.06em; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.08rem; }
 
-  /* privacy strip */
-  .privacy .shell{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;
-    background:var(--surface);border:1px solid var(--hair);border-radius:28px;padding:clamp(28px,4vw,44px)}
-  @media(max-width:640px){.privacy .shell{grid-template-columns:1fr}}
-  .pglyph{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;
-    background:rgba(255,107,53,.12);border:1px solid rgba(255,107,53,.28);color:var(--accent)}
-  .pglyph svg{width:28px;height:28px}
+    .exam-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+    .exam-cloud span { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: #d4cec7; font-size: .9rem; }
+    .exam-cloud span:nth-child(3n + 1) { border-color: rgba(255, 103, 53, .35); color: #ffc1ad; }
+    .fine-print { margin-top: 18px; color: #77716b; font-size: .78rem; }
 
-  /* faq */
-  .faq details{border-top:1px solid var(--hair);padding:1.35em 0}
-  .faq details:last-child{border-bottom:1px solid var(--hair)}
-  .faq summary{display:flex;justify-content:space-between;align-items:center;gap:1em;cursor:pointer;list-style:none;
-    font-weight:600;font-size:1.16rem;letter-spacing:-.01em}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq .pm{color:var(--accent);font-size:1.5rem;line-height:1;transition:transform .25s;flex:0 0 auto}
-  .faq details[open] .pm{transform:rotate(45deg)}
-  .faq p{color:var(--text-2);max-width:66ch;margin-top:.85em}
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .step { min-height: 330px; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: linear-gradient(155deg, var(--surface-strong), rgba(255, 255, 255, .025)); }
+    .step-number { display: grid; width: 43px; height: 43px; place-items: center; border-radius: 14px; background: var(--accent); color: #170a05; font-weight: 800; }
+    .step h3 { margin: 84px 0 10px; font-size: 1.6rem; letter-spacing: -.035em; }
+    .step p { margin: 0; color: var(--muted); }
 
-  /* final cta */
-  .final .glow{position:relative;overflow:hidden;text-align:center;border:1px solid var(--hair-2);border-radius:32px;
-    background:linear-gradient(180deg,var(--surface),var(--bg-1));padding:clamp(48px,7vw,84px) clamp(24px,5vw,56px)}
-  .final .glow::before{content:"";position:absolute;inset:-50% 25% auto;height:70%;
-    background:radial-gradient(50% 100% at 50% 0,rgba(255,107,53,.3),transparent 72%)}
-  .final h2,.final .lede,.final .btn{position:relative}
-  .final .lede{margin:.5em auto 2em;text-align:center}
+    .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .feature { position: relative; min-height: 290px; padding: 30px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+    .feature.large { grid-column: span 7; }
+    .feature.small { grid-column: span 5; }
+    .feature.half { grid-column: span 6; }
+    .feature h3 { max-width: 500px; margin: 0 0 10px; font-size: 1.65rem; letter-spacing: -.04em; }
+    .feature p { max-width: 530px; margin: 0; color: var(--muted); }
+    .feature .metric { position: absolute; left: 30px; bottom: 26px; color: #fff; font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 760; letter-spacing: -.06em; }
+    .feature .metric small { color: var(--muted); font-size: .8rem; font-weight: 500; letter-spacing: 0; }
+    .source-row { position: absolute; left: 30px; right: 30px; bottom: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .source-row span { padding: 8px 11px; border-radius: 12px; background: rgba(255, 255, 255, .08); font-size: .8rem; }
+    .mode-row { position: absolute; left: 30px; right: 30px; bottom: 28px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .mode-row span { padding: 12px; border: 1px solid var(--line); border-radius: 14px; color: #cbc5be; font-size: .82rem; text-align: center; }
+    .accent-feature { background: linear-gradient(145deg, #ff7648, #f45120); color: #1a0b05; border-color: transparent; }
+    .accent-feature p { color: rgba(30, 12, 5, .68); }
 
-  footer{border-top:1px solid var(--hair);padding:48px 0 60px;color:var(--text-3);font-size:.9rem}
-  .foot-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
-  .foot-in .brand{font-size:1.1rem}
-  footer a:hover{color:var(--text)}
-  .foot-links{display:flex;gap:1.5em}
+    .privacy-band { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 48px; border: 1px solid var(--line); border-radius: 40px; background: #f4efe8; color: #16120f; }
+    .privacy-band h2 { margin: 0 0 14px; font-size: clamp(2.3rem, 4vw, 4rem); line-height: 1; letter-spacing: -.055em; }
+    .privacy-band p { color: #6f6760; }
+    .privacy-points { display: grid; gap: 12px; }
+    .privacy-points div { padding: 16px 18px; border: 1px solid rgba(22, 18, 15, .11); border-radius: 16px; background: rgba(255, 255, 255, .55); font-weight: 650; }
 
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important;scroll-behavior:auto}
-    .reveal{opacity:1;transform:none}
-    .c-keep,.c-fall{stroke-dashoffset:0}.c-dot{opacity:1}
-  }
-</style>
+    .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .plan { display: flex; min-height: 420px; flex-direction: column; padding: 32px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+    .plan.featured { background: #f4efe8; color: #17120e; }
+    .plan-label { color: var(--accent); font-size: .8rem; font-weight: 760; letter-spacing: .12em; text-transform: uppercase; }
+    .plan h3 { margin: 11px 0 4px; font-size: 2.1rem; letter-spacing: -.045em; }
+    .plan > p { min-height: 48px; margin: 0 0 22px; color: var(--muted); }
+    .plan.featured > p { color: #706860; }
+    .plan ul { margin: 0 0 28px; padding: 0; list-style: none; display: grid; gap: 11px; }
+    .plan li { display: flex; gap: 9px; }
+    .plan li::before { content: "✓"; color: var(--green); font-weight: 800; }
+    .plan.featured li::before { color: #d94d21; }
+    .plan .button { margin-top: auto; }
+
+    details { border-top: 1px solid var(--line); }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { padding: 22px 0; cursor: pointer; font-size: 1.08rem; font-weight: 680; }
+    details p { max-width: 800px; margin: -8px 0 24px; color: var(--muted); }
+
+    .final-cta { padding: 120px 0; text-align: center; }
+    .final-cta h2 { max-width: 850px; margin: 0 auto 18px; font-size: clamp(3rem, 7vw, 6.5rem); line-height: .94; letter-spacing: -.07em; }
+    .final-cta p { max-width: 620px; margin: 0 auto 30px; color: var(--muted); font-size: 1.08rem; }
+
+    footer { padding: 32px 0 calc(32px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); color: var(--muted); font-size: .84rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 900px) {
+      .nav-links > a:not(.button) { display: none; }
+      .hero { min-height: auto; padding-top: 70px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .device-stage { min-height: 610px; }
+      .phone { transform: none; }
+      .floating-card.top { right: 0; }
+      .floating-card.bottom { left: 0; }
+      .steps { grid-template-columns: 1fr; }
+      .step { min-height: 240px; }
+      .step h3 { margin-top: 48px; }
+      .feature.large, .feature.small, .feature.half { grid-column: span 12; }
+      .privacy-band { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .brand span { font-size: .95rem; }
+      .button.small { min-height: 40px; padding-inline: 13px; }
+      .hero { padding-top: 52px; }
+      h1 { font-size: clamp(3.05rem, 15vw, 4.6rem); }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .device-stage { min-height: 540px; }
+      .phone { width: 100%; min-height: 520px; padding: 12px; border-radius: 38px; }
+      .screen { min-height: 494px; padding: 18px; border-radius: 27px; }
+      .screen h2 { font-size: 2.1rem; }
+      .floating-card { display: none; }
+      .proof { padding-bottom: 46px; }
+      .proof-line { grid-template-columns: 1fr; }
+      section { padding: 68px 0; }
+      .step, .feature, .plan { padding: 24px; border-radius: 26px; }
+      .privacy-band { padding: 28px 22px; border-radius: 28px; }
+      .plans { grid-template-columns: 1fr; }
+      .plan > p { min-height: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="shell nav-in">
-    <a class="brand" href="./"><img src="apple-touch-icon.png" alt="Cognito logo"> Cognito</a>
-    <div class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a class="nav-cta" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Get the app</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="shell hero-grid">
-    <div>
-      <span class="eyebrow">AI flashcards · iPhone &amp; iPad</span>
-      <h1>Watch it once.<br>Know it <span class="grad">forever</span>.</h1>
-      <p class="lede">Cognito turns any lecture, PDF, YouTube video, or research paper into flashcards — then schedules every review with FSRS spaced repetition so it lands in long-term memory.</p>
-      <div class="hero-cta">
-        <div class="row">
-          <a class="btn btn-app" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">
-            <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268c-.3-37 16.4-65 50.1-85.6-18.8-27-47.2-41.8-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 139.5 0 184.5 0 276c0 27 4.9 54.9 14.8 83.7 13.2 38 60.8 131.3 110.5 129.8 25.9-.6 44.2-18.4 78-18.4 32.8 0 49.7 18.4 76.4 18.4 50.1-.7 93.2-85.5 105.7-123.6-67.2-31.7-66.7-92.8-66.7-95.3zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-            Download on the App Store
-          </a>
-        </div>
-        <div class="trust">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Free to start</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> iOS 18+</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> No ads, no tracking</span>
-        </div>
-      </div>
-    </div>
-    <div style="position:relative">
-      <div class="device-halo"></div>
-      <div class="device"><img src="screenshots/study.png" alt="Studying a flashcard in Cognito" width="588" height="1280"></div>
-    </div>
-  </div>
-</header>
-
-<!-- HOW -->
-<section id="how">
-  <div class="shell">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Turn anything into a deck</span>
-      <h2>Paste a link. Drop a PDF.<br>Snap your notes.</h2>
-      <p class="lede" style="max-width:56ch">Cognito reads your source and writes clean, exam-ready cards in seconds — one idea per card, no fluff, the way memory actually works.</p>
-    </div>
-    <div class="sources reveal">
-      <span class="chip">▶︎ <b>YouTube</b></span>
-      <span class="chip">📄 <b>PDF</b></span>
-      <span class="chip">🎙 <b>Lecture audio</b></span>
-      <span class="chip">📷 <b>Photo of notes</b></span>
-      <span class="chip">🔗 <b>Any web page</b></span>
-      <span class="chip">🧪 <b>arXiv papers</b></span>
-      <span class="chip">⌨︎ <b>Just a topic</b></span>
-    </div>
-    <div class="flow-note reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      AI drafts the deck, flags weak cards, and you study in one tap.
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section id="features" style="padding-top:0">
-  <div class="shell">
-
-    <div class="feat reveal">
-      <div class="feat-copy">
-        <span class="feat-tag">AI generation</span>
-        <h3>From source to study in seconds</h3>
-        <p>Hand Cognito a video, a chapter, or a messy photo of your notes. It pulls out what matters and writes focused question-and-answer cards, cloze deletions, or vocabulary — aligned to your exam when you pick one.</p>
-      </div>
-      <div style="position:relative"><div class="device-halo"></div><div class="device"><img src="screenshots/ai-generation.png" alt="AI generating flashcards in Cognito" loading="lazy"></div></div>
-    </div>
-
-    <div class="feat flip reveal">
-      <div class="feat-copy">
-        <span class="feat-tag">AI &amp; Voice Tutor · Quiz</span>
-        <h3>Get it wrong? Cognito explains why</h3>
-        <p>Test yourself with multiple-choice or typed answers, and when something doesn't click, the AI Tutor breaks it down — out loud, in a natural voice. A study partner that never tires of your questions.</p>
-      </div>
-      <div style="position:relative"><div class="device-halo"></div><div class="device"><img src="screenshots/quiz.png" alt="Quiz mode and AI tutor in Cognito" loading="lazy"></div></div>
-    </div>
-
-    <div class="feat reveal">
-      <div class="feat-copy">
-        <span class="feat-tag">Skill Trees</span>
-        <h3>A path from basics to mastery</h3>
-        <p>Give Cognito a topic and it maps a full Skill Tree — prerequisites, branches, and boss-node challenges — so you always know what to learn next instead of staring at one giant pile of cards.</p>
-      </div>
-      <div style="position:relative"><div class="device-halo"></div><div class="device"><img src="screenshots/study.png" alt="A structured study path in Cognito" loading="lazy"></div></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FSRS / RATE -->
-<section class="fsrs">
-  <div class="shell fsrs-grid">
-    <div class="reveal">
-      <span class="eyebrow">FSRS spaced repetition</span>
-      <h2>Rate it. Remember it.</h2>
-      <p class="lede">After each card you tap how it felt. Cognito's FSRS engine — the modern scheduler power-users pick over Anki's defaults — turns those four taps into a personal schedule, surfacing every card the moment before you'd forget.</p>
-      <div class="legend">
-        <span><i class="dot" style="background:var(--accent)"></i> Reinforced with Cognito</span>
-        <span><i class="dot" style="background:var(--text-3)"></i> Natural forgetting</span>
-      </div>
-      <div class="curve" style="margin-top:1.4em">
-        <svg viewBox="0 0 600 240" role="img" aria-label="Reviews keep memory high while natural recall declines.">
-          <line x1="20" y1="218" x2="580" y2="218" stroke="var(--hair-2)" stroke-width="1"/>
-          <path class="c-fall" pathLength="1" d="M24,40 C110,150 210,196 330,210 C440,222 520,224 576,226"/>
-          <path class="c-keep" pathLength="1" d="M24,42 C78,98 110,120 150,128 L160,40 C214,86 256,100 300,108 L310,36 C366,74 414,82 452,90 L462,34 C512,58 548,64 576,72"/>
-          <circle class="c-dot" cx="24" cy="42" r="6.5"/>
-          <circle class="c-dot" cx="160" cy="40" r="6.5"/>
-          <circle class="c-dot" cx="310" cy="36" r="6.5"/>
-          <circle class="c-dot" cx="462" cy="34" r="6.5"/>
-        </svg>
-      </div>
-    </div>
-    <div class="demo-card edge reveal">
-      <div class="q">What is the periodic table?</div>
-      <div class="tags"><span class="tag">chemistry-basics</span><span class="tag">periodic-table</span></div>
-      <div class="ans">A tabular arrangement of chemical elements, ordered by atomic number, electron configuration, and recurring chemical properties.</div>
-      <div class="rate">
-        <div class="k again"><b>Again</b><span>1d</span></div>
-        <div class="k hard"><b>Hard</b><span>3d</span></div>
-        <div class="k good"><b>Good</b><span>1w</span></div>
-        <div class="k easy"><b>Easy</b><span>6d</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section>
-  <div class="shell">
-    <div class="sec-head reveal"><h2>Built for iOS, down to the last pixel</h2></div>
-    <div class="gallery reveal">
-      <figure class="gcard"><div class="device"><img src="screenshots/study.png" alt="Study screen" loading="lazy"></div><figcaption class="cap">Study</figcaption></figure>
-      <figure class="gcard"><div class="device"><img src="screenshots/ai-generation.png" alt="AI generation" loading="lazy"></div><figcaption class="cap">AI generation</figcaption></figure>
-      <figure class="gcard"><div class="device"><img src="screenshots/quiz.png" alt="Quiz and tutor" loading="lazy"></div><figcaption class="cap">Quiz &amp; Tutor</figcaption></figure>
-      <figure class="gcard"><div class="device"><img src="screenshots/spaced-repetition.png" alt="Spaced repetition" loading="lazy"></div><figcaption class="cap">Spaced repetition</figcaption></figure>
-      <figure class="gcard"><div class="device"><img src="screenshots/results.png" alt="Session results" loading="lazy"></div><figcaption class="cap">Session results</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="shell">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Pricing</span>
-      <h2>Free to start. Yours to keep.</h2>
-      <p class="lede" style="max-width:54ch">Your cards, decks, and progress stay free forever — even if you never upgrade. Premium pays for the ongoing AI work, not access to what you've made.</p>
-    </div>
-    <div class="plans reveal">
-      <div class="plan">
-        <div class="pname">Free</div>
-        <div class="price">$0<small> / forever</small></div>
-        <div class="alt-line">No account required</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>3 AI card generations every day</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>FSRS spaced repetition</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Classic &amp; Compact study modes</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Manual cards · Anki, CSV &amp; TSV import</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>iCloud sync across your devices</li>
-        </ul>
-      </div>
-      <div class="plan pro edge">
-        <div class="pname">Premium <span class="badge">Most popular</span></div>
-        <div class="price">$39.99<small> / year</small></div>
-        <div class="alt-line">or $9.99/month · free trial</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Unlimited</b> AI generation</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Every source: YouTube, PDF, audio, photo, web, arXiv</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>AI Skill Trees</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>AI Tutor, Voice Tutor, Quiz &amp; Typed answers</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Advanced analytics &amp; weekly recap</li>
-        </ul>
-        <a class="btn btn-app" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Try Premium free</a>
-      </div>
-      <div class="plan ultra edge">
-        <div class="pname">Ultra <span class="badge alt">Best quality</span></div>
-        <div class="price">$99.99<small> / year</small></div>
-        <div class="alt-line">The best Cognito can do</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Premium</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>The most powerful AI models</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Deepest reasoning on every card</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Auto-polish, always on</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Top quality from every source</li>
-        </ul>
-        <span class="soon">✦ Coming soon</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRIVACY -->
-<section class="privacy" style="padding-top:0">
-  <div class="shell reveal">
-    <div class="pglyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div>
-      <h3 style="margin-bottom:.35em;font-size:1.5rem">Your knowledge stays yours</h3>
-      <p class="muted" style="max-width:66ch">Flashcards and study history live on your device and sync only through your private iCloud. AI features send just the content you submit — nothing else. No ads, no third-party trackers, no selling your data.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section>
-  <div class="shell">
-    <div class="sec-head reveal"><h2>Questions, answered</h2></div>
-    <div class="faq reveal">
-      <details open><summary>Is Cognito really free?<span class="pm">+</span></summary><p>Yes. Manual cards, FSRS spaced repetition, Classic &amp; Compact study, Anki/CSV/TSV import, iCloud sync, and 3 AI generations a day are free forever — no account needed. Premium adds unlimited AI and the advanced sources and tools.</p></details>
-      <details><summary>What is FSRS, and why does it matter?<span class="pm">+</span></summary><p>FSRS is a modern spaced-repetition scheduler — the same algorithm serious Anki users switch to. It models your personal forgetting curve and reviews each card at the optimal moment, so you remember more while studying less.</p></details>
-      <details><summary>Can I bring my Anki decks?<span class="pm">+</span></summary><p>Absolutely. Import your existing Anki (.apkg), CSV, or TSV decks in seconds — cards, decks, and all.</p></details>
-      <details><summary>Which devices does it run on?<span class="pm">+</span></summary><p>iPhone and iPad, on iOS 18 or later, with iCloud sync to keep everything in step across your devices.</p></details>
-      <details><summary>Do I need to be online?<span class="pm">+</span></summary><p>Studying and reviewing work offline. Generating cards with AI needs a connection, since that step runs in the cloud.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final" style="padding-top:0">
-  <div class="shell">
-    <div class="glow reveal">
-      <h2>Stop re-learning what you already studied.</h2>
-      <p class="lede">Turn your next lecture, PDF, or video into a deck that actually sticks.</p>
-      <a class="btn btn-app" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">
-        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268c-.3-37 16.4-65 50.1-85.6-18.8-27-47.2-41.8-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 139.5 0 184.5 0 276c0 27 4.9 54.9 14.8 83.7 13.2 38 60.8 131.3 110.5 129.8 25.9-.6 44.2-18.4 78-18.4 32.8 0 49.7 18.4 76.4 18.4 50.1-.7 93.2-85.5 105.7-123.6-67.2-31.7-66.7-92.8-66.7-95.3zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-        Download on the App Store
+  <nav aria-label="Primary navigation">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Cognito System home">
+        <img src="logo-sm.png" width="38" height="38" alt="">
+        <span>Cognito System</span>
       </a>
-      <p class="cta-note">Free to start · iOS 18+</p>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a class="button small" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Get the app</a>
+      </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<footer>
-  <div class="shell foot-in">
-    <div><a class="brand" href="./">Cognito</a><div style="margin-top:.5em">Made by Cognito Team · © 2026</div></div>
-    <div class="foot-links">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">App Store</a>
+  <main id="main">
+    <header class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Built for the exam you are taking</div>
+          <h1><span>Study material in.</span><em>Exam-ready practice</em><span>out.</span></h1>
+          <p>Choose your exam, add a syllabus, PDF, lecture, video, or topic, and Cognito builds practice with the right terminology, question style, and answer depth—then schedules every review for you.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Download free on the App Store <span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="#how">See how it works</a>
+          </div>
+          <div class="hero-notes" aria-label="Product highlights">
+            <span>80+ exam formats</span>
+            <span>Free to start</span>
+            <span>Works offline</span>
+          </div>
+        </div>
+
+        <div class="device-stage" aria-label="Preview of the Cognito home screen">
+          <div class="floating-card top"><strong>Exam-aware generation</strong><span>Question depth matched to your goal</span></div>
+          <div class="phone">
+            <div class="screen">
+              <div class="screen-head">
+                <img class="app-icon" src="logo-sm.png" width="48" height="48" alt="Cognito app icon">
+                <span class="streak" aria-label="3 day streak">🔥 3</span>
+              </div>
+              <h2>Good afternoon</h2>
+              <div class="today-card">
+                <div class="today-label">Today</div>
+                <h3>24 cards ready to study</h3>
+                <p>About 18 days to finish</p>
+                <div class="progress-label"><span>Daily goal</span><strong>3 / 5</strong></div>
+                <div class="progress" aria-hidden="true"><span></span></div>
+                <button class="review" type="button" tabindex="-1">Review →</button>
+              </div>
+              <div class="exam-card"><small>Current exam</small><strong>IB Biology · Higher Level</strong></div>
+            </div>
+          </div>
+          <div class="floating-card bottom"><strong>FSRS scheduling</strong><span>Review before you forget</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="proof">
+      <div class="wrap proof-line">
+        <div class="proof-item"><strong>80+</strong><span>school, university, admissions, and medical exam formats</span></div>
+        <div class="proof-item"><strong>8 source types</strong><span>from PDFs and audio to YouTube and handwritten notes</span></div>
+        <div class="proof-item"><strong>4 study modes</strong><span>Classic, Compact, Quiz, and Typed Answer</span></div>
+      </div>
     </div>
-  </div>
-</footer>
 
-</div>
-<script>
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+    <section aria-labelledby="exam-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">One system, many goals</div>
+          <h2 class="section-title" id="exam-heading">Your exam is context—not a label.</h2>
+          <p>Cognito uses your selected exam to shape generated practice. You can also study without choosing an exam and change the format later.</p>
+        </div>
+        <div class="exam-cloud" aria-label="Examples of supported exams">
+          <span>GCSE</span><span>A-Level</span><span>IB</span><span>SAT</span><span>ACT</span><span>AP</span>
+          <span>MCAT</span><span>USMLE</span><span>NCLEX</span><span>PLAB</span><span>MCCQE</span><span>NEET</span>
+          <span>JEE</span><span>ENEM</span><span>YKS</span><span>ATAR</span><span>VCE</span><span>Gaokao</span>
+          <span>Common Test</span><span>Suneung</span><span>JAMB</span><span>WAEC</span><span>UPSC</span><span>Quebec Secondary</span>
+        </div>
+        <p class="fine-print">Exam names and trademarks belong to their respective owners. Cognito is an independent study tool and is not endorsed by or affiliated with exam boards or testing organizations.</p>
+      </div>
+    </section>
+
+    <section id="how" aria-labelledby="how-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">How it works</div>
+          <h2 class="section-title" id="how-heading">From source to long-term memory.</h2>
+          <p>A focused workflow that gets the setup out of the way and keeps you practicing what matters.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><span class="step-number">1</span><h3>Choose your target</h3><p>Select the exam you are preparing for, or begin with a general topic. Cognito keeps that context across generation and study.</p></article>
+          <article class="step"><span class="step-number">2</span><h3>Add your material</h3><p>Paste a topic or bring a PDF, image, recording, YouTube video, webpage, arXiv paper, or handwritten note.</p></article>
+          <article class="step"><span class="step-number">3</span><h3>Practice at the right time</h3><p>Study with active recall. FSRS adapts future reviews to your answers, helping you retain more with less unnecessary repetition.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" aria-labelledby="features-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">The study system</div>
+          <h2 class="section-title" id="features-heading">More than a flashcard maker.</h2>
+          <p>Creation, organization, practice, tutoring, and progress live in one native iOS experience.</p>
+        </div>
+        <div class="bento">
+          <article class="feature large accent-feature"><h3>Exam-aware AI generation</h3><p>Build focused cards in the terminology and expected answer depth of your selected exam. Review and edit every card before it enters your library.</p><div class="metric">80+ <small>exam formats</small></div></article>
+          <article class="feature small"><h3>Any useful source</h3><p>Turn the material you already use into structured practice.</p><div class="source-row"><span>PDF</span><span>YouTube</span><span>Audio</span><span>Images</span><span>Web</span><span>arXiv</span><span>Notes</span></div></article>
+          <article class="feature small"><h3>Practice your way</h3><p>Switch study modes based on the material and how much support you need.</p><div class="mode-row"><span>Classic</span><span>Compact</span><span>Quiz</span><span>Typed answer</span></div></article>
+          <article class="feature large"><h3>Recall that adapts</h3><p>FSRS spaced repetition uses your answer history to decide when each card should return. Daily Mix, Weak Spots, skill trees, hints, and brief explanations keep the next action clear.</p><div class="metric">FSRS <small>adaptive scheduling</small></div></article>
+          <article class="feature half"><h3>Rich study content</h3><p>LaTeX, code, tables, Mermaid diagrams, cloze cards, image occlusion, text-to-speech, and tags support subjects from mathematics to medicine.</p></article>
+          <article class="feature half"><h3>Built into iOS</h3><p>Native navigation, widgets, Dynamic Island activities, offline study, accessibility support, and optional iCloud sync across your Apple devices.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" aria-labelledby="privacy-heading">
+      <div class="wrap privacy-band">
+        <div>
+          <div class="kicker">Local-first</div>
+          <h2 id="privacy-heading">Your study library starts on your device.</h2>
+          <p>Cards, decks, settings, and progress are stored locally. Optional iCloud sync uses your private CloudKit database. Online and AI features only process the data needed to provide the feature you choose.</p>
+          <a href="privacy.html">Read the full Privacy Policy →</a>
+        </div>
+        <div class="privacy-points" aria-label="Privacy highlights">
+          <div>No third-party advertising SDKs</div>
+          <div>No sale of personal information</div>
+          <div>Offline study after content is created</div>
+          <div>Optional private iCloud sync</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans" aria-labelledby="plans-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Start free</div>
+          <h2 class="section-title" id="plans-heading">Build the habit before you subscribe.</h2>
+          <p>Prices, billing periods, trial eligibility, and available offers are shown in the app in your local currency before purchase.</p>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <div class="plan-label">Free</div>
+            <h3>Core study system</h3>
+            <p>Create your own library and start using active recall without a subscription.</p>
+            <ul><li>Manual cards and deck organization</li><li>Three AI generations per day</li><li>FSRS spaced repetition</li><li>Classic and Compact study modes</li><li>One Skill Tree per week</li><li>Optional iCloud sync</li></ul>
+            <a class="button secondary" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Download free</a>
+          </article>
+          <article class="plan featured">
+            <div class="plan-label">Premium</div>
+            <h3>Deeper exam preparation</h3>
+            <p>Unlock higher limits and the advanced tools that turn more of your materials into practice.</p>
+            <ul><li>Unlimited AI card generation</li><li>PDF, image, audio, video, web, and paper sources</li><li>Tutor and Voice Tutor</li><li>Quiz and Typed Answer modes</li><li>Translation, rewriting, hints, and image occlusion</li><li>Advanced analytics and insights</li></ul>
+            <a class="button" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">See offers in the app</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="faq-heading">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">FAQ</div><h2 class="section-title" id="faq-heading">Before you start.</h2></div>
+        <details><summary>Do I have to choose an exam?</summary><p>No. Choose “Learn without an exam” during onboarding and study any topic. You can select or change an exam later in Settings.</p></details>
+        <details><summary>Does Cognito guarantee that generated cards match an official syllabus?</summary><p>No AI system can guarantee perfect accuracy or official alignment. Cognito uses exam context to shape practice, but you should review generated content against your current syllabus and authoritative sources.</p></details>
+        <details><summary>Can I use Cognito for medical exams?</summary><p>Yes, Cognito supports several medical exam formats and medical study content. It is an educational tool—not a clinical decision system or a substitute for professional medical judgment. Do not enter patient-identifiable information.</p></details>
+        <details><summary>Can I use Cognito across devices?</summary><p>Yes. Optional iCloud sync keeps your study library available across supported Apple devices signed in to the same iCloud account.</p></details>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="final-heading">
+      <div class="wrap">
+        <h2 id="final-heading">Prepare for the exam you are actually taking.</h2>
+        <p>Bring your own material. Let Cognito turn it into focused practice and keep every review on schedule.</p>
+        <a class="button" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Get Cognito System for iPhone <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Cognito System. Operated by Aleksei Usanov.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:support@cognitosystem.com">Support</a>
+        <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">App Store</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
