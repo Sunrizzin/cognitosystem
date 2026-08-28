@@ -1,87 +1,735 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Privacy Policy — Cognito System</title>
-  <meta name="description" content="How Cognito System stores study data and processes information when you use AI, iCloud sync, analytics, notifications, and other online features.">
-  <meta name="theme-color" content="#0b0a09">
-  <link rel="canonical" href="https://cognitosystem.com/privacy.html">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <style>
-    :root { color-scheme: dark; --bg:#0b0a09; --surface:#151310; --line:rgba(255,255,255,.12); --text:#fbf8f4; --muted:#aaa39b; --accent:#ff6735; --max:800px; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; min-width:320px; background:radial-gradient(circle at 20% 0,rgba(255,103,53,.13),transparent 28rem),var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif; line-height:1.68; -webkit-font-smoothing:antialiased; }
-    a { color:#ff956f; text-underline-offset:3px; }
-    a:hover { color:#ffc0a9; }
-    a:focus-visible { outline:3px solid #fff; outline-offset:4px; border-radius:4px; }
-    .wrap { width:min(calc(100% - 36px),var(--max)); margin-inline:auto; }
-    nav { position:sticky; top:0; z-index:10; padding:max(12px,env(safe-area-inset-top)) 0 12px; border-bottom:1px solid rgba(255,255,255,.07); background:rgba(11,10,9,.84); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
-    .nav-inner { width:min(calc(100% - 36px),1120px); margin:auto; display:flex; align-items:center; justify-content:space-between; gap:18px; }
-    .brand { display:inline-flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:720; letter-spacing:-.02em; }
-    .brand img { width:38px; height:38px; border-radius:11px; }
-    .nav-links { display:flex; gap:18px; font-size:.9rem; }
-    .nav-links a { color:var(--muted); text-decoration:none; }
-    header { padding:88px 0 42px; }
-    .label { color:var(--accent); font-size:.8rem; font-weight:760; letter-spacing:.13em; text-transform:uppercase; }
-    h1 { margin:12px 0 14px; font-size:clamp(3.1rem,8vw,5.7rem); line-height:.96; letter-spacing:-.065em; }
-    .lede { margin:0; color:var(--muted); font-size:1.1rem; }
-    .updated { display:inline-block; margin-top:24px; padding:8px 11px; border:1px solid var(--line); border-radius:10px; color:#d2cbc4; font-size:.82rem; }
-    .summary { margin:24px 0 58px; padding:26px; border:1px solid rgba(255,103,53,.28); border-radius:24px; background:rgba(255,103,53,.07); }
-    .summary h2 { margin-top:0; }
-    .summary ul { margin-bottom:0; }
-    article { padding-bottom:90px; }
-    section { padding:28px 0; border-top:1px solid var(--line); }
-    h2 { margin:0 0 12px; font-size:1.55rem; line-height:1.25; letter-spacing:-.035em; }
-    h3 { margin:24px 0 8px; font-size:1.05rem; }
-    p { margin:0 0 14px; color:#c3bcb5; }
-    ul { margin:8px 0 16px; padding-left:22px; color:#c3bcb5; }
-    li + li { margin-top:8px; }
-    strong { color:var(--text); }
-    table { width:100%; margin:18px 0; border-collapse:separate; border-spacing:0; overflow:hidden; border:1px solid var(--line); border-radius:18px; color:#c3bcb5; font-size:.9rem; }
-    th,td { padding:14px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
-    th { color:var(--text); background:rgba(255,255,255,.04); }
-    tr:last-child td { border-bottom:0; }
-    .note { padding:16px 18px; border-radius:16px; background:rgba(255,255,255,.05); color:#cfc8c1; }
-    footer { padding:28px 0 calc(28px + env(safe-area-inset-bottom)); border-top:1px solid var(--line); color:var(--muted); font-size:.84rem; }
-    .footer-inner { width:min(calc(100% - 36px),1120px); margin:auto; display:flex; justify-content:space-between; gap:20px; }
-    .footer-links { display:flex; flex-wrap:wrap; gap:16px; }
-    .footer-links a { color:var(--muted); text-decoration:none; }
-    @media(max-width:640px){ .nav-links a:first-child{display:none}.footer-inner{flex-direction:column}table,thead,tbody,tr,th,td{display:block}thead{display:none}td{border-bottom:1px solid var(--line)}tr:last-child td:last-child{border-bottom:0} }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy — Cognito System</title>
+<meta name="description" content="What Cognito stores on your device, what online and AI features process, and the choices available to you.">
+<meta name="theme-color" content="#ba4e27" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#984020" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://cognitosystem.com/privacy.html">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cognitosystem.com/privacy.html">
+<meta property="og:site_name" content="Cognito System">
+<meta property="og:title" content="Privacy Policy — Cognito System">
+<meta property="og:description" content="What Cognito stores on your device, what online and AI features process, and the choices available to you.">
+<meta property="og:image" content="https://cognitosystem.com/logo-new.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy Policy — Cognito System">
+<meta name="twitter:description" content="What Cognito stores on your device, what online and AI features process, and the choices available to you.">
+<meta name="twitter:image" content="https://cognitosystem.com/logo-new.png">
+<meta name="robots" content="index, follow">
+<style>
+/* ==========================================================================
+   Cognito System — web design tokens.
+   Every value below is lifted from the app's own design system:
+   AnkiMate/DesignSystem/DesignSystem.swift (DS.Radius, DS.Spacing, DS.Shadow,
+   DS.Typography), DesignSystem/ThemeColor.swift (Tangerine #FF6B35) and
+   Dashboard/AmbientHeroHeader.swift (the accent field + echo rings).
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* Apple system palette — Light Mode */
+  --bg: #f2f2f7;              /* systemGroupedBackground */
+  --surface: #ffffff;         /* secondarySystemGroupedBackground = DS contentSurface */
+  --fill: #f2f2f7;            /* systemGray6  — DS bgFill */
+  --fill-2: #e5e5ea;          /* systemGray5  — DS bgFillSecondary */
+  --label: #000000;
+  /* Apple ships secondaryLabel at .60, which is 3.4:1 on white — fine behind
+     iOS's larger dynamic type, short of WCAG AA for 15-17px web copy. Same
+     hue, carried at the alpha that clears 4.5:1 on BOTH page planes. */
+  --label-2: rgba(60, 60, 67, .76);
+  --label-3: rgba(60, 60, 67, .30);   /* decorative glyphs only — 1.7:1 */
+  --separator: rgba(60, 60, 67, .29);
+  --hairline: rgba(0, 0, 0, .10);   /* DS.Color.surfaceBorder, light */
+
+  /* Tangerine — the app's default accent, and the field it paints */
+  --accent: #ff6b35;
+  --accent-ink: #ba4e27;      /* accessibleFilledBackground(.light): 5:1 on white */
+  --accent-strong: #ad4924;   /* base x 0.93 — accent text on #f2f2f7 (5.0:1) */
+  --field-top: #d4592c;       /* base x 1.14 */
+  --field-mid: #ba4e27;       /* base */
+  --field-low: #984020;       /* base x 0.82 */
+  --field-bar: #b24b25;       /* base x 0.96 — collapsed bar's lower stop */
+  /* DS.Color.filledButtonLabel = systemBackground: the label on any solid
+     accent control follows the APPEARANCE, not the accent's luminance. */
+  --btn-label: #ffffff;
+  /* The app's compactActionLabel: a control on a permanently white surface
+     keeps the LIGHT-mode accent ink in both appearances
+     (accent.accessibleFilledBackground(scheme: .light)). */
+  --accent-on-white: #ba4e27;
+
+  --green: #34c759;
+
+  /* Accent washes at DS.Opacity tokens, written literally so no browser has to
+     resolve a colour function for a load-bearing surface. */
+  --tint-08: rgba(255, 107, 53, .08);
+  --tint-12: rgba(255, 107, 53, .12);
+  --tint-20: rgba(255, 107, 53, .20);
+
+  /* DS.Radius */
+  --r-sm: 8px;  --r-md: 12px; --r-card: 14px;
+  --r-lg: 16px; --r-xl: 20px; --r-xxxl: 28px;
+
+  /* DS.Shadow */
+  --sh-sm: 0 2px 4px rgba(0, 0, 0, .08);
+  --sh-md: 0 4px 8px rgba(0, 0, 0, .10);
+  --sh-lg: 0 6px 12px rgba(0, 0, 0, .10);
+
+  /* DS.Spacing (4pt grid) */
+  --s-xs: 4px; --s-sm: 8px;  --s-md: 12px; --s-lg: 16px;
+  --s-xl: 24px; --s-xxl: 32px; --s-xxxl: 48px;
+
+  --hit: 44px;                /* DS.Layout.minimumInteractiveDimension */
+  --measure: 700px;           /* DS.Layout.maxContentWidth */
+  --max: 1120px;
+
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          "Segoe UI", system-ui, sans-serif;
+  --rounded: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
+             system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --surface: #1c1c1e;
+    --fill: #1c1c1e;
+    --fill-2: #2c2c2e;
+    --label: #ffffff;
+    --label-2: rgba(235, 235, 245, .60);
+    --label-3: rgba(235, 235, 245, .30);
+    --separator: rgba(84, 84, 88, .65);
+    --hairline: rgba(255, 255, 255, .14);
+    --accent-ink: #ff6b35;    /* accessibleFilledBackground(.dark) */
+    --accent-strong: #ff6b35;
+    --btn-label: #000000;
+    /* The app sinks the whole field by 0.82 in Dark Mode so a saturated
+       plane never glares against a black content sheet. */
+    --field-top: #ae4924;
+    --field-mid: #984020;
+    --field-low: #7d341a;
+    --field-bar: #92411f;
+    --sh-sm: 0 2px 4px rgba(0, 0, 0, .40);
+    --sh-md: 0 4px 8px rgba(0, 0, 0, .45);
+    --sh-lg: 0 6px 12px rgba(0, 0, 0, .50);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--label);
+  font-family: var(--sans);
+  font-size: 17px;          /* .body */
+  line-height: 22px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, svg { display: block; max-width: 100%; }
+/* Every inline glyph carries .ic. Without an intrinsic width an SVG falls back
+   to 300x150, which silently blows a row's height apart — this is the floor,
+   and the per-context rules below refine it. DS.Icon.md is 18pt. */
+svg.ic { width: 18px; height: 18px; flex: none; display: inline-block; vertical-align: -.18em; }
+a { color: var(--accent-strong); }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* --- Apple type ramp (points map 1:1 to px) ------------------------------ */
+.t-large   { font-size: 34px; line-height: 41px; font-weight: 700; letter-spacing: -.4px; }
+.t-title   { font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -.3px; }
+.t-title2  { font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -.2px; }
+.t-title3  { font-size: 20px; line-height: 25px; font-weight: 600; letter-spacing: -.2px; }
+.t-head    { font-size: 17px; line-height: 22px; font-weight: 600; }
+.t-body    { font-size: 17px; line-height: 24px; }
+.t-callout { font-size: 16px; line-height: 21px; }
+.t-sub     { font-size: 15px; line-height: 21px; }
+.t-foot    { font-size: 13px; line-height: 18px; }
+.t-cap     { font-size: 12px; line-height: 16px; }
+.t-cap2    { font-size: 11px; line-height: 13px; }
+
+/* Display roles sit above the ramp and are SF Rounded, exactly as
+   DS.Typography.DisplayRole declares (design: .rounded). */
+.d-hero, .d-stat, .d-statmed, .d-display, .d-statsm {
+  font-family: var(--rounded); font-weight: 700; letter-spacing: -.02em;
+}
+.d-hero    { font-size: clamp(40px, 5.4vw, 64px); line-height: 1.03; }
+.d-stat    { font-size: 48px; line-height: 1.05; }
+.d-statmed { font-size: 36px; line-height: 1.1; }
+.d-display { font-size: 32px; line-height: 1.15; }
+.d-statsm  { font-size: 26px; line-height: 1.15; }
+.num       { font-family: var(--rounded); font-variant-numeric: tabular-nums; }
+
+.eyebrow {
+  font-size: 11px; line-height: 13px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+
+.muted { color: var(--label-2); }
+
+/* --- Layout -------------------------------------------------------------- */
+.wrap { width: min(100% - 40px, var(--max)); margin-inline: auto; }
+.measure { max-width: var(--measure); }
+
+.section { padding: var(--s-xxxl) 0; }
+.section-head { display: flex; flex-direction: column; gap: var(--s-md); margin-bottom: var(--s-xl); }
+.section-head .kicker { color: var(--accent-ink); }
+.section-head p { margin: 0; color: var(--label-2); max-width: 620px; }
+.section-head h2 { margin: 0; max-width: 720px; }
+
+/* --- Controls ------------------------------------------------------------ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-sm);
+  min-height: 54px;                 /* AmbientPrimaryButtonStyle */
+  padding: 0 var(--s-xl);
+  border: 0; border-radius: var(--r-card);
+  font: inherit; font-size: 17px; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+}
+
+/* Inverted primary: the interface's own plane, carrying the accent, on the
+   accent field — AmbientPrimaryButtonStyle. */
+a.btn-invert, .btn-invert { background: var(--surface); color: var(--accent-ink); box-shadow: var(--sh-md); }
+a.btn-invert:hover, .btn-invert:hover { color: var(--accent-ink); filter: brightness(.98); }
+/* Field-native secondary: the streak chip's white .18 fill. */
+a.btn-ghost, .btn-ghost { background: rgba(255, 255, 255, .18); color: #fff; }
+a.btn-ghost:hover, .btn-ghost:hover { background: rgba(255, 255, 255, .26); color: #fff; }
+/* Filled accent on a content plane. */
+a.btn-accent, .btn-accent { background: var(--accent-ink); color: var(--btn-label); box-shadow: var(--sh-md); }
+a.btn-accent:hover, .btn-accent:hover { color: var(--btn-label); filter: brightness(1.06); }
+a.btn-quiet, .btn-quiet {
+  background: var(--fill-2); color: var(--label);
+  box-shadow: none; border: .75px solid var(--hairline);
+}
+a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--separator); }
+.btn-sm { min-height: 36px; padding: 0 var(--s-lg); font-size: 15px; border-radius: 999px; }
+
+/* --- Content surface (dsContentBackground) ------------------------------- */
+.card {
+  background: var(--surface);
+  border: .75px solid var(--hairline);        /* DS.Border.subtle */
+  border-radius: var(--r-card);
+  box-shadow: var(--sh-sm);
+}
+.card-xl { border-radius: var(--r-xl); }
+/* dsContentBackground(accentColor:) → 1pt accent @ DS.Opacity.medium */
+.card-accent { border: 1px solid var(--tint-20); }
+
+/* Icon in a tinted circle — DSIconBadge, the app's most-repeated idiom
+   (40pt circle, fill at DS.Opacity.light = 0.12, body-sized glyph). */
+.badge {
+  flex: none; width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--tint-12);
+  color: var(--accent-ink);
+}
+.badge svg { width: 20px; height: 20px; }
+.badge .num { font-size: 17px; font-weight: 600; }
+
+/* Chip — TagView, unselected: systemGray5 fill, secondary label,
+   0.5pt separator ring, caption semibold, 8/4 padding. */
+.chip {
+  display: inline-flex; align-items: center;
+  padding: var(--s-xs) var(--s-sm);
+  border-radius: 999px;
+  border: .5px solid var(--separator);
+  background: var(--fill-2);
+  color: var(--label-2);
+  font-size: 12px; line-height: 16px; font-weight: 600;
+}
+
+/* Inset grouped list — one card, hairline separators inset past the glyph. */
+.list { list-style: none; margin: 0; padding: 0; }
+.list > li { display: flex; gap: var(--s-lg); padding: var(--s-lg); align-items: flex-start; }
+.list > li + li { border-top: .75px solid var(--hairline); }
+.list h3 { margin: 0 0 2px; }
+.list p { margin: 0; color: var(--label-2); }
+
+/* --- The accent field --------------------------------------------------- */
+/* Flat colour by design: Liquid Glass stays in the navigation layer.
+   An earlier accent-background attempt in the app got this wrong by keeping
+   glass panels on top of the plane. */
+.field {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  /* Same three stops the app derives from the accent, re-ordered so every
+     stop under text is at least the base: white on base is 4.99:1, white on
+     the lowest stop 6.80:1. The x1.14 highlight is confined to the top 8%,
+     which the navigation bar covers. */
+  background: linear-gradient(to bottom, var(--field-top), var(--field-mid) 8%, var(--field-low));
+  color: #fff;
+}
+.field a:not([class*="btn"]) { color: #fff; }
+/* The app dims field copy to white .80/.75. On the web the same plane has to
+   clear 4.5:1, so secondary field copy stops at .90 and anything 13px or
+   smaller stays pure white. */
+.field-dim { color: rgba(255, 255, 255, .90); }
+.field .eyebrow, .field .notes, .field .updated { color: #fff; }
+
+/* Concentric outlines that give the plane depth without a glow or a glass
+   layer, fading out with distance from the corner they radiate from. */
+.echo {
+  position: absolute; top: -168px; right: -46px; width: 340px; height: 340px;
+  pointer-events: none; z-index: -1;
+  -webkit-mask-image: radial-gradient(circle at 100% 0%, #fff 0 46%, transparent 100%);
+          mask-image: radial-gradient(circle at 100% 0%, #fff 0 46%, transparent 100%);
+}
+.echo i {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  display: block; border-radius: 50%;
+  border-style: solid; border-color: rgba(255, 255, 255, .10);
+}
+.echo i:nth-child(1) { width: 240px; height: 240px; border-width: 26px; }
+.echo i:nth-child(2) {
+  width: 340px; height: 340px; border-width: 14px;
+  border-color: rgba(255, 255, 255, .07);
+}
+
+/* The content sheet rides up over the field's lower edge by
+   AmbientHeroHeader.sheetOverlap = DS.Radius.xxxl. */
+.sheet {
+  position: relative;
+  margin-top: calc(-1 * var(--r-xxxl));
+  border-radius: var(--r-xxxl) var(--r-xxxl) 0 0;
+  background: var(--bg);
+}
+
+/* --- Navigation ---------------------------------------------------------- */
+/* The app's collapsed header: the pinned bar and the expanded field read as
+   the same plane (AmbientFieldPalette.barGradient), so the bar never appears
+   as a second surface floating over the hero. */
+.nav {
+  position: sticky; top: 0; z-index: 30;
+  background: linear-gradient(to bottom, var(--field-mid), var(--field-bar));
+  -webkit-backdrop-filter: saturate(140%) blur(20px);
+          backdrop-filter: saturate(140%) blur(20px);
+  padding-top: env(safe-area-inset-top);
+}
+.nav-in {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--s-xl); min-height: 60px;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: var(--s-md);
+  color: #fff; text-decoration: none; font-size: 17px; font-weight: 600;
+  letter-spacing: -.2px;
+}
+.brand .mark { width: 32px; height: 32px; flex: none; box-shadow: var(--sh-sm); border-radius: 7px; }
+.nav-links { display: flex; align-items: center; gap: var(--s-xl); }
+.nav-links a { color: rgba(255, 255, 255, .92); text-decoration: none; font-size: 15px; }
+.nav-links a:hover { color: #fff; }
+.nav-links a.nav-cta, .nav-cta {
+  min-height: var(--hit); display: inline-flex; align-items: center; padding: 0 var(--s-lg);
+  border-radius: 999px; background: #fff; color: var(--accent-on-white);
+  font-size: 15px; font-weight: 600; text-decoration: none;
+}
+.nav-links a.nav-cta:hover, .nav-cta:hover { color: var(--accent-on-white); background: #f2f2f7; }
+@media (max-width: 720px) { .nav-links .hide-sm { display: none; } }
+
+.skip {
+  position: fixed; z-index: 100; left: 16px; top: 12px;
+  padding: 10px 14px; border-radius: var(--r-md);
+  background: var(--surface); color: var(--label); text-decoration: none;
+  transform: translateY(-160%);
+}
+.skip:focus { transform: none; }
+
+/* --- Hero --------------------------------------------------------------- */
+.hero { padding: var(--s-xxxl) 0 calc(var(--s-xxxl) + var(--r-xxxl)); }
+.hero-grid {
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: center; gap: clamp(32px, 5vw, 72px);
+}
+.hero h1 { margin: var(--s-lg) 0 var(--s-lg); max-width: 15ch; }
+.hero h1 .q { color: rgba(255, 255, 255, .72); display: block; }
+.hero h1 .a { display: block; }
+.hero-lede { margin: 0; max-width: 44ch; font-size: 17px; line-height: 25px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--s-md); margin-top: var(--s-xl); }
+.notes { display: flex; flex-wrap: wrap; gap: var(--s-lg); margin: var(--s-xl) 0 0; padding: 0; list-style: none; }
+.notes li { display: inline-flex; align-items: center; gap: var(--s-sm); font-size: 13px; }
+.notes svg { width: 14px; height: 14px; flex: none; }
+
+/* --- Device frame ------------------------------------------------------- */
+.device-slot { display: grid; place-items: center; }
+/* The frame's proportions come from the capture itself (iPhone 17 Pro,
+   402x874pt), so the screenshot is never cropped or letterboxed. */
+.phone {
+  width: min(410px, 100%);
+  padding: 10px; border-radius: 54px; background: #1c1c1e;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .30), inset 0 0 0 .75px rgba(255, 255, 255, .12);
+}
+.screen {
+  aspect-ratio: 402 / 874;
+  overflow: hidden; border-radius: 44px; background: #fff;
+}
+.screen img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- Proof strip -------------------------------------------------------- */
+.proof { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.proof > div { padding: var(--s-xl); }
+.proof > div + div { border-left: .75px solid var(--hairline); }
+.proof dt { font-family: var(--rounded); font-size: 36px; line-height: 1.1; font-weight: 700; letter-spacing: -.02em; color: var(--accent-ink); }
+.proof dd { margin: var(--s-xs) 0 0; color: var(--label-2); font-size: 13px; line-height: 18px; }
+
+/* --- Chip cloud --------------------------------------------------------- */
+.cloud { display: flex; flex-wrap: wrap; gap: var(--s-sm); }
+.fine { margin: var(--s-lg) 0 0; color: var(--label-2); font-size: 13px; line-height: 18px; max-width: 68ch; }
+
+/* --- Steps -------------------------------------------------------------- */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-lg); }
+.step { padding: var(--s-xl); }
+.step h3 { margin: var(--s-lg) 0 var(--s-sm); }
+.step p { margin: 0; color: var(--label-2); font-size: 15px; line-height: 21px; }
+
+/* --- Feature lists ------------------------------------------------------ */
+/* Both grouped cards stretch to the taller one, and their rows share one
+   track height, so the hairline separators line up straight across the pair
+   instead of drifting with each row's copy length. */
+.cols-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-lg); align-items: stretch; }
+.cols-2 > .list { display: grid; grid-auto-rows: 1fr; }
+.list h3 { font-size: 17px; line-height: 22px; font-weight: 600; }
+.list p { font-size: 15px; line-height: 21px; }
+
+/* --- Privacy band ------------------------------------------------------- */
+.band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: var(--s-xxl); padding: var(--s-xl); align-items: center; }
+.band h2 { margin: var(--s-md) 0; }
+.band p { margin: 0 0 var(--s-lg); color: var(--label-2); }
+.band .list > li { padding: var(--s-md) 0; align-items: center; }
+.band .list > li:first-child { padding-top: 0; }
+/* `.band p` carries a 16px bottom margin for the prose column. Inside the
+   list that margin made each paragraph's box 37px tall while the glyph beside
+   it stayed 20px, so centring the row put the text 8px above the check. */
+.band .list p { margin: 0; }
+.band .list svg { width: 20px; height: 20px; flex: none; color: var(--green); }
+
+/* --- Plans -------------------------------------------------------------- */
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-lg); align-items: stretch; }
+/* Column layout so the call to action sits on the card's floor whatever
+   the list above it costs — the two cards then end on the same line. */
+.plan { padding: var(--s-xl); display: flex; flex-direction: column; }
+.plan .tier { color: var(--accent-ink); }
+.plan h3 { margin: var(--s-sm) 0 var(--s-sm); }
+.plan > p { margin: 0 0 var(--s-lg); color: var(--label-2); font-size: 15px; line-height: 21px; }
+.plan ul { list-style: none; margin: 0 0 var(--s-xl); padding: 0; display: grid; gap: var(--s-md); }
+.plan ul:last-of-type { margin-bottom: auto; }
+.plan .btn { margin-top: var(--s-xl); }
+.plan li { display: flex; gap: var(--s-md); align-items: flex-start; font-size: 15px; line-height: 21px; }
+.plan li svg { width: 18px; height: 18px; flex: none; margin-top: 2px; color: var(--accent-ink); }
+.plan .btn { width: 100%; }
+.plan-note { margin: var(--s-lg) 0 0; color: var(--label-2); font-size: 13px; line-height: 18px; max-width: 84ch; }
+
+/* --- FAQ ---------------------------------------------------------------- */
+.faq > details { border-top: .75px solid var(--hairline); }
+.faq > details:first-child { border-top: 0; }
+.faq summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-lg);
+  min-height: var(--hit); padding: var(--s-lg);
+  font-size: 17px; font-weight: 600; cursor: pointer; list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary svg { width: 18px; height: 18px; flex: none; color: var(--label-3); transition: transform .2s ease-in-out; }
+.faq details[open] summary svg { transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) { .faq summary svg { transition: none; } }
+.faq details > p { margin: 0; padding: 0 var(--s-lg) var(--s-lg); color: var(--label-2); font-size: 15px; line-height: 21px; max-width: 76ch; }
+
+/* --- Closing field + footer -------------------------------------------- */
+.close { padding: var(--s-xxxl) 0; text-align: center; }
+.close h2 { margin: 0 auto var(--s-md); max-width: 22ch; }
+.close p { margin: 0 auto var(--s-xl); max-width: 52ch; color: rgba(255, 255, 255, .90); }
+.close .btn { margin-inline: auto; }
+
+.foot { padding: var(--s-xl) 0 calc(var(--s-xl) + env(safe-area-inset-bottom)); background: var(--bg); }
+.foot-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-md); }
+.foot, .foot a { color: var(--label-2); font-size: 13px; line-height: 18px; }
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--label); }
+.foot-links { display: flex; flex-wrap: wrap; gap: var(--s-lg); }
+.foot-links a { padding-block: var(--s-sm); }
+
+/* --- Legal pages -------------------------------------------------------- */
+.legal-hero { padding: var(--s-xxl) 0 calc(var(--s-xxl) + var(--r-xxxl)); }
+.legal-hero h1 { margin: var(--s-md) 0; }
+.legal-hero .lede { margin: 0; max-width: 60ch; font-size: 17px; line-height: 25px; }
+.legal-hero .updated { display: inline-block; margin-top: var(--s-lg); font-size: 13px; }
+.legal { padding: var(--s-xl) 0 var(--s-xxxl); }
+.legal-body { max-width: var(--measure); }
+.legal-body section { padding: var(--s-xl) 0; border-top: .75px solid var(--hairline); }
+.legal-body section:first-of-type { border-top: 0; }
+.legal-body h2 { margin: 0 0 var(--s-md); font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -.2px; }
+.legal-body h3 { margin: var(--s-lg) 0 var(--s-sm); font-size: 17px; line-height: 22px; font-weight: 600; }
+.legal-body p, .legal-body li { color: var(--label-2); font-size: 16px; line-height: 24px; }
+.legal-body p { margin: 0 0 var(--s-md); }
+.legal-body ul { margin: 0 0 var(--s-md); padding-left: var(--s-xl); display: grid; gap: var(--s-sm); }
+.legal-body strong { color: var(--label); font-weight: 600; }
+.summary { padding: var(--s-xl); margin-bottom: var(--s-xl); }
+.summary h2 { margin: 0 0 var(--s-md); font-size: 20px; line-height: 25px; font-weight: 600; }
+.summary ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-md); }
+.summary li { display: flex; gap: var(--s-md); align-items: flex-start; font-size: 15px; line-height: 21px; color: var(--label-2); }
+.summary li svg { width: 18px; height: 18px; flex: none; margin-top: 2px; color: var(--accent-ink); }
+.note {
+  padding: var(--s-lg); border-radius: var(--r-card);
+  background: var(--tint-08);
+  border: .75px solid var(--tint-20);
+}
+.note p:last-child { margin-bottom: 0; }
+.toc { display: flex; flex-wrap: wrap; gap: var(--s-sm); margin-bottom: var(--s-xl); }
+.toc a { text-decoration: none; }
+.toc a:hover .chip { background: var(--separator); }
+
+/* --- Responsive --------------------------------------------------------- */
+@media (max-width: 1000px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .band { grid-template-columns: minmax(0, 1fr); gap: var(--s-xl); }
+}
+@media (max-width: 860px) {
+  .proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proof > div:nth-child(3) { border-left: 0; }
+  .proof > div:nth-child(n + 3) { border-top: .75px solid var(--hairline); }
+  .steps, .cols-2, .plans { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .wrap { width: calc(100% - 32px); }
+  .phone { border-radius: 46px; }
+  .screen { border-radius: 36px; }
+  .section { padding: var(--s-xxl) 0; }
+  .proof { grid-template-columns: minmax(0, 1fr); }
+  .proof > div + div { border-left: 0; border-top: .75px solid var(--hairline); }
+  .hero-actions .btn { width: 100%; }
+}
+
+/* Tables inside legal copy scroll inside their own container so the page body
+   never scrolls horizontally. */
+.tablewrap { overflow-x: auto; margin: 0 0 var(--s-md); -webkit-overflow-scrolling: touch; }
+.legal-body table { width: 100%; min-width: 460px; border-collapse: collapse; }
+.legal-body th, .legal-body td {
+  text-align: left; vertical-align: top;
+  padding: var(--s-md); border-bottom: .75px solid var(--hairline);
+  font-size: 15px; line-height: 21px; color: var(--label-2);
+}
+.legal-body th { color: var(--label); font-weight: 600; font-size: 13px; line-height: 18px; }
+.legal-body tbody tr:last-child td { border-bottom: 0; }
+
+/* ==========================================================================
+   Motion — mapped from the app's own semantic motion system,
+   AnkiMate/DesignSystem/MotionSystem.swift.
+
+   Its springs are converted to CSS `linear()` easings sampled from the real
+   step response rather than eyeballed as a cubic-bezier, so the page settles
+   on exactly the curves the app settles on:
+
+     DS.Motion.Role.reveal   spring(response 0.48, damping 0.86)  — content arriving
+     .smooth(0.34, bounce 0)                                      — the accent field's
+                                                                    launch cascade
+     DS.Motion.Role.press    easeOut 0.14
+     DS.Motion.Role.ambient  easeInOut 8s, repeating, autoreversing
+
+   Two rules from that file are honoured literally rather than loosely:
+
+   1. "Spatial changes must never be interpolated with Reduce Motion." Every
+      transform below sits inside `prefers-reduced-motion: no-preference`, and
+      content arriving falls back to the specified `.fade(duration: 0.16)`.
+   2. The accent field's cascade is transform-only. The app's comment is
+      explicit about why: dimming it produced "a ghosted intermediate state
+      that read as an unfinished load", and the white call to action on an
+      orange plane is exactly where that shows. So the hero moves; it never
+      fades.
+
+   Scroll reveals use native scroll-driven animations, so the page still ships
+   no JavaScript at all. Browsers without them simply render the final state.
+   ========================================================================== */
+
+:root {
+  /* spring(0.48, 0.86) — settles in 0.633s, overshoots 0.50% */
+  --e-reveal: linear(0, 0.0424, 0.1412, 0.2649, 0.3935, 0.5149, 0.6226, 0.7142, 0.7893, 0.849, 0.8953, 0.9301, 0.9557, 0.9739, 0.9864, 0.9947, 0.9999, 1.003, 1.0045, 1.005, 1.0049, 1.0045, 1.0039, 1.0032, 1.0026, 1.0021, 1);
+  --d-reveal: .633s;
+  /* smooth(0.34, bounce 0) — critically damped, settles in 0.498s */
+  --e-smooth: linear(0, 0.0496, 0.1585, 0.2869, 0.4135, 0.5279, 0.6263, 0.7079, 0.7741, 0.8268, 0.8681, 0.9002, 0.9249, 0.9437, 0.958, 0.9688, 0.9768, 0.9829, 0.9874, 0.9907, 0.9932, 0.995, 0.9963, 0.9973, 0.9981, 0.9986, 1);
+  --d-smooth: .498s;
+  /* easeOut 0.14 */
+  --e-press: cubic-bezier(.33, 1, .68, 1);
+  --d-press: .14s;
+  --d-fade: .16s;      /* the Reduce Motion fallback the app specifies */
+}
+
+/* --- Press ---------------------------------------------------------------
+   DS.Motion.pressPresentation is a scale AND a 0.90 opacity dip; only the
+   scale is spatial, so only the scale is withheld under Reduce Motion. */
+.btn {
+  transition: filter var(--d-press) var(--e-press),
+              opacity var(--d-press) var(--e-press),
+              background-color var(--d-press) var(--e-press);
+}
+.btn:active { opacity: .90; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn {
+    transition: transform var(--d-press) var(--e-press),
+                box-shadow var(--d-press) var(--e-press),
+                filter var(--d-press) var(--e-press),
+                opacity var(--d-press) var(--e-press),
+                background-color var(--d-press) var(--e-press);
+  }
+  .btn:hover { transform: translate3d(0, -1px, 0); }
+  .btn:active { transform: scale(.98); }
+  .nav-cta { transition: background-color var(--d-press) var(--e-press); }
+}
+
+/* --- The accent field's launch cascade -----------------------------------
+   Travel grows down the stack exactly as AmbientHeroHeader stages it
+   (6, 8, 10, 12pt at 0, 0.02, 0.06, 0.10s). Transform only. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > *,
+  .device-slot {
+    animation: ds-rise var(--d-smooth) var(--e-smooth) both;
+  }
+  .hero-copy > :nth-child(1) { --rise: 6px;  animation-delay: 0s; }
+  .hero-copy > :nth-child(2) { --rise: 8px;  animation-delay: .02s; }
+  .hero-copy > :nth-child(3) { --rise: 10px; animation-delay: .06s; }
+  .hero-copy > :nth-child(4) { --rise: 12px; animation-delay: .10s; }
+  .hero-copy > :nth-child(5) { --rise: 12px; animation-delay: .14s; }
+  .device-slot               { --rise: 14px; animation-delay: .06s; }
+}
+
+@keyframes ds-rise {
+  from { transform: translate3d(0, var(--rise, 8px), 0); }
+}
+
+/* --- Content arriving on scroll ------------------------------------------
+   The app's idiom for this is `.move(edge:).combined(with: .opacity)` on the
+   `.reveal` spring, so both halves are used here. Ranges finish inside the
+   first third of entry, which keeps a reveal from stalling half-done on a
+   section taller than the viewport. */
+@keyframes ds-reveal {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal] {
+      animation-name: ds-reveal;
+      animation-fill-mode: both;
+      animation-timing-function: var(--e-reveal);
+      animation-timeline: view();
+      animation-range: entry 2% entry 34%;
+    }
+    /* Siblings in a row arrive in order rather than as a slab. */
+    [data-reveal="2"] { animation-range: entry 8% entry 40%; }
+    [data-reveal="3"] { animation-range: entry 14% entry 46%; }
+  }
+
+  /* Reduce Motion keeps the arrival legible but removes the movement, which is
+     the substitution MotionSystem prescribes. */
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      animation-name: ds-fade;
+      animation-fill-mode: both;
+      animation-timing-function: ease-out;
+      animation-timeline: view();
+      animation-range: entry 2% entry 20%;
+    }
+  }
+}
+
+@keyframes ds-fade { from { opacity: 0; } }
+
+/* --- Ambient -------------------------------------------------------------
+   DS.Motion.Role.ambient is an 8s autoreversing ease-in-out, used in the app
+   for exactly this: background pulsing. The rings swell from the corner they
+   radiate out of. Reduce Motion resolves this role to `.instant`, i.e. none. */
+@media (prefers-reduced-motion: no-preference) {
+  .echo {
+    transform-origin: 100% 0;
+    animation: ds-breathe 8s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes ds-breathe {
+  from { transform: scale(1);    opacity: .82; }
+  to   { transform: scale(1.06); opacity: 1; }
+}
+
+/* --- Navigation edge ----------------------------------------------------
+   The app fades a scroll edge effect in as content passes under the bar
+   (dsScrollEdgeEffect). A shadow is not movement, so it is not withheld under
+   Reduce Motion. */
+@supports (animation-timeline: scroll()) {
+  .nav {
+    animation-name: ds-nav-edge;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-timeline: scroll();
+    animation-range: 0 72px;
+  }
+}
+
+@keyframes ds-nav-edge {
+  from { box-shadow: 0 4px 8px rgba(0, 0, 0, 0); }
+  to   { box-shadow: 0 4px 8px rgba(0, 0, 0, .16); }
+}
+
+/* --- FAQ disclosure -----------------------------------------------------
+   `interpolate-size` plus `::details-content` animates a native <details>
+   with no script. Where it is unsupported the panel simply snaps open. */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .faq details::details-content {
+      block-size: 0;
+      overflow: clip;
+      transition: block-size .3s var(--e-smooth), content-visibility .3s;
+      transition-behavior: allow-discrete;
+    }
+    .faq details[open]::details-content { block-size: auto; }
+  }
+}
+</style>
 </head>
 <body>
-  <nav aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a class="brand" href="index.html"><img src="logo-sm.png" width="38" height="38" alt=""><span>Cognito System</span></a>
-      <div class="nav-links"><a href="index.html">Product</a><a href="terms.html">Terms</a><a href="mailto:support@cognitosystem.com">Support</a></div>
-    </div>
-  </nav>
-
-  <header class="wrap">
-    <div class="label">Legal</div>
-    <h1>Privacy Policy</h1>
-    <p class="lede">This policy explains what Cognito stores on your device, what is processed when you use online features, and the choices available to you.</p>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 1024 1024" aria-hidden="true"><clipPath id="cog-mark-clip"><rect width="1024" height="1024" rx="232" ry="232"/></clipPath><g clip-path="url(#cog-mark-clip)" transform="translate(0 1024) scale(1 -1)"><path d="M0 0H1024V1024H0Z" fill="#FF6B35"/><path d="M0 170C250 110 770 570 1024 520V0H0Z" fill="#24100C"/><path d="M0 360C250 300 770 760 1024 710V520C770 570 250 110 0 170Z" fill="#FFB45F"/></g></svg>
+      <span>Cognito System</span>
+    </a>
+    <div class="nav-links"><a class="hide-sm" href="index.html#how">How it works</a><a class="hide-sm" href="index.html#features">Features</a><a class="hide-sm" href="index.html#plans">Plans</a><a class="hide-sm" href="privacy.html">Privacy</a><a class="nav-cta" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Get the app</a></div>
+  </div>
+</nav>
+<header class="field" aria-labelledby="legal-h">
+  <span class="echo" aria-hidden="true"><i></i><i></i></span>
+  <div class="wrap legal-hero">
+    <p class="eyebrow field-dim" style="margin:0">Legal</p>
+    <h1 class="d-statmed" id="legal-h">Privacy Policy</h1>
+    <p class="lede field-dim">This policy explains what Cognito stores on your device, what is processed when you use online features, and the choices available to you.</p>
     <span class="updated">Last updated: July 19, 2026</span>
-  </header>
-
-  <main class="wrap">
-    <div class="summary">
-      <h2>The short version</h2>
+  </div>
+</header>
+<main id="main" class="sheet legal">
+  <div class="wrap legal-body">
+    <div class="card card-xl summary"><h2>The short version</h2>
       <ul>
-        <li>Your cards, decks, study history, progress, and settings are stored locally by default.</li>
-        <li>Optional iCloud sync uses your private CloudKit database.</li>
-        <li>AI and online features process the content you choose to send so they can provide the requested result.</li>
-        <li>Cognito uses Firebase for essential app infrastructure, product analytics, diagnostics, notifications, and selected cloud features.</li>
-        <li>We do not sell personal information and do not use third-party advertising SDKs or cross-app advertising tracking.</li>
-      </ul>
-    </div>
-
-    <article>
-      <section>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Your cards, decks, study history, progress, and settings are stored locally by default.</li>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Optional iCloud sync uses your private CloudKit database.</li>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>AI and online features process the content you choose to send so they can provide the requested result.</li>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Cognito uses Firebase for essential app infrastructure, product analytics, diagnostics, notifications, and selected cloud features.</li>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>We do not sell personal information and do not use third-party advertising SDKs or cross-app advertising tracking.</li>
+      </ul></div>
+    <article><section>
         <h2>1. Who we are and what this policy covers</h2>
         <p>Cognito System (“Cognito,” “we,” “us,” or “our”) is operated by Aleksei Usanov. This policy applies to the Cognito iOS application, cognitosystem.com, and related support interactions.</p>
         <p>For privacy questions or requests, email <a href="mailto:support@cognitosystem.com">support@cognitosystem.com</a>.</p>
@@ -149,7 +797,7 @@
 
       <section>
         <h2>8. Service providers and disclosures</h2>
-        <table>
+        <div class="tablewrap"><table>
           <thead><tr><th>Provider</th><th>What it supports</th></tr></thead>
           <tbody>
             <tr><td>Apple</td><td>App Store distribution and purchases, StoreKit, iCloud/CloudKit sync, APNs notifications, device permissions, and Apple Ads attribution.</td></tr>
@@ -158,7 +806,7 @@
             <tr><td>DeepSeek</td><td>AI processing for supported regional routing, including certain requests from mainland China.</td></tr>
             <tr><td>Website hosting provider</td><td>Delivery and security of cognitosystem.com, which may involve standard request logs such as IP address, browser type, and access time.</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <p>We may also disclose information if required by law, to protect users or the service, in connection with a business reorganization, or with your direction. Providers may process data in countries other than your own under their terms and appropriate legal safeguards.</p>
         <p>We do not sell or rent personal information. The public website does not currently install analytics or advertising cookies.</p>
       </section>
@@ -200,12 +848,24 @@
         <h2>14. Changes and contact</h2>
         <p>We may update this policy as Cognito, our providers, or legal requirements change. The current version and update date will remain available on this page. Material changes may also be communicated in the app where appropriate.</p>
         <p>Questions or requests: <a href="mailto:support@cognitosystem.com">support@cognitosystem.com</a>.</p>
-      </section>
-    </article>
-  </main>
-
-  <footer>
-    <div class="footer-inner"><span>© 2026 Cognito System. Operated by Aleksei Usanov.</span><div class="footer-links"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:support@cognitosystem.com">Support</a></div></div>
-  </footer>
+      </section></article>
+    <p class="fine" style="margin-top:var(--s-xl)">
+      Also on this site: <a href="terms.html">Terms of Use</a> &middot;
+      <a href="mailto:support@cognitosystem.com">support@cognitosystem.com</a>
+    </p>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>&copy; 2026 Cognito System. Operated by Aleksei Usanov.</span>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:support@cognitosystem.com">Support</a>
+      <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">App Store</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

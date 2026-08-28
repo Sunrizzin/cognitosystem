@@ -1,12 +1,12 @@
 # Cognito System
 
-> Cognito System is an exam-focused study app for iPhone. It turns a syllabus, topic, PDF, image, recording, YouTube video, webpage, arXiv paper, or notes into practice shaped around the exam a learner is preparing for, then schedules reviews with FSRS spaced repetition.
+> Cognito System is an exam-focused study app for iPhone and iPad. It turns a syllabus, topic, PDF, image, recording, YouTube video, webpage, arXiv paper, or notes into practice shaped around the exam a learner is preparing for, then schedules reviews with FSRS spaced repetition.
 
 ## Key facts
 - Brand: Cognito System (also called Cognito)
-- Platform: iPhone, iOS 18 or later
+- Platform: iPhone and iPad, iOS/iPadOS 18 or later
 - Category: Education and exam preparation
-- Availability: Free to start, with optional subscriptions shown in local App Store pricing
+- Availability: Free to start. The free tier includes unlimited hand-made cards, FSRS scheduling, Classic and Compact study, image occlusion, Anki import, every accent theme, analytics charts, widgets, optional iCloud sync, and 10 AI generations per calendar month. Premium (weekly, monthly or yearly) lifts the generation cap and adds Voice AI Tutor, Quiz and Type Answer study, deck translation, AI rewrite and mnemonic hints, auto-play review, AI Coach, streak protection and smart reminders. Prices are shown in local App Store currency.
 - Exam support: More than 80 school, university, admissions, professional, and medical exam formats
 - Study modes: Classic, Compact, Quiz, and Typed Answer
 - Scheduling: FSRS spaced repetition

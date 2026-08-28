@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="Cognito System">
+  <clipPath id="cog-mark-clip"><rect width="1024" height="1024" rx="232" ry="232"/></clipPath>
+  <g clip-path="url(#cog-mark-clip)" transform="translate(0 1024) scale(1 -1)">
+    <path d="M0 0H1024V1024H0Z" fill="#FF6B35"/>
+    <path d="M0 170C250 110 770 570 1024 520V0H0Z" fill="#24100C"/>
+    <path d="M0 360C250 300 770 760 1024 710V520C770 570 250 110 0 170Z" fill="#FFB45F"/>
+  </g>
+</svg>
