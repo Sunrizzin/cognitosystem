@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Make an Exam Study Plan That Fits Your Week | Cognito</title>
+<meta name="description" content="Build a realistic exam study plan around your exam date, available days, daily capacity and flashcard reviews. See how Cognito's Exam Plan adapts when you fall behind.">
+<meta name="theme-color" content="#ba4e27" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#984020" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://cognitosystem.com/exam-study-plan.html">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://cognitosystem.com/exam-study-plan.html">
+<meta property="og:site_name" content="Cognito System">
+<meta property="og:title" content="How to Make an Exam Study Plan That Fits Your Week">
+<meta property="og:description" content="A practical way to plan new material and spaced reviews around the time you actually have.">
+<meta property="og:image" content="https://cognitosystem.com/logo-new.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@cognitoaicards">
+<meta name="twitter:title" content="How to Make an Exam Study Plan That Fits Your Week">
+<meta name="twitter:description" content="A practical way to plan new material and spaced reviews around the time you actually have.">
+<meta name="twitter:image" content="https://cognitosystem.com/logo-new.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to Make an Exam Study Plan That Fits Your Week",
+      "description": "A practical guide to setting an exam date, study days and daily capacity while leaving room for spaced reviews.",
+      "datePublished": "2026-09-27",
+      "dateModified": "2026-09-27",
+      "author": {"@type": "Organization", "name": "Cognito System", "url": "https://cognitosystem.com/"},
+      "publisher": {"@type": "Organization", "name": "Cognito System", "url": "https://cognitosystem.com/"},
+      "mainEntityOfPage": "https://cognitosystem.com/exam-study-plan.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cognitosystem.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Exam study plan", "item": "https://cognitosystem.com/exam-study-plan.html"}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f2f2f7; --surface: #fff; --fill: #e5e5ea; --label: #000;
+  --secondary: rgba(60,60,67,.76); --rule: rgba(0,0,0,.12);
+  --accent: #ba4e27; --field-top: #d4592c; --field-mid: #ba4e27;
+  --field-low: #984020; --field-bar: #b24b25;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --rounded: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000; --surface: #1c1c1e; --fill: #2c2c2e; --label: #fff;
+    --secondary: rgba(235,235,245,.72); --rule: rgba(255,255,255,.16);
+    --accent: #ff8a60; --field-top: #ae4924; --field-mid: #984020;
+    --field-low: #7d341a; --field-bar: #92411f;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--bg); color: var(--label); font: 17px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+::selection { background: #ffb45f; color: #24100c; }
+a { color: var(--accent); text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.nav a:focus-visible, .field a:focus-visible { outline-color: #fff; }
+.wrap { width: min(100% - 40px, 1120px); margin-inline: auto; }
+.nav { position: sticky; top: 0; z-index: 10; padding-top: env(safe-area-inset-top); background: linear-gradient(var(--field-mid),var(--field-bar)); }
+.nav-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 60px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.brand img { width: 32px; height: 32px; border-radius: 7px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a { color: #fff; text-decoration: none; font-size: 15px; }
+.nav-links a:hover { text-decoration: underline; }
+.nav-links .nav-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #fff; color: #ba4e27; font-weight: 600; white-space: nowrap; }
+.skip { position: fixed; z-index: 20; top: 8px; left: 8px; padding: 10px 14px; background: var(--surface); transform: translateY(-150%); }
+.skip:focus { transform: none; }
+.field { color: #fff; background: linear-gradient(var(--field-top), var(--field-mid) 8%, var(--field-low)); }
+.hero { padding: 48px 0 76px; }
+.crumb { margin: 0 0 32px; font-size: 14px; }
+.crumb a { color: #fff; }
+.hero h1 { max-width: 860px; margin: 0; font: 700 clamp(40px, 6vw, 64px)/1.06 var(--rounded); letter-spacing: -.025em; text-wrap: balance; }
+.hero p { max-width: 62ch; margin: 24px 0 0; color: #fff; font-size: 19px; line-height: 1.5; }
+.sheet { position: relative; margin-top: -28px; border-radius: 28px 28px 0 0; background: var(--bg); }
+.layout { display: grid; grid-template-columns: minmax(0, 700px) minmax(200px, 1fr); gap: clamp(32px, 5vw, 80px); padding-block: 48px 80px; }
+article { min-width: 0; }
+article > p:first-child { margin-top: 0; font-size: 19px; line-height: 1.5; color: var(--label); }
+article p, article li, article dd { max-width: 70ch; color: var(--secondary); }
+article h2 { margin: 56px 0 16px; font: 700 30px/1.18 var(--rounded); letter-spacing: -.02em; text-wrap: balance; }
+article h3 { margin: 28px 0 8px; font-size: 19px; line-height: 1.3; }
+article p { margin: 0 0 18px; }
+article ul { margin: 0 0 20px; padding-left: 24px; }
+article li { padding-left: 4px; margin-bottom: 10px; }
+article strong { color: var(--label); }
+.byline { display: flex; flex-wrap: wrap; gap: 8px 16px; padding-bottom: 32px; border-bottom: 1px solid var(--rule); font-size: 14px; color: var(--secondary); }
+.inputs { margin: 28px 0 12px; border-top: 1px solid var(--rule); }
+.input-row { display: grid; grid-template-columns: minmax(120px, .4fr) 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.input-row dt { font-weight: 600; }
+.input-row dd { margin: 0; }
+.example { margin: 28px 0; padding: 24px; border-radius: 16px; background: var(--surface); }
+.example h3 { margin: 0 0 8px; }
+.example p:last-child { margin-bottom: 0; }
+.week { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 8px; margin: 20px 0; }
+.day { min-width: 0; padding: 12px 8px; border-radius: 12px; background: var(--fill); text-align: center; font-size: 14px; }
+.day b { display: block; color: var(--label); }
+.day span { display: block; margin-top: 6px; color: var(--secondary); }
+.example .caption { font-size: 13px; line-height: 1.45; }
+.decision { padding: 18px 0; border-top: 1px solid var(--rule); }
+.decision:last-child { border-bottom: 1px solid var(--rule); }
+.decision h3 { margin: 0 0 6px; }
+.decision p { margin: 0; }
+.aside { align-self: start; position: sticky; top: 84px; padding: 24px; border-radius: 16px; background: var(--surface); }
+.aside h2 { margin: 0 0 16px; font-size: 17px; }
+.aside ul { margin: 0; padding: 0; list-style: none; }
+.aside li + li { border-top: 1px solid var(--rule); }
+.aside a { display: block; padding: 10px 0; min-height: 44px; font-size: 15px; font-weight: 600; text-decoration: none; }
+.aside p { margin: 20px 0 0; font-size: 14px; color: var(--secondary); }
+.aside .button, .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 18px; border-radius: 14px; background: #ba4e27; color: #fff; font-weight: 600; text-align: center; text-decoration: none; }
+.aside .button { margin-top: 20px; width: 100%; }
+.button:hover, .aside .button:hover { background: #984020; color: #fff; }
+.closing { margin-top: 56px; padding: 32px; border-radius: 20px; background: var(--surface); }
+.closing h2 { margin: 0 0 12px; }
+.closing p { margin-bottom: 24px; }
+.foot { padding: 24px 0 calc(24px + env(safe-area-inset-bottom)); border-top: 1px solid var(--rule); }
+.foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; color: var(--secondary); font-size: 13px; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 16px; }
+.foot-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--secondary); text-decoration: none; }
+@media (max-width: 760px) {
+  .nav-links .hide-sm { display: none; }
+  .layout { display: block; padding-top: 36px; }
+  .aside { display: none; }
+  .hero { padding: 36px 0 68px; }
+}
+@media (max-width: 500px) {
+  .wrap { width: calc(100% - 32px); }
+  .hero h1 { font-size: 40px; }
+  .input-row { display: block; }
+  .input-row dd { margin-top: 4px; }
+  .week { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><img src="icon.svg" width="32" height="32" alt=""><span>Cognito System</span></a>
+    <div class="nav-links"><a class="hide-sm" href="index.html">Home</a><a class="hide-sm" href="index.html#features">Features</a><a class="nav-cta" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">Get the app</a></div>
+  </div>
+</nav>
+<header class="field">
+  <div class="wrap hero">
+    <p class="crumb"><a href="index.html">Home</a> / Exam study plan</p>
+    <h1>How to make an exam study plan that fits your week</h1>
+    <p>Start with the time you really have. Then give new material and returning reviews room in the same plan.</p>
+  </div>
+</header>
+<main class="sheet" id="main">
+  <div class="wrap layout">
+    <article>
+      <p>A useful exam plan answers two questions each study day: <strong>what is due for review?</strong> and <strong>how much new material can I add?</strong> A calendar that only divides the syllabus into equal chunks misses the first question. A flashcard queue without an exam date misses the second.</p>
+      <div class="byline"><span>By Cognito System</span><span>Updated 27 September 2026</span></div>
+
+      <section id="constraints" aria-labelledby="constraints-heading">
+        <h2 id="constraints-heading">Begin with constraints, not a perfect timetable</h2>
+        <p>Before assigning topics to days, write down the things your plan cannot ignore. You can do this on paper or in Cognito’s Exam Plan.</p>
+        <dl class="inputs">
+          <div class="input-row"><dt>Exam date</dt><dd>The deadline. Check the current date and syllabus with the exam provider.</dd></div>
+          <div class="input-row"><dt>Study days</dt><dd>The weekdays you can actually study, including any days you need to leave free.</dd></div>
+          <div class="input-row"><dt>Daily capacity</dt><dd>A sustainable amount of work for each available day, not your best-ever session.</dd></div>
+          <div class="input-row"><dt>Card inventory</dt><dd>What is already in your library and what still needs to become practice material.</dd></div>
+          <div class="input-row"><dt>Review schedule</dt><dd>Cards already due or expected to return through spaced repetition.</dd></div>
+        </dl>
+        <p>Keep a little flexibility near the exam for consolidation rather than scheduling new material until the final day. Cognito lets you add an optional consolidation period.</p>
+      </section>
+
+      <section id="week" aria-labelledby="week-heading">
+        <h2 id="week-heading">Make room for reviews before adding new cards</h2>
+        <p>Begin each session with due reviews. Use the remaining time to introduce new cards from a topic or your own notes. Check each generated question and answer before saving it; an inaccurate card becomes a repeated error.</p>
+        <div class="example">
+          <h3>An illustrative five-day rhythm</h3>
+          <p>Each study day has the same order. The amount of work changes with your actual due queue and capacity.</p>
+          <div class="week" aria-label="Example study-week pattern">
+            <div class="day"><b>Monday</b><span>Review → new</span></div>
+            <div class="day"><b>Tuesday</b><span>Review → new</span></div>
+            <div class="day"><b>Wednesday</b><span>Review → new</span></div>
+            <div class="day"><b>Thursday</b><span>Review → new</span></div>
+            <div class="day"><b>Friday</b><span>Review → new</span></div>
+          </div>
+          <p class="caption">Illustration only: this is a routine, not a prediction of how many cards any learner should complete. Your exam, available time and current reviews determine the daily target.</p>
+        </div>
+        <p>New material creates future reviews. If the due queue grows, reduce the amount you introduce rather than hiding unfinished reviews behind a fixed “new cards per day” target.</p>
+      </section>
+
+      <section id="adjust" aria-labelledby="adjust-heading">
+        <h2 id="adjust-heading">Adjust the plan when real life intervenes</h2>
+        <div class="decision"><h3>If you miss a day</h3><p>Carry unfinished work forward and look at the remaining study days. Do not pretend that every missed review happened on time.</p></div>
+        <div class="decision"><h3>If the daily target becomes too large</h3><p>Change something real: add study capacity where possible, narrow the material you are covering, or revise the date if it is flexible. A harder-looking calendar alone cannot create more time.</p></div>
+        <div class="decision"><h3>If your exam is very close</h3><p>Prioritise due reviews and weak topics over generating a large new library. Verify high-stakes facts against your current syllabus and authoritative materials.</p></div>
+      </section>
+
+      <section id="cognito" aria-labelledby="cognito-heading">
+        <h2 id="cognito-heading">How Cognito turns this into an Exam Plan</h2>
+        <p>Choose your exam in <strong>Settings</strong>, then open <strong>Exam Plan</strong> on Home. Set the exam date, study weekdays, daily capacity and, if you want one, a consolidation period. Cognito combines those choices with your card inventory and current FSRS review schedule to show today’s review and new-card target.</p>
+        <p>As you study, the plan updates. If you miss a day, unfinished work is carried forward <strong>without changing your cards’ FSRS schedule</strong>. When the remaining capacity is unrealistic, the plan flags overload so you can adjust the date or capacity.</p>
+        <p>Exam Plans and FSRS review are available in the free tier. You can make cards by hand without a generation limit; the free AI allowance is 10 generation batches per calendar month from topics, pasted text or photos. Premium adds unlimited AI generation and more supported source types. <a href="index.html#plans">Compare what is included.</a></p>
+        <p>Cognito is an independent study tool, not an official exam syllabus. AI-generated cards may contain mistakes or omit topics; check them against your exam board’s current requirements.</p>
+      </section>
+
+      <div class="closing">
+        <h2>Make the next study day clear</h2>
+        <p>Bring your own material, review the cards you save, and let your available days shape the plan.</p>
+        <a class="button" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">Get Cognito on the App Store</a>
+      </div>
+    </article>
+    <aside class="aside" aria-label="On this page">
+      <h2>On this page</h2>
+      <ul>
+        <li><a href="#constraints">Set your constraints</a></li>
+        <li><a href="#week">Plan a study week</a></li>
+        <li><a href="#adjust">Handle missed days</a></li>
+        <li><a href="#cognito">Use Cognito Exam Plan</a></li>
+      </ul>
+      <p>Want the plan inside your flashcard library?</p>
+      <a class="button" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">Download free</a>
+    </aside>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>&copy; 2026 Cognito System. Operated by Aleksei Usanov.</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:support@cognitosystem.com">Support</a><a href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">App Store</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
