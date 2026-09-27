@@ -1,18 +1,18 @@
 # Cognito System
 
-> Cognito System is an exam-focused study app for iPhone and iPad. It turns a syllabus, topic, PDF, image, recording, YouTube video, webpage, arXiv paper, or notes into practice shaped around the exam a learner is preparing for, then schedules reviews with FSRS spaced repetition.
+> Cognito is an exam-focused study app for iPhone and iPad. Learners can generate flashcards from their own material, check and edit cards before saving, then follow an Exam Plan and review with FSRS spaced repetition.
 
 ## Key facts
 - Brand: Cognito System (also called Cognito)
 - Platform: iPhone and iPad, iOS/iPadOS 18 or later
 - Category: Education and exam preparation
-- Availability: Free to start. The free tier includes unlimited hand-made cards, FSRS scheduling, Classic and Compact study, image occlusion, Anki import, every accent theme, analytics charts, widgets, optional iCloud sync, and 10 AI generations per calendar month. Premium (weekly, monthly or yearly) lifts the generation cap and adds Voice AI Tutor, Quiz and Type Answer study, deck translation, AI rewrite and mnemonic hints, auto-play review, AI Coach, streak protection and smart reminders. Prices are shown in local App Store currency.
+- Availability: Free to start. The free tier includes unlimited hand-made cards and review, FSRS scheduling, Classic and Compact study, Exam Plans, Anki import, optional iCloud sync, and 10 AI generation batches per calendar month from topics, pasted text or photos. Premium (weekly, monthly or yearly) lifts the generation cap and adds supported PDF, scan, audio, YouTube, web and arXiv sources; Text and Voice AI Tutors; Quiz and Type Answer; deck translation, AI rewrite, mnemonic hints, hands-free review, AI Coach and streak protection. Prices are shown in local App Store currency.
 - Exam support: More than 80 school, university, admissions, professional, and medical exam formats
 - Study modes: Classic, Compact, Quiz, and Typed Answer
 - Scheduling: FSRS spaced repetition
-- Sources: topics, PDFs, images, audio, YouTube, webpages, arXiv papers, and notes
+- Sources: topics, pasted text and photos for free; supported PDFs, scans, audio, YouTube, webpages and arXiv papers with Premium
 - Rich content: LaTeX, code, tables, Mermaid diagrams, cloze cards, image occlusion, and text-to-speech
-- Other features: Tutor, Voice Tutor, Skill Trees, Daily Mix, Weak Spots, analytics, widgets, and optional iCloud sync
+- Other features: Exam Plans, Daily Mix, Weak Spots, Learn, analytics, widgets, and optional iCloud sync
 - Data model: cards, decks, progress, history, and settings are local-first; supported data can be synced through the user's private iCloud/CloudKit database
 - Developer and operator: Aleksei Usanov
 
@@ -22,7 +22,10 @@
 - Medical content is for study only and is not medical advice or clinical decision support.
 
 ## Links
-- [App Store](https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298)
+- [App Store](https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298)
 - [Website](https://cognitosystem.com/)
 - [Privacy Policy](https://cognitosystem.com/privacy.html)
 - [Terms of Use](https://cognitosystem.com/terms.html)
+- [TikTok](https://www.tiktok.com/@cognito.system)
+- [Instagram](https://www.instagram.com/cognito.system/)
+- [X](https://x.com/cognitoaicards)

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cognito System — exam-aligned study that remembers</title>
-<meta name="description" content="Pick your exam, add your own material, and Cognito turns it into exam-aligned practice with AI, active recall and FSRS spaced repetition. Free to start on iPhone and iPad.">
+<title>Cognito: Exam Prep &amp; Study — AI flashcards with a plan</title>
+<meta name="description" content="Turn your notes into exam practice. Check AI flashcards before saving, follow an Exam Plan, and review with FSRS. Free to start on iPhone and iPad.">
 <meta name="theme-color" content="#ba4e27" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#984020" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://cognitosystem.com/">
@@ -14,12 +14,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cognitosystem.com/">
 <meta property="og:site_name" content="Cognito System">
-<meta property="og:title" content="Cognito System — exam-aligned study that remembers">
-<meta property="og:description" content="Turn your syllabus, notes, PDFs, lectures and videos into practice shaped around the exam you are actually taking.">
+<meta property="og:title" content="Cognito: Exam Prep &amp; Study — AI flashcards with a plan">
+<meta property="og:description" content="Turn your own material into flashcards, check every answer, and follow a daily plan for your exam.">
 <meta property="og:image" content="https://cognitosystem.com/logo-new.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cognito System — exam-aligned study that remembers">
-<meta name="twitter:description" content="Turn your syllabus, notes, PDFs, lectures and videos into practice shaped around the exam you are actually taking.">
+<meta name="twitter:site" content="@cognitoaicards">
+<meta name="twitter:title" content="Cognito: Exam Prep &amp; Study — AI flashcards with a plan">
+<meta name="twitter:description" content="Turn your own material into flashcards, check every answer, and follow a daily plan for your exam.">
 <meta name="twitter:image" content="https://cognitosystem.com/logo-new.png">
 <script type="application/ld+json">
 {
@@ -27,14 +28,19 @@
   "@graph": [
     {
       "@type": "SoftwareApplication",
-      "name": "Cognito System",
-      "alternateName": "Cognito",
+      "name": "Cognito: Exam Prep & Study",
+      "alternateName": "Cognito System",
       "operatingSystem": "iOS 18.0 or later, iPadOS 18.0 or later",
       "applicationCategory": "EducationalApplication",
       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-      "description": "An exam-focused study system for iPhone and iPad. It turns your own material into exam-aligned practice and schedules every review with FSRS spaced repetition.",
+      "description": "Turn your own material into exam-focused flashcards, check every answer before saving, and follow an Exam Plan with FSRS spaced repetition.",
       "url": "https://cognitosystem.com/",
-      "downloadUrl": "https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298",
+      "downloadUrl": "https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298",
+      "sameAs": [
+        "https://www.tiktok.com/@cognito.system",
+        "https://www.instagram.com/cognito.system/",
+        "https://x.com/cognitoaicards"
+      ],
       "author": {"@type": "Person", "name": "Aleksei Usanov"}
     },
     {
@@ -42,7 +48,7 @@
       "mainEntity": [
         {"@type": "Question", "name": "Do I have to choose an exam?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pick \u201cLearn without an exam\u201d during onboarding and study any topic. You can choose or change an exam later in Settings, and existing cards keep working."}},
         {"@type": "Question", "name": "Are generated cards guaranteed to match an official syllabus?", "acceptedAnswer": {"@type": "Answer", "text": "No AI system can guarantee that. Cognito uses your exam as context to shape practice, but you should check generated content against your current syllabus and authoritative sources."}},
-        {"@type": "Question", "name": "What does the free tier actually include?", "acceptedAnswer": {"@type": "Answer", "text": "Unlimited hand-made cards and decks, FSRS scheduling, Classic and Compact study, image occlusion, Anki import, every accent theme, analytics charts, widgets, optional iCloud sync, and 10 AI generations each calendar month."}},
+        {"@type": "Question", "name": "What does the free tier actually include?", "acceptedAnswer": {"@type": "Answer", "text": "Unlimited hand-made cards and review, FSRS scheduling, Classic and Compact study, Exam Plans, Anki import, optional iCloud sync, and 10 AI generation batches per calendar month from topics, pasted text, or photos."}},
         {"@type": "Question", "name": "Can I use it for medical exams?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 several medical formats are supported. It is a study tool, not clinical decision support, and it is not a place for patient-identifiable information."}},
         {"@type": "Question", "name": "Does it work on iPad?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cognito is a native iPhone and iPad app and needs iOS or iPadOS 18 or later. Optional iCloud sync keeps one library across both."}}
       ]
@@ -486,7 +492,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
 .foot a { text-decoration: none; }
 .foot a:hover { color: var(--label); }
 .foot-links { display: flex; flex-wrap: wrap; gap: var(--s-lg); }
-.foot-links a { padding-block: var(--s-sm); }
+.foot-links a { display: inline-flex; align-items: center; min-height: var(--hit); }
 
 /* --- Legal pages -------------------------------------------------------- */
 .legal-hero { padding: var(--s-xxl) 0 calc(var(--s-xxl) + var(--r-xxxl)); }
@@ -735,7 +741,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
       <svg class="mark" viewBox="0 0 1024 1024" aria-hidden="true"><clipPath id="cog-mark-clip"><rect width="1024" height="1024" rx="232" ry="232"/></clipPath><g clip-path="url(#cog-mark-clip)" transform="translate(0 1024) scale(1 -1)"><path d="M0 0H1024V1024H0Z" fill="#FF6B35"/><path d="M0 170C250 110 770 570 1024 520V0H0Z" fill="#24100C"/><path d="M0 360C250 300 770 760 1024 710V520C770 570 250 110 0 170Z" fill="#FFB45F"/></g></svg>
       <span>Cognito System</span>
     </a>
-    <div class="nav-links"><a class="hide-sm" href="#how">How it works</a><a class="hide-sm" href="#features">Features</a><a class="hide-sm" href="#plans">Plans</a><a class="hide-sm" href="privacy.html">Privacy</a><a class="nav-cta" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Get the app</a></div>
+    <div class="nav-links"><a class="hide-sm" href="#how">How it works</a><a class="hide-sm" href="#features">Features</a><a class="hide-sm" href="#plans">Plans</a><a class="hide-sm" href="privacy.html">Privacy</a><a class="nav-cta" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">Get the app</a></div>
   </div>
 </nav>
 <header class="field" id="top">
@@ -747,23 +753,23 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
         <span class="q">Your material in.</span>
         <span class="a">Exam-ready practice out.</span>
       </h1>
-      <p class="hero-lede field-dim">Pick your exam, add a syllabus, PDF, lecture recording, video or
-        topic, and Cognito writes practice in the terminology and answer depth that exam expects &mdash;
-        then schedules every review with FSRS.</p>
+      <p class="hero-lede field-dim">Start with a topic, notes or a photo. Cognito creates cards you can
+        check and edit before saving, then uses FSRS to plan each review. Choose an exam for more
+        focused practice; Premium also supports PDFs, audio, videos and other sources.</p>
       <div class="hero-actions">
-        <a class="btn btn-invert" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Download on the App Store</a>
+        <a class="btn btn-invert" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">Download on the App Store</a>
         <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
       <ul class="notes field-dim">
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Free to start</li>
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>No account needed</li>
-        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Studies offline</li>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Review saved cards offline</li>
       </ul>
     </div>
     <div class="device-slot"><div class="phone">
   <div class="screen">
     <img src="app-home.webp" width="780" height="1696" loading="eager" fetchpriority="high" decoding="async"
-         alt="The Cognito Home screen: twenty cards due, a daily goal of six of ten, a Review button, and a More ways to study list with Daily Mix, Weak Spots and Learn.">
+         alt="An example Cognito Home screen with cards due, a daily goal, a Review button, and Daily Mix, Weak Spots and Learn study options.">
   </div>
 </div></div>
   </div>
@@ -772,7 +778,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
 <div class="wrap" style="padding-top:var(--s-xl)">
   <dl class="card card-xl proof" style="margin:0" data-reveal>
     <div><dt class="num">80+</dt><dd>school, university, admissions and medical exam formats</dd></div>
-    <div><dt class="num">8</dt><dd>source types, from PDFs and audio to YouTube and your own notes</dd></div>
+    <div><dt class="num">10</dt><dd>free AI generation batches per calendar month</dd></div>
     <div><dt class="num">4</dt><dd>study modes: Classic, Compact, Quiz and Type Answer</dd></div>
     <div><dt class="num">FSRS</dt><dd>the scheduler that decides when each card comes back</dd></div>
   </dl>
@@ -792,20 +798,20 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
 <section class="section wrap" id="how" aria-labelledby="how-h">
   <div class="section-head" data-reveal>
     <p class="eyebrow kicker" style="margin:0">How it works</p>
-    <h2 class="t-title" id="how-h">Three steps, then it runs itself.</h2>
+    <h2 class="t-title" id="how-h">Make a set. Check it. Keep learning.</h2>
   </div>
   <div class="steps"><article class="card step" data-reveal="1">
       <span class="badge"><span class="num">1</span></span>
       <h3 class="t-head">Choose your target</h3>
-      <p>Select the exam you are preparing for, or start from a plain topic. That context follows you through generation, study and your progress.</p>
+      <p>Select the exam you are preparing for, or start without one. Your exam profile shapes the terminology and depth of generated cards.</p>
     </article><article class="card step" data-reveal="2">
       <span class="badge"><span class="num">2</span></span>
       <h3 class="t-head">Add your material</h3>
-      <p>Type a topic, or bring a PDF, photo, lecture recording, YouTube video, webpage, arXiv paper or your own notes. Review and edit every card before it is saved.</p>
+      <p>Create from a topic, pasted notes or a photo for free. Premium adds supported PDFs, audio, YouTube, web and arXiv sources. Check and edit cards before saving.</p>
     </article><article class="card step" data-reveal="3">
       <span class="badge"><span class="num">3</span></span>
       <h3 class="t-head">Practise at the right time</h3>
-      <p>Answer from memory. FSRS reads your answer history and brings each card back just before you would have forgotten it.</p>
+      <p>Review on a schedule shaped by your answer history. Set an exam date and study days to turn your library into an Exam Plan.</p>
     </article></div>
 </section>
 <section class="section wrap" id="features" aria-labelledby="feat-h">
@@ -820,19 +826,19 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
       <div><h3>Exam-aware AI generation</h3><p>Cards written in your exam&rsquo;s terminology and expected answer depth. Nothing enters your library until you have reviewed it.</p></div>
     </li><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3.8h6.2L19 8.6V17a2.2 2.2 0 0 1-2.2 2.2H8A2.2 2.2 0 0 1 5.8 17V6A2.2 2.2 0 0 1 8 3.8z"/><path d="M14 3.8v5h5"/><path d="M9 13h6M9 16h4"/></svg></span>
-      <div><h3>The sources you already study from</h3><p>Topics, PDFs, photos of handwritten notes, audio recordings, YouTube, webpages and arXiv papers.</p></div>
+      <div><h3>The sources you already study from</h3><p>Start free with topics, pasted text and photos. Premium also turns supported PDFs, audio, YouTube, webpages and arXiv papers into cards.</p></div>
     </li><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7.5" width="13" height="13" rx="2.6"/><path d="M7.5 4.5h9.4A3.6 3.6 0 0 1 20.5 8.1v9.4"/></svg></span>
       <div><h3>Four ways to practise</h3><p>Classic, Compact, Quiz and Type Answer &mdash; the interaction changes, the card does not.</p></div>
     </li></ul><ul class="card card-xl list" data-reveal="2"><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.6V12l3.2 2"/></svg></span>
-      <div><h3>Recall that adapts</h3><p>FSRS spaced repetition sets each card&rsquo;s next review from your own answer history. Daily Mix, Weak Spots and Skill Trees decide what to open next.</p></div>
+      <div><h3>Recall that adapts</h3><p>FSRS spaces reviews around your answer history. Daily Mix, Weak Spots, Learn and Exam Plans help you decide what to study next.</p></div>
     </li><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 5H7.6l5.2 7-5.2 7H17"/></svg></span>
       <div><h3>Built for real subjects</h3><p>LaTeX, code, tables, Mermaid diagrams, cloze deletions, image occlusion, tags and text-to-speech &mdash; maths through medicine.</p></div>
     </li><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.8" width="11" height="18.4" rx="2.8"/><path d="M10.6 5.4h2.8"/></svg></span>
-      <div><h3>Native on iPhone and iPad</h3><p>Widgets, Live Activities, offline study, Dynamic Type, VoiceOver and optional iCloud sync across your devices.</p></div>
+      <div><h3>Native on iPhone and iPad</h3><p>Widgets, offline review of saved cards, Dynamic Type, VoiceOver and optional iCloud sync across your devices.</p></div>
     </li></ul></div>
 </section>
 <section class="section wrap" id="privacy" aria-labelledby="priv-h">
@@ -853,22 +859,22 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
 <section class="section wrap" id="plans" aria-labelledby="plans-h">
   <div class="section-head" data-reveal>
     <p class="eyebrow kicker" style="margin:0">Start free</p>
-    <h2 class="t-title" id="plans-h">Build the habit before you subscribe.</h2>
+    <h2 class="t-title" id="plans-h">Start free. Go further with Premium.</h2>
   </div>
   <div class="plans">
     <article class="card card-xl plan" data-reveal="1">
       <p class="eyebrow tier" style="margin:0">Free</p>
       <h3 class="t-title2">The whole study system</h3>
       <p>Everything needed to run active recall on your own material, with AI generation on a monthly allowance.</p>
-      <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Every card and deck you make by hand, unlimited</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>10 AI generations a month</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>FSRS spaced repetition and daily goals</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Classic and Compact study</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Image occlusion, Anki import and every accent theme</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Analytics charts, widgets and optional iCloud sync</span></li></ul>
-      <a class="btn btn-quiet" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">Download free</a>
+      <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Unlimited hand-made cards and review</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>10 AI generation batches per calendar month</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Topics, pasted text and photos for AI creation</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>FSRS, Exam Plans and daily goals</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Classic and Compact study, Anki import</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Rich cards and optional iCloud sync</span></li></ul>
+      <a class="btn btn-quiet" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">Download free</a>
     </article>
     <article class="card card-xl plan card-accent" data-reveal="2">
       <p class="eyebrow tier" style="margin:0">Premium</p>
       <h3 class="t-title2">Deeper exam preparation</h3>
       <p>Lifts the generation cap and unlocks the tools that turn more of your material into practice.</p>
-      <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Unlimited AI cards, from any source</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Voice AI Tutor</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Quiz and Type Answer study</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Deck translation, AI rewrite and mnemonic hints</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Hands-free review with auto-play</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>AI Coach, streak protection and smart reminders</span></li></ul>
-      <a class="btn btn-accent" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">See plans in the app</a>
+      <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Unlimited AI generation from supported sources</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>PDFs, scans, audio, YouTube, web and arXiv</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Text and Voice AI Tutors</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Quiz and Type Answer study</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Deck translation, AI rewrite and mnemonic hints</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Hands-free review, AI Coach and streak protection</span></li></ul>
+      <a class="btn btn-accent" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">See plans in the app</a>
     </article>
   </div>
   <p class="plan-note">Weekly, monthly and yearly plans. Prices, billing periods, trial eligibility
@@ -881,7 +887,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
     <h2 class="t-title" id="faq-h">Before you start.</h2>
   </div>
   <div class="card card-xl faq measure" data-reveal>
-    <details><summary>Do I have to choose an exam?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>No. Pick &ldquo;Learn without an exam&rdquo; during onboarding and study any topic. You can choose or change an exam later in Settings, and existing cards keep working.</p></details><details><summary>Are generated cards guaranteed to match an official syllabus?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>No AI system can guarantee that. Cognito uses your exam as context to shape practice, but you should check generated content against your current syllabus and authoritative sources.</p></details><details><summary>What does the free tier actually include?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Unlimited hand-made cards and decks, FSRS scheduling, Classic and Compact study, image occlusion, Anki import, every accent theme, analytics charts, widgets, optional iCloud sync, and 10 AI generations each calendar month.</p></details><details><summary>Can I use it for medical exams?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Yes &mdash; several medical formats are supported. It is a study tool, not clinical decision support, and it is not a place for patient-identifiable information.</p></details><details><summary>Does it work on iPad?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Yes. Cognito is a native iPhone and iPad app and needs iOS or iPadOS 18 or later. Optional iCloud sync keeps one library across both.</p></details>
+    <details><summary>Do I have to choose an exam?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>No. Pick &ldquo;Learn without an exam&rdquo; during onboarding and study any topic. You can choose or change an exam later in Settings, and existing cards keep working.</p></details><details><summary>Are generated cards guaranteed to match an official syllabus?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>No AI system can guarantee that. Cognito uses your exam as context to shape practice, but you should check generated content against your current syllabus and authoritative sources.</p></details><details><summary>What does the free tier actually include?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Unlimited hand-made cards and review, FSRS scheduling, Classic and Compact study, Exam Plans, Anki import, optional iCloud sync, and 10 AI generation batches per calendar month from topics, pasted text or photos.</p></details><details><summary>Can I use it for medical exams?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Yes &mdash; several medical formats are supported. It is a study tool, not clinical decision support, and it is not a place for patient-identifiable information.</p></details><details><summary>Does it work on iPad?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Yes. Cognito is a native iPhone and iPad app and needs iOS or iPadOS 18 or later. Optional iCloud sync keeps one library across both.</p></details>
   </div>
 </section>
 </main>
@@ -891,19 +897,22 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
     <h2 class="d-display" id="close-h" data-reveal>Prepare for the exam you are actually taking.</h2>
     <p class="t-body" data-reveal="2">Bring your own material. Cognito turns it into focused
       practice and keeps every review on schedule.</p>
-    <a class="btn btn-invert" href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298" data-reveal="3">Get Cognito System</a>
+    <a class="btn btn-invert" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298" data-reveal="3">Get Cognito</a>
   </div>
 </section>
 <footer class="foot">
   <div class="wrap foot-in">
     <span>&copy; 2026 Cognito System. Operated by Aleksei Usanov.</span>
-    <div class="foot-links">
+    <nav class="foot-links" aria-label="Footer">
       <a href="index.html">Home</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="mailto:support@cognitosystem.com">Support</a>
-      <a href="https://apps.apple.com/us/app/cognito-ai-flashcards/id6739693298">App Store</a>
-    </div>
+      <a href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">App Store</a>
+      <a href="https://www.tiktok.com/@cognito.system">TikTok</a>
+      <a href="https://www.instagram.com/cognito.system/">Instagram</a>
+      <a href="https://x.com/cognitoaicards">X</a>
+    </nav>
   </div>
 </footer>
 </body>
