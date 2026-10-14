@@ -716,7 +716,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
     <p class="eyebrow field-dim" style="margin:0">Legal</p>
     <h1 class="d-statmed" id="legal-h">Privacy Policy</h1>
     <p class="lede field-dim">This policy explains what Cognito stores on your device, what is processed when you use online features, and the choices available to you.</p>
-    <span class="updated">Last updated: July 19, 2026</span>
+    <span class="updated">Last updated: October 14, 2026</span>
   </div>
 </header>
 <main id="main" class="sheet legal">
@@ -724,14 +724,14 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
     <div class="card card-xl summary"><h2>The short version</h2>
       <ul>
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Your cards, decks, study history, progress, and settings are stored locally by default.</li>
-        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Optional iCloud sync uses your private CloudKit database.</li>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>iCloud sync uses your private CloudKit database when enabled and available for your device.</li>
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>AI and online features process the content you choose to send so they can provide the requested result.</li>
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Cognito uses Firebase for essential app infrastructure, product analytics, diagnostics, notifications, and selected cloud features.</li>
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>We do not sell personal information and do not use third-party advertising SDKs or cross-app advertising tracking.</li>
       </ul></div>
     <article><section>
         <h2>1. Who we are and what this policy covers</h2>
-        <p>Cognito System (“Cognito,” “we,” “us,” or “our”) is operated by Aleksei Usanov. This policy applies to the Cognito iOS application, cognitosystem.com, and related support interactions.</p>
+        <p>Cognito System (“Cognito,” “we,” “us,” or “our”) is operated by Aleksei Usanov. This policy applies to Cognito for iPhone, iPad and Mac, cognitosystem.com, and related support interactions.</p>
         <p>For privacy questions or requests, email <a href="mailto:support@cognitosystem.com">support@cognitosystem.com</a>.</p>
       </section>
 
@@ -739,9 +739,9 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
         <h2>2. Information stored on your device and in iCloud</h2>
         <h3>Local study data</h3>
         <p>Your cards, decks, folders, tags, scheduling state, study history, goals, app settings, and other learning data are stored locally on your device. This makes normal library access and study possible offline.</p>
-        <h3>Optional iCloud sync</h3>
-        <p>If you enable iCloud sync, Apple CloudKit synchronizes supported study data through the private database associated with your iCloud account. Private CloudKit data is controlled through Apple’s services and is not publicly accessible. Apple’s terms and privacy practices apply to iCloud.</p>
-        <p>Disabling iCloud sync stops future synchronization but does not necessarily delete existing local copies or data already stored in your iCloud account.</p>
+        <h3>iCloud sync</h3>
+        <p>When iCloud sync is enabled and available, Apple CloudKit synchronizes supported study data through the private database associated with your iCloud account. Private CloudKit data is controlled through Apple’s services and is not publicly accessible. Apple’s terms and privacy practices apply to iCloud.</p>
+        <p>On Mac, library synchronization is automatic when iCloud Drive and Cognito’s iCloud access are available through the same Apple Account. Device-level iCloud controls are provided by Apple. Where sync can be disabled, doing so stops future synchronization but does not necessarily delete existing local copies or data already stored in your iCloud account.</p>
       </section>
 
       <section>
@@ -754,7 +754,14 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
           <li>questions and conversation context used by Tutor, Voice Tutor, explanations, hints, translation, rewriting, quality review, or search-grounded generation;</li>
           <li>generated output returned to the app.</li>
         </ul>
-        <p>These requests are generally processed through Google Firebase AI Logic and Google Gemini. In supported regional routing, including certain requests from mainland China, Cognito may use DeepSeek. Search-grounded features may also use Google Search. Provider processing, security, retention, and international transfer practices may apply.</p>
+        <p>These requests are generally processed through Google Firebase AI Logic and Google Gemini. Compatible text requests may automatically fall back to DeepSeek when the primary provider fails before returning output, so the same request may be processed by both providers. After a successful fallback, compatible requests may temporarily continue using DeepSeek. Routing does not determine your country or storefront. Media, Live audio, URL context and explicitly requested Google Search do not use this fallback. Search-grounded features may use Google Search. Provider processing, security, retention, and international transfer practices may apply.</p>
+
+        <h3>Shared topic cache</h3>
+        <p>Eligible card creation from an ordinary study topic may store the topic and original AI-generated questions and answers in a shared Firestore cache. A later request with the same topic and generation settings may reuse that result. Cached answers are not represented as teacher-reviewed. This technical cache is not a public profile or sharing feed.</p>
+        <p>The cache excludes My material, documents, images, audio, links, personal notes, later edits, learning history and existing personal decks. Avoid confidential or identifying information in Topic; automatic checks cannot detect every kind of personal information.</p>
+        <p>Cache records include generation settings, timestamps, expiry and a pseudonymous contributor identifier used for service integrity and privacy requests. Other learners do not receive that identifier. Editing or deleting a personal card does not change the cached original or copies already saved by other learners.</p>
+        <h3>Saved exercises</h3>
+        <p>Preparing an AI exercise sends the question, answer and relevant exercise settings to our online services and AI provider. Prepared results and operation records may be stored to recover interrupted preparation and find previously saved exercises without another generation. Service identifiers and entitlement or allowance records support recovery, access checks and abuse prevention. Personal library deletion does not automatically remove these service records.</p>
         <p class="note"><strong>Do not submit confidential or patient-identifiable information.</strong> Cognito is a study tool, not a system for storing medical records or protected health information. Remove names, dates of birth, record numbers, faces, and other identifying details before using medical study material.</p>
       </section>
 
@@ -771,6 +778,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
           <li><strong>Apple Ads attribution:</strong> non-content campaign, ad group, keyword, country, and placement identifiers that help us understand whether an App Store ad led to an install or app open.</li>
         </ul>
         <p>Cognito does not use this information to track you across apps or websites owned by other companies.</p>
+        <p>Mac Release builds send crash diagnostics to Firebase Crashlytics by default. Turn off Send Crash Reports in Cognito Settings to stop automatic submission and discard pending reports; reports already sent cannot be recalled. Cognito does not add card text or account identifiers as custom Mac crash logs or keys. The Mac app does not enable Firebase product Analytics. Development builds and automated tests do not send Mac crash reports. The online services used by Mac still process authentication, installation, security and subscription information needed for their functions.</p>
       </section>
 
       <section>
@@ -781,7 +789,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
 
       <section>
         <h2>6. Device permissions</h2>
-        <p>Cognito may request access to the microphone, camera, photo library, files, notifications, or speech-related services when you use a feature that needs them. Access is controlled by iOS. You can change permissions at any time in the iOS Settings app, although the related feature may stop working.</p>
+        <p>Cognito may request access to the microphone, camera, photo library, files, notifications, or speech-related services when you use a feature that needs them. Available permissions depend on the platform and feature. Access is controlled by Apple’s operating system. You can change permissions in Settings on iPhone and iPad or System Settings on Mac, although the related feature may stop working. Mac deck import and export use native file selection inside App Sandbox; importing a deck does not send the file to Firebase or AI. Saved imported content follows the library’s iCloud synchronization behavior.</p>
       </section>
 
       <section>
@@ -803,7 +811,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
             <tr><td>Apple</td><td>App Store distribution and purchases, StoreKit, iCloud/CloudKit sync, APNs notifications, device permissions, and Apple Ads attribution.</td></tr>
             <tr><td>Google Firebase</td><td>Anonymous authentication, analytics, Crashlytics, Firestore, App Check, Cloud Messaging, and Firebase AI Logic.</td></tr>
             <tr><td>Google Gemini and Search</td><td>AI generation, tutoring, content transformation, and search-grounded responses when those features are requested.</td></tr>
-            <tr><td>DeepSeek</td><td>AI processing for supported regional routing, including certain requests from mainland China.</td></tr>
+            <tr><td>DeepSeek</td><td>Automatic fallback for compatible text AI requests.</td></tr>
             <tr><td>Website hosting provider</td><td>Delivery and security of cognitosystem.com, which may involve standard request logs such as IP address, browser type, and access time.</td></tr>
           </tbody>
         </table></div>
@@ -819,12 +827,15 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
           <li>Crashlytics crash data is generally retained according to Google’s service settings and documentation, commonly for approximately 90 days.</li>
           <li>Firebase identifiers, analytics, survey responses, service records, and security logs are retained only as long as needed for the purposes described, configured retention periods, legal obligations, or dispute prevention.</li>
           <li>AI providers may retain or log requests and outputs according to their service terms, safety requirements, and our provider configuration.</li>
+          <li>Generated topic-cache entries stop being reused after 30 days and are scheduled for cloud deletion, which may take additional time. A protected local retry queue holds at most 20 original sets for retry within seven days; expired local entries are removed when that queue is next accessed. Copies saved by learners remain in their own collections until deleted. Cache rate-limit records are scheduled to expire after two days; blocked-topic markers may be retained to prevent reintroduction of removed content.</li>
+          <li>Temporary Mac import/export files are removed after use or by expiry cleanup. Exported files you save remain at your chosen destination until you remove them.</li>
         </ul>
       </section>
 
       <section>
         <h2>10. Your choices and rights</h2>
-        <p>You can edit or delete study content inside Cognito, disable iCloud sync, change iOS permissions and notification settings, and cancel subscriptions through your Apple ID settings.</p>
+        <p>You can edit or delete study content inside Cognito, manage device-level iCloud access and permissions through Apple’s settings, change notification settings where supported, and cancel subscriptions through your Apple Account. On Mac, Send Crash Reports in Cognito Settings controls future automatic crash submission.</p>
+        <p>To request removal of cached topic content or report private or incorrect content, email <a href="mailto:support@cognitosystem.com">support@cognitosystem.com</a> with the topic and approximate creation date. We may ask for the installation’s Firebase identifier to locate and verify contributor records. Removing a cache record does not delete copies already saved on another learner’s device.</p>
         <p>Depending on where you live, you may have rights to access, correct, delete, restrict, object to processing of, or receive a portable copy of personal information. You may also have the right to complain to your local data-protection authority.</p>
         <p>To make a privacy request, email <a href="mailto:support@cognitosystem.com">support@cognitosystem.com</a>. Much of our service data is pseudonymous, so we may ask for a diagnostic or Firebase identifier and other information reasonably needed to locate and verify the relevant records. Deleting local app data does not automatically delete records held by service providers.</p>
       </section>
