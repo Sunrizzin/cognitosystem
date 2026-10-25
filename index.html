@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.className = "js";</script>
 <title>Cognito: Exam Prep &amp; Study — AI flashcards with a plan</title>
-<meta name="description" content="Turn your notes into exam practice. Check AI flashcards before saving, follow an Exam Plan, and review with FSRS. Free to start on iPhone and iPad.">
+<meta name="description" content="Turn your notes into exam practice. Check AI flashcards before saving, follow an Exam Plan, and review with FSRS. Free to start on iPhone, iPad and Mac.">
 <meta name="theme-color" content="#ba4e27" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#984020" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://cognitosystem.com/">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="image" href="media/study-iphone.webp" fetchpriority="high">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cognitosystem.com/">
 <meta property="og:site_name" content="Cognito System">
@@ -30,7 +32,7 @@
       "@type": "SoftwareApplication",
       "name": "Cognito: Exam Prep & Study",
       "alternateName": "Cognito System",
-      "operatingSystem": "iOS 18.0 or later, iPadOS 18.0 or later",
+      "operatingSystem": "iOS 18.0 or later, iPadOS 18.0 or later, macOS 15.0 or later",
       "applicationCategory": "EducationalApplication",
       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
       "description": "Turn your own material into exam-focused flashcards, check every answer before saving, and follow an Exam Plan with FSRS spaced repetition.",
@@ -48,9 +50,9 @@
       "mainEntity": [
         {"@type": "Question", "name": "Do I have to choose an exam?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pick \u201cLearn without an exam\u201d during onboarding and study any topic. You can choose or change an exam later in Settings, and existing cards keep working."}},
         {"@type": "Question", "name": "Are generated cards guaranteed to match an official syllabus?", "acceptedAnswer": {"@type": "Answer", "text": "No AI system can guarantee that. Cognito uses your exam as context to shape practice, but you should check generated content against your current syllabus and authoritative sources."}},
-        {"@type": "Question", "name": "What does the free tier actually include?", "acceptedAnswer": {"@type": "Answer", "text": "Unlimited hand-made cards and review, FSRS scheduling, Classic and Compact study, Exam Plans, Anki import, optional iCloud sync, and 10 AI generation batches per calendar month from topics, pasted text, or photos."}},
+        {"@type": "Question", "name": "What does the free tier actually include?", "acceptedAnswer": {"@type": "Answer", "text": "Unlimited hand-made cards and review, FSRS scheduling, Exam Plans, saved exercises in every format, Anki import, iCloud sync, and 10 AI generation batches per calendar month on each device from topics, pasted text or photos, plus one free try of a Premium source such as a PDF."}},
         {"@type": "Question", "name": "Can I use it for medical exams?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 several medical formats are supported. It is a study tool, not clinical decision support, and it is not a place for patient-identifiable information."}},
-        {"@type": "Question", "name": "Does it work on iPad?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cognito is a native iPhone and iPad app and needs iOS or iPadOS 18 or later. Optional iCloud sync keeps one library across both."}}
+        {"@type": "Question", "name": "Does it work on iPad and Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cognito is native on iPhone and iPad (iOS or iPadOS 18 or later) and on Mac (macOS 15 or later), with a companion Apple Watch app for quick reviews. Every version is free to download, iCloud sync keeps one library across them, and one Premium subscription covers iPhone, iPad and Mac."}}
       ]
     }
   ]
@@ -180,7 +182,12 @@ img, svg { display: block; max-width: 100%; }
 svg.ic { width: 18px; height: 18px; flex: none; display: inline-block; vertical-align: -.18em; }
 a { color: var(--accent-strong); }
 a:hover { color: var(--accent); }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 3px; border-radius: 4px; }
+/* On the accent field the ink ring would vanish; white clears 4.9:1 there. */
+.nav :focus-visible, .field :focus-visible { outline-color: #fff; }
+a { text-underline-offset: .18em; }
+::selection { background: var(--tint-20); }
+.field ::selection, .nav ::selection { background: rgba(255, 255, 255, .3); color: #fff; }
 
 /* --- Apple type ramp (points map 1:1 to px) ------------------------------ */
 .t-large   { font-size: 34px; line-height: 41px; font-weight: 700; letter-spacing: -.4px; }
@@ -207,11 +214,6 @@ a:hover { color: var(--accent); }
 .d-statsm  { font-size: 26px; line-height: 1.15; }
 .num       { font-family: var(--rounded); font-variant-numeric: tabular-nums; }
 
-.eyebrow {
-  font-size: 11px; line-height: 13px; font-weight: 600;
-  letter-spacing: .08em; text-transform: uppercase;
-}
-
 .muted { color: var(--label-2); }
 
 /* --- Layout -------------------------------------------------------------- */
@@ -220,7 +222,6 @@ a:hover { color: var(--accent); }
 
 .section { padding: var(--s-xxxl) 0; }
 .section-head { display: flex; flex-direction: column; gap: var(--s-md); margin-bottom: var(--s-xl); }
-.section-head .kicker { color: var(--accent-ink); }
 .section-head p { margin: 0; color: var(--label-2); max-width: 620px; }
 .section-head h2 { margin: 0; max-width: 720px; }
 
@@ -312,7 +313,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
    clear 4.5:1, so secondary field copy stops at .90 and anything 13px or
    smaller stays pure white. */
 .field-dim { color: rgba(255, 255, 255, .90); }
-.field .eyebrow, .field .notes, .field .updated { color: #fff; }
+.field .notes, .field .updated { color: #fff; }
 
 /* Concentric outlines that give the plane depth without a glow or a glass
    layer, fading out with distance from the corner they radiate from. */
@@ -412,17 +413,13 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
 }
 .screen img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- Proof strip -------------------------------------------------------- */
-.proof { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.proof > div { padding: var(--s-xl); }
-.proof > div + div { border-left: .75px solid var(--hairline); }
-.proof dt { font-family: var(--rounded); font-size: 36px; line-height: 1.1; font-weight: 700; letter-spacing: -.02em; color: var(--accent-ink); }
-.proof dd { margin: var(--s-xs) 0 0; color: var(--label-2); font-size: 13px; line-height: 18px; }
-
 /* --- Chip cloud --------------------------------------------------------- */
 .cloud { display: flex; flex-wrap: wrap; gap: var(--s-sm); }
 .fine { margin: var(--s-lg) 0 0; color: var(--label-2); font-size: 13px; line-height: 18px; max-width: 68ch; }
-.guide-link { display: flex; align-items: center; justify-content: space-between; gap: var(--s-lg); margin-top: var(--s-xl); padding: var(--s-xl); text-decoration: none; }
+.guides { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-lg); margin-top: var(--s-xl); }
+.guide-link { display: flex; align-items: center; justify-content: space-between; gap: var(--s-lg); padding: var(--s-xl); text-decoration: none; }
+.chip-link { text-decoration: none; color: var(--accent-strong); border-color: var(--tint-20); background: var(--tint-08); }
+.chip-link:hover { color: var(--accent-strong); background: var(--tint-12); }
 .guide-link strong { display: block; color: var(--label); font-size: 20px; line-height: 25px; }
 .guide-link span { display: block; margin-top: var(--s-xs); color: var(--label-2); font-size: 15px; line-height: 21px; }
 .guide-link svg { width: 20px; height: 20px; flex: none; color: var(--accent-ink); }
@@ -460,8 +457,7 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
 /* Column layout so the call to action sits on the card's floor whatever
    the list above it costs — the two cards then end on the same line. */
 .plan { padding: var(--s-xl); display: flex; flex-direction: column; }
-.plan .tier { color: var(--accent-ink); }
-.plan h3 { margin: var(--s-sm) 0 var(--s-sm); }
+.plan h3 { margin: 0 0 var(--s-sm); }
 .plan > p { margin: 0 0 var(--s-lg); color: var(--label-2); font-size: 15px; line-height: 21px; }
 .plan ul { list-style: none; margin: 0 0 var(--s-xl); padding: 0; display: grid; gap: var(--s-md); }
 .plan ul:last-of-type { margin-bottom: auto; }
@@ -529,24 +525,210 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
 .toc a { text-decoration: none; }
 .toc a:hover .chip { background: var(--separator); }
 
+/* --- Screen recordings -------------------------------------------------- */
+/* Real captures of the app (tools/make_media.py), never mock-ups. Each one
+   carries its own pause control: a loop longer than five seconds must be
+   stoppable, and Reduce Motion starts it paused on its first frame. */
+.rec { position: relative; margin: 0; }
+.screen video, .mac-window video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.loop-toggle {
+  display: inline-flex; align-items: center; gap: var(--s-sm);
+  min-height: 36px; padding: 0 14px; border: 0; border-radius: 999px;
+  font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+  background: var(--fill-2); color: var(--label);
+}
+.loop-toggle svg { width: 14px; height: 14px; flex: none; }
+.loop-toggle .i-play, .loop-toggle[aria-pressed="true"] .i-pause { display: none; }
+.loop-toggle[aria-pressed="true"] .i-play { display: block; }
+.field .loop-toggle { background: rgba(255, 255, 255, .18); color: #fff; }
+.field .loop-toggle:hover { background: rgba(255, 255, 255, .26); }
+.loop-toggle:hover { background: var(--separator); }
+.no-js .loop-toggle { display: none; }
+.device-slot { gap: var(--s-md); }
+.rec-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--s-sm) var(--s-md); }
+.field .rec-note { color: #fff; }
+/* Two columns: the device, its control and its caption fit the first
+   viewport (nav 60, hero padding 48, control row about 60). */
+@media (min-width: 1001px) {
+  .phone { width: min(410px, 100%, max(280px, calc((100vh - 200px) * 402 / 874 + 20px))); }
+  @supports (height: 100svh) {
+    .phone { width: min(410px, 100%, max(280px, calc((100svh - 200px) * 402 / 874 + 20px))); }
+  }
+}
+.rec-note { margin: 0; font-size: 13px; line-height: 18px; color: var(--label-2); }
+
+/* --- Try one review ----------------------------------------------------- */
+/* The app's study surface at web scale: a white card on the grouped
+   background, the reveal chip, and the four rating buttons. The rating
+   fills are Apple's Increased Contrast system colours, the variants iOS
+   itself switches to when white labels need more contrast: the standard
+   red, orange, blue and green stop at 2.2-3.6:1 under white 15px text.
+   Green goes one step further (#248A3D is 4.4:1) to clear 4.5:1. */
+.try { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.try-copy h2 { margin: 0 0 var(--s-md); }
+.try-copy p { margin: 0 0 var(--s-lg); color: var(--label-2); max-width: 46ch; }
+kbd {
+  display: inline-block; min-width: 26px; padding: 2px 7px; border-radius: 6px;
+  font: 600 13px/18px var(--sans); text-align: center; color: var(--label);
+  background: var(--surface); border: .75px solid var(--separator); box-shadow: 0 1px 0 var(--separator);
+}
+.keys { display: flex; flex-wrap: wrap; align-items: center; gap: 6px var(--s-sm); font-size: 15px; line-height: 21px; }
+.keys .range { display: inline-flex; align-items: center; gap: 3px; }
+@media (hover: none) and (pointer: coarse) { .keys { display: none; } }
+
+.demo { padding: var(--s-lg); }
+.demo-stage { position: relative; perspective: 1400px; }
+.demo-card {
+  position: relative; display: grid; place-items: center; width: 100%; min-height: 248px;
+  padding: var(--s-xxl) var(--s-xl) 64px; border: .75px solid var(--hairline); border-radius: var(--r-xl);
+  background: var(--surface); color: var(--label); box-shadow: var(--sh-md);
+  font: inherit; text-align: center; cursor: pointer;
+  transform-style: preserve-3d;
+}
+.demo-card:disabled { cursor: default; }
+.demo-card:disabled .demo-hint { display: none; }
+.demo-q, .demo-a { font-size: 20px; line-height: 26px; font-weight: 600; letter-spacing: -.2px; max-width: 26ch; text-wrap: balance; }
+.demo-a { font-weight: 500; }
+.demo-hint {
+  position: absolute; left: 50%; bottom: var(--s-lg); transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  padding: 6px 12px; border-radius: 999px; background: var(--tint-12); color: var(--accent-strong);
+  font-size: 13px; line-height: 16px; font-weight: 600;
+}
+.demo-hint svg { width: 14px; height: 14px; }
+.demo-card .side { font-size: 12px; line-height: 16px; font-weight: 600; color: var(--label-2); position: absolute; top: var(--s-lg); left: var(--s-lg); }
+.js .demo-a, .js .demo-card.is-open .demo-q, .js .demo-card.is-open .demo-hint { display: none; }
+.js .demo-card.is-open .demo-a { display: block; }
+.no-js .demo-hint, .no-js .grades, .no-js .demo-reset { display: none; }
+.no-js .demo-a { display: block; margin-top: var(--s-md); color: var(--label-2); }
+
+.grades { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-sm); margin-top: var(--s-md); }
+.grade {
+  display: grid; justify-items: center; gap: 1px; min-height: 54px; padding: 8px 4px;
+  border: 0; border-radius: var(--r-card); color: #fff; cursor: pointer;
+  font: inherit; font-size: 15px; line-height: 20px; font-weight: 600;
+}
+.grade small { font-size: 12px; line-height: 15px; font-weight: 500; opacity: .92; }
+.grade[data-grade="again"] { background: #d70015; }
+.grade[data-grade="hard"]  { background: #c93400; }
+.grade[data-grade="good"]  { background: #0040dd; }
+.grade[data-grade="easy"]  { background: #1f7f38; }
+/* Until the answer shows, the ratings wait in neutral grey; their colour
+   arrives with the answer, which is the moment they become meaningful. */
+.grade { transition: background-color var(--d-fade) ease-out, color var(--d-fade) ease-out, filter var(--d-press) var(--e-press); }
+.grade:disabled { background: var(--fill-2); color: var(--label-2); cursor: default; }
+.grade:disabled kbd { background: rgba(0, 0, 0, .06); color: var(--label-2); }
+.grade small, .ruler-ticks li { font-family: var(--rounded); font-variant-numeric: tabular-nums; }
+.grade:not(:disabled):hover { filter: brightness(1.1); }
+.grade:not(:disabled):active, .demo-card:not(:disabled):active { opacity: .9; }
+.demo-card { transition: box-shadow var(--d-press) var(--e-press); }
+.demo-card:not(:disabled):hover { box-shadow: var(--sh-lg); }
+@media (prefers-reduced-motion: no-preference) {
+  .grade:not(:disabled):active { transform: scale(.98); }
+}
+.hint-click { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .hint-touch { display: none; }
+  .hint-click { display: inline; }
+}
+.ruler .ts { display: none; }
+@media (max-width: 480px) {
+  .ruler .tl { display: none; }
+  .ruler .ts { display: inline; }
+}
+.ruler-pins:empty::before {
+  content: "Rated cards land on the day they come back";
+  position: absolute; left: 0; bottom: 4px;
+  font-size: 13px; line-height: 18px; color: var(--label-2);
+}
+/* Done: the rating row goes, the card becomes the session summary, and
+   the ruler with its pins is what is left to look at. */
+.demo.is-done .grades { display: none; }
+.demo.is-done .demo-card { min-height: 0; padding: var(--s-xl) var(--s-xl) var(--s-lg); place-items: stretch; text-align: left; }
+.demo.is-done .side { position: static; margin-bottom: var(--s-sm); }
+.demo.is-done .demo-q { max-width: none; font-size: 15px; line-height: 21px; font-weight: 400; letter-spacing: 0; }
+.demo-sum { display: grid; gap: var(--s-sm); }
+.demo-sum span { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 var(--s-md); font-size: 15px; line-height: 21px; }
+.demo-sum b { font-weight: 600; color: var(--label); }
+.demo-sum i { font-style: normal; color: var(--label-2); font-family: var(--rounded); white-space: nowrap; }
+.grade kbd { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .grade kbd {
+    display: inline-block; min-width: 0; padding: 0 5px; margin-top: 2px; border: 0; box-shadow: none;
+    background: rgba(0, 0, 0, .24); color: #fff; font-size: 11px; line-height: 15px;
+  }
+}
+
+/* When each card comes back: a log-scaled ruler, Today to one month. */
+.ruler { position: relative; margin: var(--s-lg) var(--s-sm) 0; padding-top: 88px; }
+.ruler-track { height: 4px; border-radius: 2px; background: var(--fill-2); }
+.ruler-ticks { position: relative; height: 34px; margin: 0; padding: 0; list-style: none; }
+.ruler-ticks li {
+  position: absolute; top: 0; transform: translateX(-50%); padding-top: 10px;
+  font-size: 12px; line-height: 16px; color: var(--label-2); white-space: nowrap;
+}
+.ruler-ticks li::before { content: ""; position: absolute; top: -4px; left: 50%; width: 1px; height: 10px; background: var(--separator); }
+.ruler-ticks li:first-child { transform: none; }
+.ruler-ticks li:first-child::before { left: 0; }
+.ruler-ticks li:last-child { transform: translateX(-100%); }
+.ruler-ticks li:last-child::before { left: auto; right: 0; }
+.ruler-pins { position: absolute; inset: 0 0 auto; height: 84px; margin: 0; padding: 0; list-style: none; }
+.pin {
+  position: absolute; bottom: 0; transform: translateX(-50%);
+  padding: 4px 9px; border-radius: 999px; white-space: nowrap;
+  font-size: 12px; line-height: 16px; font-weight: 600; color: #fff;
+}
+.pin::after { content: ""; position: absolute; left: 50%; bottom: -8px; width: 2px; height: 8px; margin-left: -1px; background: inherit; }
+.pin[data-grade="again"] { background: #d70015; }
+.pin[data-grade="hard"]  { background: #c93400; }
+.pin[data-grade="good"]  { background: #0040dd; }
+.pin[data-grade="easy"]  { background: #1f7f38; }
+/* A lifted pin keeps its stem down to the ruler, drawn behind the pins in
+   the lanes below so it never crosses their labels. */
+.pin { z-index: 3; }
+.pin.lift-1 { bottom: 28px; z-index: 2; }
+.pin.lift-2 { bottom: 56px; z-index: 1; }
+.pin.lift-1::after { height: 36px; bottom: -36px; }
+.pin.lift-2::after { height: 64px; bottom: -64px; }
+.demo-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-md); margin-top: var(--s-md); }
+.demo-status { margin: 0; min-height: 21px; font-size: 15px; line-height: 21px; color: var(--label); }
+.demo-reset[hidden] { display: none; }
+.demo-note { margin: var(--s-lg) 0 0; font-size: 13px; line-height: 18px; color: var(--label-2); }
+
+/* --- Mac ---------------------------------------------------------------- */
+.mac { display: grid; gap: var(--s-xl); }
+.mac-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-xl) clamp(32px, 5vw, 72px); align-items: end; }
+.mac-head h2 { margin: 0; }
+.mac-head p { margin: 0; color: var(--label-2); max-width: 52ch; }
+.mac-window {
+  aspect-ratio: 1280 / 896; overflow: hidden; border-radius: 14px; background: #f7f5f3;
+  box-shadow: 0 0 0 .75px rgba(0, 0, 0, .16), 0 24px 56px rgba(0, 0, 0, .16), 0 6px 14px rgba(0, 0, 0, .08);
+}
+@media (prefers-color-scheme: dark) {
+  .mac-window { box-shadow: 0 0 0 .75px rgba(255, 255, 255, .18), 0 24px 56px rgba(0, 0, 0, .6); }
+}
+.mac-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-md); }
+.mac-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-xl); margin: 0; padding: var(--s-lg) 0 0; list-style: none; border-top: .75px solid var(--hairline); }
+.mac-facts strong { display: block; margin-bottom: var(--s-xs); font-size: 17px; line-height: 22px; font-weight: 600; }
+.mac-facts span { display: block; color: var(--label-2); font-size: 15px; line-height: 21px; }
+
 /* --- Responsive --------------------------------------------------------- */
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .band { grid-template-columns: minmax(0, 1fr); gap: var(--s-xl); }
+  .try, .mac-head { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .mac-facts { grid-template-columns: minmax(0, 1fr); gap: var(--s-lg); }
 }
 @media (max-width: 860px) {
-  .proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .proof > div:nth-child(3) { border-left: 0; }
-  .proof > div:nth-child(n + 3) { border-top: .75px solid var(--hairline); }
-  .steps, .cols-2, .plans { grid-template-columns: minmax(0, 1fr); }
+  .steps, .cols-2, .plans, .guides { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
   .wrap { width: calc(100% - 32px); }
   .phone { border-radius: 46px; }
   .screen { border-radius: 36px; }
   .section { padding: var(--s-xxl) 0; }
-  .proof { grid-template-columns: minmax(0, 1fr); }
-  .proof > div + div { border-left: 0; border-top: .75px solid var(--hairline); }
   .hero-actions .btn { width: 100%; }
 }
 
@@ -746,14 +928,13 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
       <svg class="mark" viewBox="0 0 1024 1024" aria-hidden="true"><clipPath id="cog-mark-clip"><rect width="1024" height="1024" rx="232" ry="232"/></clipPath><g clip-path="url(#cog-mark-clip)" transform="translate(0 1024) scale(1 -1)"><path d="M0 0H1024V1024H0Z" fill="#FF6B35"/><path d="M0 170C250 110 770 570 1024 520V0H0Z" fill="#24100C"/><path d="M0 360C250 300 770 760 1024 710V520C770 570 250 110 0 170Z" fill="#FFB45F"/></g></svg>
       <span>Cognito System</span>
     </a>
-    <div class="nav-links"><a class="hide-sm" href="exam-study-plan.html">Exam plan</a><a class="hide-sm" href="#how">How it works</a><a class="hide-sm" href="#features">Features</a><a class="hide-sm" href="#plans">Plans</a><a class="nav-cta" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">Get the app</a></div>
+    <div class="nav-links"><a class="hide-sm" href="exam-study-plan.html">Exam plan</a><a class="hide-sm" href="#how">How it works</a><a class="hide-sm" href="#mac">Mac</a><a class="hide-sm" href="#plans">Plans</a><a class="nav-cta" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">Get the app</a></div>
   </div>
 </nav>
 <header class="field" id="top">
   <span class="echo" aria-hidden="true"><i></i><i></i></span>
   <div class="wrap hero hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow field-dim" style="margin:0">Built for the exam you are taking</p>
       <h1 class="d-hero">
         <span class="q">Your material in.</span>
         <span class="a">Exam-ready practice out.</span>
@@ -769,44 +950,52 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Free to start</li>
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>No account needed</li>
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>Review saved cards offline</li>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg>iPhone, iPad and Mac</li>
       </ul>
     </div>
-    <div class="device-slot"><div class="phone">
-  <div class="screen">
-    <img src="app-home.webp" width="780" height="1696" loading="eager" fetchpriority="high" decoding="async"
-         alt="An example Cognito Home screen with cards due, a daily goal, a Review button, and Daily Mix, Weak Spots and Learn study options.">
-  </div>
-</div></div>
+    <figure class="device-slot rec" data-loop>
+      <div class="phone"><div class="screen">
+        <video width="780" height="1696" muted loop playsinline preload="none" poster="media/study-iphone.webp"
+               aria-label="Screen recording of Cognito on iPhone: Home, then a Daily Mix session where each card is answered, revealed and rated Good, Again or Easy, ending on the session result.">
+          <source src="media/study-iphone.mp4" type="video/mp4">
+        </video>
+      </div></div>
+      <figcaption class="rec-bar">
+        <button class="loop-toggle" type="button" aria-pressed="false"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4.5" width="4" height="15" rx="1.2"/><rect x="14" y="4.5" width="4" height="15" rx="1.2"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 4.8v14.4a1 1 0 0 0 1.5.86l12-7.2a1 1 0 0 0 0-1.72l-12-7.2a1 1 0 0 0-1.5.86z"/></svg><span>Pause recording</span></button>
+        <p class="rec-note">Recorded on iPhone with a sample library.</p>
+      </figcaption>
+    </figure>
   </div>
 </header>
 <main id="main" class="sheet">
-<div class="wrap" style="padding-top:var(--s-xl)">
-  <dl class="card card-xl proof" style="margin:0" data-reveal>
-    <div><dt class="num">80+</dt><dd>school, university, admissions and medical exam formats</dd></div>
-    <div><dt class="num">10</dt><dd>free AI generation batches per calendar month</dd></div>
-    <div><dt class="num">4</dt><dd>study modes: Classic, Compact, Quiz and Type Answer</dd></div>
-    <div><dt class="num">FSRS</dt><dd>the scheduler that decides when each card comes back</dd></div>
-  </dl>
-</div>
 <section class="section wrap" aria-labelledby="exam-h">
   <div class="section-head" data-reveal>
-    <p class="eyebrow kicker" style="margin:0">One system, many goals</p>
     <h2 class="t-title" id="exam-h">Your exam is context, not a label.</h2>
-    <p class="t-body">Cognito uses the exam you selected to shape what it generates and how deeply it
-      expects you to answer. You can also study with no exam chosen and set one later in Settings.</p>
+    <p class="t-body">Choose from more than 150 school, university, admissions, language and medical
+      exams. Cognito uses the one you select to shape what it generates and how deeply it expects you to
+      answer. You can also study with no exam chosen and set one later in Settings.</p>
   </div>
-  <div class="cloud" data-reveal="2"><span class="chip">GCSE</span><span class="chip">A-Level</span><span class="chip">IB</span><span class="chip">SAT</span><span class="chip">ACT</span><span class="chip">AP</span><span class="chip">MCAT</span><span class="chip">USMLE</span><span class="chip">NCLEX</span><span class="chip">PLAB</span><span class="chip">MCCQE</span><span class="chip">NEET</span><span class="chip">JEE</span><span class="chip">ENEM</span><span class="chip">YKS</span><span class="chip">ATAR</span><span class="chip">VCE</span><span class="chip">Gaokao</span><span class="chip">Common Test</span><span class="chip">Suneung</span><span class="chip">JAMB</span><span class="chip">WAEC</span><span class="chip">UPSC</span><span class="chip">Qu&eacute;bec Secondary</span></div>
+  <div class="cloud" data-reveal="2"><a class="chip chip-link" href="gcse-revision.html">GCSE</a><a class="chip chip-link" href="a-level-revision.html">A-Level</a><span class="chip">IB</span><span class="chip">SAT</span><span class="chip">ACT</span><span class="chip">AP</span><span class="chip">MCAT</span><span class="chip">USMLE</span><span class="chip">NCLEX</span><span class="chip">PLAB</span><span class="chip">MCCQE</span><span class="chip">NEET</span><span class="chip">JEE</span><span class="chip">ENEM</span><span class="chip">YKS</span><span class="chip">ATAR</span><span class="chip">VCE</span><span class="chip">Gaokao</span><span class="chip">Common Test</span><span class="chip">Suneung</span><span class="chip">JAMB</span><span class="chip">WAEC</span><span class="chip">IELTS</span><span class="chip">HKDSE</span></div>
   <p class="fine">Exam names and trademarks belong to their respective owners. Cognito is an
     independent study tool and is not endorsed by or affiliated with exam boards or testing
     organisations.</p>
-  <a class="card card-xl guide-link" href="exam-study-plan.html">
-    <div><strong>Build an exam study plan that fits your week</strong><span>Choose realistic study days, make room for reviews, and adjust when life interrupts.</span></div>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
-  </a>
+  <div class="guides">
+    <a class="card card-xl guide-link" href="gcse-revision.html">
+      <div><strong>GCSE revision by board</strong><span>33 AQA, Edexcel, OCR, Eduqas, WJEC and CCEA specifications.</span></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </a>
+    <a class="card card-xl guide-link" href="a-level-revision.html">
+      <div><strong>A-level revision by board</strong><span>20 AQA, OCR and Edexcel specifications.</span></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </a>
+    <a class="card card-xl guide-link" href="exam-study-plan.html">
+      <div><strong>A study plan that fits your week</strong><span>Realistic study days, room for reviews, and what to do when life interrupts.</span></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </a>
+  </div>
 </section>
 <section class="section wrap" id="how" aria-labelledby="how-h">
   <div class="section-head" data-reveal>
-    <p class="eyebrow kicker" style="margin:0">How it works</p>
     <h2 class="t-title" id="how-h">Make a set. Check it. Keep learning.</h2>
   </div>
   <div class="steps"><article class="card step" data-reveal="1">
@@ -823,22 +1012,89 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
       <p>Review on a schedule shaped by your answer history. Set an exam date and study days to turn your library into an Exam Plan.</p>
     </article></div>
 </section>
+<section class="section wrap" id="try" aria-labelledby="try-h">
+  <div class="try">
+    <div class="try-copy" data-reveal>
+      <h2 class="t-title" id="try-h">Recall it first. Then rate it.</h2>
+      <p class="t-body">Every review works the same way: answer from memory, reveal the card, and say how it
+        went. Cognito&rsquo;s scheduler, FSRS, turns that rating into the day the card comes back &mdash;
+        tomorrow if it slipped, weeks away if it was easy.</p>
+      <p class="keys"><span>On a keyboard:</span> <kbd>Space</kbd> <span>reveals,</span> <span class="range"><kbd>1</kbd>&ndash;<kbd>4</kbd></span> <span>rates.</span></p>
+    </div>
+    <div class="card card-xl demo" data-demo data-reveal="2">
+      <div class="demo-stage">
+        <button class="demo-card" type="button">
+          <span class="side">Question</span>
+          <span class="demo-q">Why does ice float on water?</span>
+          <span class="demo-a">It&rsquo;s less dense than liquid water.</span>
+          <span class="demo-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11.5V5.8a1.6 1.6 0 0 1 3.2 0v4.6"/><path d="M12.2 10.2V9a1.6 1.6 0 0 1 3.2 0v2"/><path d="M15.4 10.6a1.6 1.6 0 0 1 3.2 0v3.6a6 6 0 0 1-6 6h-1.2a6 6 0 0 1-4.6-2.2l-2.4-3a1.5 1.5 0 0 1 2.3-1.9L9 15"/></svg><span class="hint-touch">Tap card to reveal answer</span><span class="hint-click">Click the card or press Space</span></span>
+        </button>
+      </div>
+      <div class="grades" role="group" aria-label="Rate your answer">
+        <button class="grade" type="button" data-grade="again" disabled>Again<small>1 day</small><kbd aria-hidden="true">1</kbd></button>
+        <button class="grade" type="button" data-grade="hard" disabled>Hard<small>1 day</small><kbd aria-hidden="true">2</kbd></button>
+        <button class="grade" type="button" data-grade="good" disabled>Good<small>3 days</small><kbd aria-hidden="true">3</kbd></button>
+        <button class="grade" type="button" data-grade="easy" disabled>Easy<small>2 weeks</small><kbd aria-hidden="true">4</kbd></button>
+      </div>
+      <div class="ruler" aria-hidden="true">
+        <ol class="ruler-pins"></ol>
+        <div class="ruler-track"></div>
+        <ol class="ruler-ticks">
+          <li style="left:0">Today</li><li style="left:20.19%"><span class="tl">1 day</span><span class="ts">1d</span></li><li style="left:40.37%"><span class="tl">3 days</span><span class="ts">3d</span></li><li style="left:60.55%"><span class="tl">1 week</span><span class="ts">1w</span></li><li style="left:78.45%"><span class="tl">2 weeks</span><span class="ts">2w</span></li><li style="left:100%"><span class="tl">1 month</span><span class="ts">1mo</span></li>
+        </ol>
+      </div>
+      <div class="demo-foot">
+        <p class="demo-status" role="status">Card 1 of 3</p>
+        <button class="loop-toggle demo-reset" type="button" hidden>Start over</button>
+      </div>
+      <p class="demo-note">Sample cards. The days are Cognito&rsquo;s first intervals for a brand-new card at
+        the default 90% recall target. Longer ones get a small random spread so reviews don&rsquo;t bunch
+        up, and later intervals follow your own history.</p>
+    </div>
+  </div>
+</section>
+<section class="section wrap" id="mac" aria-labelledby="mac-h">
+  <div class="mac">
+    <div class="mac-head" data-reveal>
+      <h2 class="t-title" id="mac-h">Now on Mac, with the same library.</h2>
+      <p class="t-body">Paste a page of notes, check every card in the preview, and save the ones worth
+        keeping. Decks and progress sync with your iPhone and iPad through iCloud. Cognito for Mac is
+        free to download, like the iPhone app.</p>
+    </div>
+    <figure class="rec" data-loop data-reveal="2">
+      <div class="mac-window">
+        <video width="1280" height="896" muted loop playsinline preload="none" poster="media/create-mac.webp"
+               aria-label="Screen recording of Cognito for Mac: study notes on photosynthesis are pasted into Create Cards, six cards appear in the preview, and they are saved into the Cell Biology deck.">
+          <source src="media/create-mac.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption class="mac-bar">
+        <p class="rec-note">Recorded in Cognito for Mac with a sample library. Generated wording varies.</p>
+        <button class="loop-toggle" type="button" aria-pressed="false"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4.5" width="4" height="15" rx="1.2"/><rect x="14" y="4.5" width="4" height="15" rx="1.2"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 4.8v14.4a1 1 0 0 0 1.5.86l12-7.2a1 1 0 0 0 0-1.72l-12-7.2a1 1 0 0 0-1.5.86z"/></svg><span>Pause recording</span></button>
+      </figcaption>
+    </figure>
+    <ul class="mac-facts" data-reveal="3">
+      <li><strong>Made for the keyboard</strong><span>Space reveals the answer, 1&ndash;4 rates it, and &#8984;S saves new cards.</span></li>
+      <li><strong>One library everywhere</strong><span>Decks, cards and review history sync through your private iCloud database, with no extra account.</span></li>
+      <li><strong>Free, and Premium carries over</strong><span>The free plan works on Mac with its own 10 AI generation batches a month. Premium bought on iPhone or iPad carries over with the same Apple Account. Needs macOS 15 or later.</span></li>
+    </ul>
+  </div>
+</section>
 <section class="section wrap" id="features" aria-labelledby="feat-h">
   <div class="section-head" data-reveal>
-    <p class="eyebrow kicker" style="margin:0">The study system</p>
     <h2 class="t-title" id="feat-h">More than a flashcard maker.</h2>
     <p class="t-body">Creation, organisation, practice, tutoring and progress sit in one native app
       rather than four.</p>
   </div>
   <div class="cols-2"><ul class="card card-xl list" data-reveal="1"><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.7 4.6L18.3 9.3 13.7 11 12 15.6 10.3 11 5.7 9.3 10.3 7.6z"/><path d="M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span>
-      <div><h3>Exam-aware AI generation</h3><p>Cards written in your exam&rsquo;s terminology and expected answer depth. Nothing enters your library until you have reviewed it.</p></div>
+      <div><h3>Exam-aware AI generation</h3><p>Cards written in your exam&rsquo;s terminology and expected answer depth. New cards wait in a preview until you have checked them.</p></div>
     </li><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3.8h6.2L19 8.6V17a2.2 2.2 0 0 1-2.2 2.2H8A2.2 2.2 0 0 1 5.8 17V6A2.2 2.2 0 0 1 8 3.8z"/><path d="M14 3.8v5h5"/><path d="M9 13h6M9 16h4"/></svg></span>
       <div><h3>The sources you already study from</h3><p>Start free with topics, pasted text and photos. Premium also turns supported PDFs, audio, YouTube, webpages and arXiv papers into cards.</p></div>
     </li><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7.5" width="13" height="13" rx="2.6"/><path d="M7.5 4.5h9.4A3.6 3.6 0 0 1 20.5 8.1v9.4"/></svg></span>
-      <div><h3>Four ways to practise</h3><p>Classic, Compact, Quiz and Type Answer &mdash; the interaction changes, the card does not.</p></div>
+      <div><h3>Six exercise formats</h3><p>Quiz, written answer, sequence, matching, groups and image regions turn one card into a different kind of recall. Exercises you save run free and offline.</p></div>
     </li></ul><ul class="card card-xl list" data-reveal="2"><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.6V12l3.2 2"/></svg></span>
       <div><h3>Recall that adapts</h3><p>FSRS spaces reviews around your answer history. Daily Mix, Weak Spots, Learn and Exam Plans help you decide what to study next.</p></div>
@@ -847,56 +1103,52 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
       <div><h3>Built for real subjects</h3><p>LaTeX, code, tables, Mermaid diagrams, cloze deletions, image occlusion, tags and text-to-speech &mdash; maths through medicine.</p></div>
     </li><li>
       <span class="badge"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.8" width="11" height="18.4" rx="2.8"/><path d="M10.6 5.4h2.8"/></svg></span>
-      <div><h3>Native on iPhone and iPad</h3><p>Widgets, offline review of saved cards, Dynamic Type, VoiceOver and optional iCloud sync across your devices.</p></div>
+      <div><h3>Native on iPhone, iPad and Mac</h3><p>Widgets, quick reviews on Apple Watch, offline review of saved cards, and iCloud sync that keeps one library on every device.</p></div>
     </li></ul></div>
 </section>
 <section class="section wrap" id="privacy" aria-labelledby="priv-h">
   <div class="card card-xl band" data-reveal>
     <div>
-      <p class="eyebrow kicker" style="margin:0">Local-first</p>
       <h2 class="t-title" id="priv-h">Your library starts on your device.</h2>
-      <p class="t-body">Study data is stored locally. Optional iCloud sync goes through your private
+      <p class="t-body">Study data is stored locally. iCloud sync goes through your private
         CloudKit database. Online and AI features process only what is needed for the result you
         asked for.</p>
       <a class="t-head" href="privacy.html">Read the Privacy Policy <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4.5h5.5V10"/><path d="M19.5 4.5L11 13"/><path d="M17.5 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8.5a2 2 0 0 1 2-2h4"/></svg></a>
     </div>
     <ul class="list">
-      <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.7 2.7L16 9.6"/></svg><p class='t-sub'>Cards, decks, history and settings live on your device</p></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.7 2.7L16 9.6"/></svg><p class='t-sub'>Optional sync uses your own private iCloud database</p></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.7 2.7L16 9.6"/></svg><p class='t-sub'>No third-party advertising SDKs, no cross-app tracking</p></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.7 2.7L16 9.6"/></svg><p class='t-sub'>No sale of personal information</p></li>
+      <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.7 2.7L16 9.6"/></svg><p class='t-sub'>Cards, decks, history and settings live on your device</p></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.7 2.7L16 9.6"/></svg><p class='t-sub'>Sync uses your own private iCloud database</p></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.7 2.7L16 9.6"/></svg><p class='t-sub'>No third-party advertising SDKs, no cross-app tracking</p></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.7 2.7L16 9.6"/></svg><p class='t-sub'>No sale of personal information</p></li>
     </ul>
   </div>
 </section>
 <section class="section wrap" id="plans" aria-labelledby="plans-h">
   <div class="section-head" data-reveal>
-    <p class="eyebrow kicker" style="margin:0">Start free</p>
     <h2 class="t-title" id="plans-h">Start free. Go further with Premium.</h2>
   </div>
   <div class="plans">
     <article class="card card-xl plan" data-reveal="1">
-      <p class="eyebrow tier" style="margin:0">Free</p>
-      <h3 class="t-title2">The whole study system</h3>
-      <p>Everything needed to run active recall on your own material, with AI generation on a monthly allowance.</p>
-      <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Unlimited hand-made cards and review</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>10 AI generation batches per calendar month</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Topics, pasted text and photos for AI creation</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>FSRS, Exam Plans and daily goals</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Classic and Compact study, Anki import</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Rich cards and optional iCloud sync</span></li></ul>
+      <h3 class="t-title2">Free</h3>
+      <p>The whole study system: everything needed to run active recall on your own material, with AI generation on a monthly allowance.</p>
+      <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Unlimited hand-made cards and review</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>10 AI generation batches a month on each device</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Topics, pasted text and photos for AI creation</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>One free try of a PDF, scan, audio, YouTube or web source</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>FSRS, Exam Plans and daily goals</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Saved exercises in every format, Anki import</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Rich cards and iCloud sync</span></li></ul>
       <a class="btn btn-quiet" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">Download free</a>
     </article>
     <article class="card card-xl plan card-accent" data-reveal="2">
-      <p class="eyebrow tier" style="margin:0">Premium</p>
-      <h3 class="t-title2">Deeper exam preparation</h3>
-      <p>Lifts the generation cap and unlocks the tools that turn more of your material into practice.</p>
-      <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Unlimited AI generation from supported sources</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>PDFs, scans, audio, YouTube, web and arXiv</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Text and Voice AI Tutors</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Quiz and Type Answer study</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Deck translation, AI rewrite and mnemonic hints</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Hands-free review, AI Coach and streak protection</span></li></ul>
+      <h3 class="t-title2">Premium</h3>
+      <p>Deeper exam preparation: no generation cap, and the tools that turn more of your material into practice.</p>
+      <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Unlimited AI generation from supported sources</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>PDFs, scans, audio, YouTube, web and arXiv</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Text and Voice AI Tutors</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>30 AI-prepared exercises a month</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>Deck translation, AI rewrite and mnemonic hints</span></li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5 11-11"/></svg><span>AI Coach and automatic streak protection</span></li></ul>
       <a class="btn btn-accent" href="https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298">See plans in the app</a>
     </article>
   </div>
   <p class="plan-note">Weekly, monthly and yearly plans. Prices, billing periods, trial eligibility
-    and any current offers are shown in the app in your local currency before you buy. Image
-    occlusion, Anki import and accent themes are free and stay free.</p>
+    and any current offers are shown in the app in your local currency before you buy. One
+    subscription covers iPhone, iPad and Mac. Image occlusion, Anki import and accent themes are
+    free and stay free.</p>
 </section>
 <section class="section wrap" aria-labelledby="faq-h">
   <div class="section-head" data-reveal>
-    <p class="eyebrow kicker" style="margin:0">FAQ</p>
     <h2 class="t-title" id="faq-h">Before you start.</h2>
   </div>
   <div class="card card-xl faq measure" data-reveal>
-    <details><summary>Do I have to choose an exam?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>No. Pick &ldquo;Learn without an exam&rdquo; during onboarding and study any topic. You can choose or change an exam later in Settings, and existing cards keep working.</p></details><details><summary>Are generated cards guaranteed to match an official syllabus?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>No AI system can guarantee that. Cognito uses your exam as context to shape practice, but you should check generated content against your current syllabus and authoritative sources.</p></details><details><summary>What does the free tier actually include?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Unlimited hand-made cards and review, FSRS scheduling, Classic and Compact study, Exam Plans, Anki import, optional iCloud sync, and 10 AI generation batches per calendar month from topics, pasted text or photos.</p></details><details><summary>Can I use it for medical exams?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Yes &mdash; several medical formats are supported. It is a study tool, not clinical decision support, and it is not a place for patient-identifiable information.</p></details><details><summary>Does it work on iPad?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Yes. Cognito is a native iPhone and iPad app and needs iOS or iPadOS 18 or later. Optional iCloud sync keeps one library across both.</p></details>
+    <details><summary>Do I have to choose an exam?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>No. Pick &ldquo;Learn without an exam&rdquo; during onboarding and study any topic. You can choose or change an exam later in Settings, and existing cards keep working.</p></details><details><summary>Are generated cards guaranteed to match an official syllabus?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>No AI system can guarantee that. Cognito uses your exam as context to shape practice, but you should check generated content against your current syllabus and authoritative sources.</p></details><details><summary>What does the free tier actually include?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Unlimited hand-made cards and review, FSRS scheduling, Exam Plans, saved exercises in every format, Anki import, iCloud sync, and 10 AI generation batches per calendar month on each device from topics, pasted text or photos &mdash; plus one free try of a Premium source such as a PDF.</p></details><details><summary>Can I use it for medical exams?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Yes &mdash; several medical formats are supported. It is a study tool, not clinical decision support, and it is not a place for patient-identifiable information.</p></details><details><summary>Does it work on iPad and Mac?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5v13M5.5 12h13"/></svg></summary><p>Yes. Cognito is native on iPhone and iPad (iOS or iPadOS 18 or later) and on Mac (macOS 15 or later), with a companion Apple Watch app for quick reviews. Every version is free to download, iCloud sync keeps one library across them, and one Premium subscription covers iPhone, iPad and Mac. On Mac, AI creates cards from a topic or pasted notes; photos, PDFs and other sources stay on iPhone and iPad.</p></details>
   </div>
 </section>
 </main>
@@ -914,6 +1166,8 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
     <span>&copy; 2026 Cognito System. Operated by Aleksei Usanov.</span>
     <nav class="foot-links" aria-label="Footer">
       <a href="index.html">Home</a>
+      <a href="gcse-revision.html">GCSE revision</a>
+      <a href="a-level-revision.html">A-level revision</a>
       <a href="exam-study-plan.html">Exam study plan</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
@@ -925,5 +1179,221 @@ a.btn-quiet:hover, .btn-quiet:hover { color: var(--label); background: var(--sep
     </nav>
   </div>
 </footer>
+<script>
+/* The page's only script: it plays the recordings and runs the sample review.
+   Everything it touches is readable without it. */
+(() => {
+  const calm = matchMedia("(prefers-reduced-motion: reduce)");
+  const ease = "cubic-bezier(.16, 1, .3, 1)";
+
+  /* Recordings play while on screen. Reduce Motion starts them paused on the
+     first frame; the visitor's own choice wins after that. */
+  for (const fig of document.querySelectorAll("[data-loop]")) {
+    const video = fig.querySelector("video");
+    const toggle = fig.querySelector(".loop-toggle");
+    let paused = calm.matches;
+    let visible = false;
+    const sync = () => {
+      toggle.setAttribute("aria-pressed", String(paused));
+      toggle.querySelector("span").textContent = paused ? "Play recording" : "Pause recording";
+      if (!paused && visible) {
+        video.preload = "auto";
+        video.play().catch(() => { paused = true; sync(); });
+      } else {
+        video.pause();
+      }
+    };
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }, { threshold: .25 }).observe(video);
+    toggle.addEventListener("click", () => { paused = !paused; sync(); });
+    sync();
+  }
+
+  /* Sample review. A new card's first interval at the default 90% target is
+     its starting stability under Cognito's default FSRS weights, rounded to
+     whole days with a one-day floor: 1, 1, 3 and 16 days (iOS labels the
+     last one "2w"). */
+  const demo = document.querySelector("[data-demo]");
+  if (!demo) return;
+  const cards = [
+    { q: "Why does ice float on water?", a: "It’s less dense than liquid water.", tag: "Ice" },
+    { q: "Which organelle is the powerhouse of the cell?", a: "Mitochondria.", tag: "Mitochondria" },
+    { q: "What is the word equation for photosynthesis?", a: "Carbon dioxide + water → glucose + oxygen, using light energy.", tag: "Photosynthesis" }
+  ];
+  const plan = {
+    again: { days: 1, say: "tomorrow" },
+    hard: { days: 1, say: "tomorrow" },
+    good: { days: 3, say: "in 3 days" },
+    easy: { days: 16, say: "in about 2 weeks" }
+  };
+  const order = ["again", "hard", "good", "easy"];
+  const card = demo.querySelector(".demo-card");
+  const side = card.querySelector(".side");
+  const q = card.querySelector(".demo-q");
+  const a = card.querySelector(".demo-a");
+  const grades = [...demo.querySelectorAll(".grade")];
+  const pins = demo.querySelector(".ruler-pins");
+  const status = demo.querySelector(".demo-status");
+  const reset = demo.querySelector(".demo-reset");
+  const at = days => Math.log1p(days) / Math.log1p(30) * 100;
+  const title = grade => grade[0].toUpperCase() + grade.slice(1);
+  const results = [];
+  const placed = [];
+  let index = 0;
+  let open = false;
+  let busy = false;
+
+  const show = i => {
+    index = i;
+    open = false;
+    card.classList.remove("is-open");
+    card.disabled = i >= cards.length;
+    side.textContent = "Question";
+    if (i < cards.length) {
+      q.textContent = cards[i].q;
+      a.textContent = cards[i].a;
+      status.textContent = `Card ${i + 1} of ${cards.length}`;
+    }
+    grades.forEach(b => { b.disabled = true; });
+  };
+
+  /* A hidden or throttled tab can hold an animation's `finished` promise
+     indefinitely, so a timer settles each step as well: the card's state
+     never waits on a frame being painted. */
+  const settle = (animation, ms) => new Promise(resolve => {
+    const timer = setTimeout(resolve, ms + 80);
+    animation.finished.then(resolve, resolve).finally(() => clearTimeout(timer));
+  });
+
+  const turn = async (swap, done) => {
+    if (calm.matches || !card.animate) {
+      swap();
+      card.animate?.([{ opacity: .4 }, { opacity: 1 }], { duration: 160 });
+    } else {
+      await settle(card.animate([{ transform: "rotateY(0)" }, { transform: "rotateY(90deg)" }], { duration: 150, easing: "cubic-bezier(.5, 0, .75, 0)" }), 150);
+      swap();
+      await settle(card.animate([{ transform: "rotateY(-90deg)" }, { transform: "rotateY(0)" }], { duration: 260, easing: ease }), 260);
+    }
+    done?.();
+  };
+
+  const reveal = () => {
+    if (open || busy || index >= cards.length) return;
+    busy = true;
+    // Safari does not focus a button on click; keep focus in the demo so the
+    // rating keys and the next Space land here.
+    card.focus({ preventScroll: true });
+    turn(() => {
+      open = true;
+      card.classList.add("is-open");
+      side.textContent = "Answer";
+    }, () => {
+      busy = false;
+      grades.forEach(b => { b.disabled = false; });
+      status.textContent = "How did it go? Rate it.";
+    });
+  };
+
+  /* Each pin takes the lowest lane where it overlaps no other pin, so labels
+     never collide however narrow the ruler gets. */
+  const place = pin => {
+    pins.append(pin);
+    const base = pins.getBoundingClientRect().left;
+    const box = pin.getBoundingClientRect();
+    const l = box.left - base - 6;
+    const r = box.right - base + 6;
+    const lane = [0, 1, 2].find(n => !placed.some(p => p.lane === n && p.l < r && l < p.r)) ?? 2;
+    if (lane) pin.classList.add(`lift-${lane}`);
+    placed.push({ lane, l, r });
+  };
+
+  const rate = grade => {
+    if (!open || busy) return;
+    busy = true;
+    const step = plan[grade];
+    const pin = document.createElement("li");
+    pin.className = "pin";
+    pin.dataset.grade = grade;
+    pin.textContent = cards[index].tag;
+    pin.style.left = `${at(step.days)}%`;
+    place(pin);
+    results.push({ tag: cards[index].tag, grade, say: step.say });
+
+    if (!calm.matches && pin.animate) {
+      const from = card.getBoundingClientRect();
+      const to = pin.getBoundingClientRect();
+      const dx = from.left + from.width / 2 - (to.left + to.width / 2);
+      const dy = from.top + from.height / 2 - (to.top + to.height / 2);
+      pin.animate([
+        { transform: `translate(calc(-50% + ${dx}px), ${dy}px) scale(1.6)`, opacity: 0 },
+        { opacity: 1, offset: .25 },
+        { transform: "translate(-50%, 0) scale(1)", opacity: 1 }
+      ], { duration: 640, easing: ease });
+    } else {
+      pin.animate?.([{ opacity: 0 }, { opacity: 1 }], { duration: 160 });
+    }
+
+    const said = `${cards[index].tag}: ${title(grade)}, back ${step.say}.`;
+    const next = index + 1;
+    if (next < cards.length) {
+      turn(() => show(next), () => { busy = false; status.textContent = `${said} Card ${next + 1} of ${cards.length}.`; card.focus({ preventScroll: true }); });
+    } else {
+      show(next);
+      busy = false;
+      demo.classList.add("is-done");
+      side.textContent = "Session";
+      q.classList.add("demo-sum");
+      q.replaceChildren(...results.map(row => {
+        const line = document.createElement("span");
+        const name = document.createElement("b");
+        const when = document.createElement("i");
+        name.textContent = row.tag;
+        when.textContent = `${title(row.grade)} · back ${row.say}`;
+        line.append(name, when);
+        return line;
+      }));
+      status.textContent = `${said} Three cards, three return dates.`;
+      reset.hidden = false;
+      reset.focus({ preventScroll: true });
+    }
+  };
+
+  card.addEventListener("click", reveal);
+  grades.forEach(b => b.addEventListener("click", () => rate(b.dataset.grade)));
+
+  /* The keys work while the demo is on screen, not only while it has focus.
+     Space is taken only when it would reveal a card, so it still scrolls the
+     page everywhere else; typing in a field or using another control is left
+     alone. */
+  let onScreen = false;
+  new IntersectionObserver(([entry]) => { onScreen = entry.isIntersecting; }, { threshold: .4 }).observe(demo);
+  document.addEventListener("keydown", e => {
+    if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
+    const target = e.target instanceof Element ? e.target : document.body;
+    const inside = demo.contains(target);
+    if (!onScreen && !inside) return;
+    if (target.closest("input, textarea, select, [contenteditable]")) return;
+    if (!inside && target.closest("a, button, summary, video")) return;
+    const n = ["1", "2", "3", "4"].indexOf(e.key);
+    if (n >= 0) {
+      if (open && !busy) { e.preventDefault(); rate(order[n]); }
+    } else if (e.key === " " && !open && !busy && index < cards.length && !target.closest("button")) {
+      e.preventDefault();
+      reveal();
+    }
+  });
+
+  reset.addEventListener("click", () => {
+    pins.replaceChildren();
+    results.length = 0;
+    placed.length = 0;
+    demo.classList.remove("is-done");
+    q.classList.remove("demo-sum");
+    reset.hidden = true;
+    show(0);
+    card.focus({ preventScroll: true });
+  });
+  show(0);
+})();
+</script>
 </body>
 </html>

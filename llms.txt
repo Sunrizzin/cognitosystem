@@ -1,29 +1,32 @@
 # Cognito System
 
-> Cognito is an exam-focused study app for iPhone and iPad. Learners can generate flashcards from their own material, check and edit cards before saving, then follow an Exam Plan and review with FSRS spaced repetition.
+> Cognito is an exam-focused study app for iPhone, iPad and Mac, with a companion Apple Watch app. Learners can generate flashcards from their own material, check and edit cards before saving, then follow an Exam Plan and review with FSRS spaced repetition.
 
 ## Key facts
 - Brand: Cognito System (also called Cognito)
-- Platform: iPhone and iPad, iOS/iPadOS 18 or later
+- Platforms: iPhone and iPad (iOS/iPadOS 18 or later); native Mac app (macOS 15 or later); Apple Watch app for quick reviews of plain-text cards
 - Category: Education and exam preparation
-- Availability: Free to start. The free tier includes unlimited hand-made cards and review, FSRS scheduling, Classic and Compact study, Exam Plans, Anki import, optional iCloud sync, and 10 AI generation batches per calendar month from topics, pasted text or photos. Premium (weekly, monthly or yearly) lifts the generation cap and adds supported PDF, scan, audio, YouTube, web and arXiv sources; Text and Voice AI Tutors; Quiz and Type Answer; deck translation, AI rewrite, mnemonic hints, hands-free review, AI Coach and streak protection. Prices are shown in local App Store currency.
-- Exam support: More than 80 school, university, admissions, professional, and medical exam formats
-- Study modes: Classic, Compact, Quiz, and Typed Answer
-- Scheduling: FSRS spaced repetition
-- Sources: topics, pasted text and photos for free; supported PDFs, scans, audio, YouTube, webpages and arXiv papers with Premium
+- Availability: Free to start. The free tier includes unlimited hand-made cards and review, FSRS scheduling, Exam Plans, saved exercises in every format, Anki import, iCloud sync, 10 AI generation batches per calendar month on each device from topics, pasted text or photos, and one free try of a Premium source. Premium (weekly, monthly or yearly) lifts the generation cap and adds supported PDF, scan, audio, YouTube, web and arXiv sources; Text and Voice AI Tutors; 30 AI-prepared exercises a month; deck translation, AI rewrite, mnemonic hints, AI Coach and automatic streak protection. One subscription covers iPhone, iPad and Mac. Prices are shown in local App Store currency.
+- Exam support: more than 150 school, university, admissions, language, professional and medical exams; built-in course profiles for 33 GCSE and 20 A-level specifications (AQA, Pearson Edexcel, OCR, Eduqas, WJEC, CCEA)
+- Study: flashcards plus six exercise formats (Quiz, written answer, sequence, matching, groups and image regions)
+- Scheduling: FSRS spaced repetition; a new card's first intervals at the default 90% target are 1, 1, 3 and 16 days for Again, Hard, Good and Easy
+- Sources: topics, pasted text and photos for free; supported PDFs, scans, audio, YouTube, webpages and arXiv papers with Premium. On Mac, AI creates cards from a topic or pasted notes.
 - Rich content: LaTeX, code, tables, Mermaid diagrams, cloze cards, image occlusion, and text-to-speech
-- Other features: Exam Plans, Daily Mix, Weak Spots, Learn, analytics, widgets, and optional iCloud sync
-- Data model: cards, decks, progress, history, and settings are local-first; supported data can be synced through the user's private iCloud/CloudKit database
+- Other features: Exam Plans, Daily Mix, Weak Spots, Learn, analytics, widgets, and iCloud sync
+- Data model: cards, decks, progress, history, and settings are local-first; supported data syncs through the user's private iCloud/CloudKit database
 - Developer and operator: Aleksei Usanov
 
 ## Important qualifications
 - Cognito is independent and is not endorsed by or affiliated with exam boards or testing organizations.
 - AI-generated content should be checked against the current syllabus and authoritative sources.
 - Medical content is for study only and is not medical advice or clinical decision support.
+- The Mac app's interface is in English.
 
 ## Links
 - [App Store](https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298)
 - [Website](https://cognitosystem.com/)
+- [GCSE revision flashcards](https://cognitosystem.com/gcse-revision.html)
+- [A-level revision flashcards](https://cognitosystem.com/a-level-revision.html)
 - [How to make an exam study plan](https://cognitosystem.com/exam-study-plan.html)
 - [Privacy Policy](https://cognitosystem.com/privacy.html)
 - [Terms of Use](https://cognitosystem.com/terms.html)

@@ -12,7 +12,7 @@ The primary audience for new search pages is people preparing for an exam who ne
 
 ## Product Purpose
 
-Explain how the Cognito iPhone and iPad app turns a learner's own material into cards they can check before saving, then helps them practise with spaced repetition and an Exam Plan. The website should help visitors decide whether the app fits their exam, material and study routine, and lead them to the App Store.
+Explain how the Cognito app for iPhone, iPad and Mac turns a learner's own material into cards they can check before saving, then helps them practise with spaced repetition and an Exam Plan. The website should help visitors decide whether the app fits their exam, material and study routine, and lead them to the App Store.
 
 ## Positioning
 
@@ -20,11 +20,12 @@ Lead with exam-focused practice from the learner's own material and a plan for w
 
 ## Operating Context
 
-People may start with a topic, pasted notes or a photo, review generated cards, save useful ones, and study them on iPhone or iPad. They may select an exam, set its date and available study days, and use Exam Plans and FSRS review. Supported document, audio, video and web sources require Premium; already-saved cards remain available without a subscription. These capabilities are described in the current public App Store listing and app repository; check the released version before publishing future claims.
+People may start with a topic, pasted notes or a photo, review generated cards, save useful ones, and study them on iPhone, iPad or Mac, with quick reviews on Apple Watch. They may select an exam, set its date and available study days, and use Exam Plans and FSRS review. Supported document, audio, video and web sources require Premium; already-saved cards remain available without a subscription. These capabilities are described in the current public App Store listing and app repository; check the released version before publishing future claims.
 
 ## Capabilities and Constraints
 
-- Keep Free and Premium capabilities distinct and describe the 10 free AI generation batches per calendar month accurately.
+- Keep Free and Premium capabilities distinct and describe the 10 free AI generation batches per calendar month (counted on each device) accurately.
+- On Mac, AI creates cards only from a topic or pasted notes, and the interface is in English; do not imply otherwise.
 - Make no promise of official exam-board affiliation, complete syllabus coverage, guaranteed scores or perfect AI answers.
 - Show actual app behaviour and real examples; do not invent testimonials, usage figures or exam results.
 - The existing website is static HTML/CSS with no external JavaScript, analytics cookies or build step. Preserve its incumbent visual language and privacy posture.
@@ -37,7 +38,7 @@ The website uses Cognito System; the App Store product is Cognito: Exam Prep & S
 ## Evidence on Hand
 
 - Current public App Store listing: https://apps.apple.com/us/app/cognito-exam-prep-study/id6739693298
-- Existing product page and visual assets: `index.html`, `app-home.webp`, `logo-new.png`
+- Existing product page and visual assets: `index.html`, `media/` (real screen recordings), `logo-new.png`
 - App-side feature and ASO evidence: `/Users/sunrizz/Cognito/AnkiMate/` and `/Users/sunrizz/Cognito/aso/strategy/`
 - No approved testimonials, independent exam outcomes or ranking claims have been supplied.
 
